@@ -1,4 +1,5 @@
 // Numbers 1 - 20
+num0 .data 0
 num1 .data 1
 num2 .data 2
 num3 .data 3
