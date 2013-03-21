@@ -1,4 +1,4 @@
-start call check check_ra
+start call function_check function_check_ra
 
 	// If the input was incorrect check will redirect to the error.
 	// If we're here, valid input was given. Check i to see if we're done.
@@ -29,17 +29,17 @@ end halt
 // keyboard_value: The inputted character for the password.
 // i: The current password character identifier.
 //
-check cpfa current password i
+function_check cpfa current password i
 
-	call keyboard_on_press keyboard_on_press_ra
+	call function_keyboard_on_press function_keyboard_on_press_ra
 
 	bne invalid current keyboard_value
 
 	add i i num1
 
-	ret check_ra
+	ret function_check_ra
 
-check_ra .data 0
+function_check_ra .data 0
 
 i .data 0
 length .data 4
@@ -51,5 +51,4 @@ password .data 116
          .data 116
 
 // Include libraries
-#include constants.e
-#include drivers/keyboard.e
+#include ../bootstrap.e
