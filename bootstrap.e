@@ -50,8 +50,9 @@ chary .data 121
 charz .data 122
 
 // Colors
-color_white .data 255
-color_black .data 0
+color_white  .data 255
+color_green  .data 20
+color_black  .data 0
 
 // Booleans
 true  .data 1
