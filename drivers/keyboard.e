@@ -15,8 +15,8 @@ keyboard_read in 21 keyboard_response
     in 23 keyboard_value
 	out 20 num0
 
-function_keyboard_finish in 21 keyboard_response
-	bne function_keyboard_finish keyboard_response num0
+keyboard_finish in 21 keyboard_response
+	bne keyboard_finish keyboard_response num0
 
     ret function_keyboard_ra
 
