@@ -49,4 +49,8 @@ charx .data 120
 chary .data 121
 charz .data 122
 
+//True or False
+true  .data 1
+false .data 0
+
 #include drivers/keyboard.e
