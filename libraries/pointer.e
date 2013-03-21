@@ -19,11 +19,11 @@ function_prepare_pointer cp vga_x1 pointer_x
 
 //
 // Move the pointer. This "erases" the previous pointer by drawing
-// a black rectangle on top of it. Then, a white rectangle is drawn
+// a black rectangle on top of it. Then, a rectangle is drawn
 // and will act as the new pointer.
 //
-// pointer_x: the pointer's x-coordinate.
-// pointer_y: the pointer's y-coordinate.
+// pointer_x: the old pointer's x-coordinate.
+// pointer_y: the old pointer's y-coordinate.
 // pointer_height: the pointer's height.
 // pointer_width: the pointer's width.
 // pointer_color: the pointer's color.
@@ -49,6 +49,20 @@ function_move_pointer cp vga_color color_black
 
                       ret function_move_pointer_ra
 
+//
+// Change the color of the pointer.
+//
+// pointer_new_color: the new color of the pointer
+//
+function_change_pointer_color cp pointer_new_x pointer_x
+                              cp pointer_new_y pointer_y
+
+                              cp pointer_color pointer_new_color
+
+                              call function_move_pointer function_move_pointer_ra
+
+                              ret function_change_pointer_color_ra
+
 pointer_x .data 0
 pointer_y .data 0
 
@@ -59,6 +73,8 @@ pointer_new_x .data 0
 pointer_new_y .data 0
 
 pointer_color .data 255
+pointer_new_color .data 0
 
-function_prepare_pointer_ra .data 0
-function_move_pointer_ra .data 0
+function_prepare_pointer_ra       .data 0
+function_move_pointer_ra          .data 0
+function_change_pointer_color_ra  .data 0
