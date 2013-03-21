@@ -26,3 +26,16 @@ cp pointer_new_color color_green
 
 call function_change_pointer_color change_pointer_color_ra
 ```
+
+# Hiding the pointer.
+
+The pointer can be hidden using the `hide_pointer` function, and can be shown again
+using the `show_pointer` function.
+
+```
+// Hide the pointer
+call function_hide_pointer function_hide_pointer_ra
+
+// Show the pointer
+call function_show_pointer function_show_pointer_ra
+```

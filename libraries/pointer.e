@@ -63,6 +63,32 @@ function_change_pointer_color cp pointer_new_x pointer_x
 
                               ret function_change_pointer_color_ra
 
+function_hide_pointer cp pointer_new_x pointer_x
+                      cp pointer_new_y pointer_y
+
+                      // We'll save the pointer's old color (if it's not black) so that
+                      // the pointer can have the same color when it is shown again. 
+                      be _keep_new_p_color pointer_color color_black
+
+                      cp pointer_new_color pointer_color
+_keep_new_p_color      cp pointer_color color_black
+
+                      call function_move_pointer function_move_pointer_ra
+
+                      ret function_hide_pointer_ra
+
+function_show_pointer cp pointer_new_x pointer_x
+                      cp pointer_new_y pointer_y
+
+                      bne _show_pointer pointer_new_color color_black
+
+                      // The pointer's new color is set to black, so let's use white.
+                      cp pointer_new_color color_white
+
+_show_pointer         call function_change_pointer_color function_change_pointer_color_ra
+
+                      ret function_show_pointer_ra
+
 pointer_x .data 0
 pointer_y .data 0
 
@@ -78,3 +104,5 @@ pointer_new_color .data 0
 function_prepare_pointer_ra       .data 0
 function_move_pointer_ra          .data 0
 function_change_pointer_color_ra  .data 0
+function_hide_pointer_ra          .data 0
+function_show_pointer_ra          .data 0

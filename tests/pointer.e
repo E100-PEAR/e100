@@ -13,6 +13,8 @@ read_key call function_keyboard_on_press function_keyboard_on_press_ra
 	// End the program if the user presses 'q'
     be end keyboard_value charq
     be change_color keyboard_value charc
+    be hide_pointer keyboard_value charh
+    be show_pointer keyboard_value chars
 
 move_pointer add pointer_new_x pointer_new_x num10
 	add pointer_new_y pointer_new_y num10
@@ -27,6 +29,11 @@ change_color cp pointer_new_color color_green
              call function_change_pointer_color function_change_pointer_color_ra
              be move_pointer num0 num0
 
+hide_pointer call function_hide_pointer function_hide_pointer_ra
+             be move_pointer num0 num0
+
+show_pointer call function_show_pointer function_show_pointer_ra
+             be move_pointer num0 num0
 end halt
 
 #include ../libraries/pointer.e
