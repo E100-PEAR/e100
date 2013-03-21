@@ -24,5 +24,5 @@ move_pointer call function_keyboard_on_press function_keyboard_on_press_ra
 
 end halt
 
-#include includes/pointer.e
-#include bootstrap.e
+#include ../libraries/pointer.e
+#include ../bootstrap.e
