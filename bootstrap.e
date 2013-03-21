@@ -49,7 +49,11 @@ charx .data 120
 chary .data 121
 charz .data 122
 
-//True or False
+// Colors
+color_white .data 255
+color_black .data 0
+
+// Booleans
 true  .data 1
 false .data 0
 
