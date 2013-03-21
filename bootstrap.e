@@ -47,3 +47,5 @@ charw .data 119
 charx .data 120
 chary .data 121
 charz .data 122
+
+#include drivers/keyboard.e
