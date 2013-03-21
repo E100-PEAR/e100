@@ -8,15 +8,15 @@ Displays a rectangle on the screen.
 
 ```
 // Set the start and end x-coordinate of the rectangle.
-cp vga_x1  twenty
-cp vga_x2  sixty
+cp vga_x1  num10
+cp vga_x2  num15
 
 // Set the start and end y-coordinate of the rectangle.
-cp vga_y1  twenty
-cp vga_y2  eighty
+cp vga_y1  num7
+cp vga_y2  num12
 
 // Set the color of the rectangle.
-cp vga_color  twenty
+cp vga_color  color_green
 
 call function_vga function_vga_ra
 ```
