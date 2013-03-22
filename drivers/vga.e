@@ -26,7 +26,22 @@ vga_wait1 in 61 vga_response
           bne vga_wait1	vga_response num0
 
 vga_quit  ret function_vga_ra   
- 
+
+//
+// Set the entire screen to black.
+//
+// screen_width:  the width of the screen
+// screen_height: the height of the screen.
+//
+function_clear_screen cp vga_x1 num0
+                      cp vga_y1 num0
+                      cp vga_x2 screen_width
+                      cp vga_y2 screen_height
+                      cp vga_color color_black
+
+                      call function_vga function_vga_ra
+
+                      ret function_clear_screen_ra
 
 vga_x1        .data   0
 vga_y1        .data   0
@@ -36,3 +51,4 @@ vga_color     .data   0
 vga_response  .data   0
 
 function_vga_ra .data   0
+function_clear_screen_ra .data 0
