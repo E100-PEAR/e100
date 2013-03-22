@@ -2,6 +2,15 @@
 
 The VGA driver handles displaying objects on the screen.
 
+## Clearing the Screen
+
+You can clear the screen by using the `clear_screen` function. This draws a black
+rectangle with dimensions `screen_width` by `screen_height`.
+
+```
+call function_clear_screen function_clear_screen_ra
+```
+
 ## Displaying Rectangles
 
 A rectangle can be shown on the screen with the `vga` function.
