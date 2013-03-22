@@ -74,6 +74,10 @@ function_change_pointer_color cp pointer_new_x pointer_x
 
                               ret function_change_pointer_color_ra
 
+//
+// Hide the pointer. This will save the pointer's current color
+// for when it is shown again.
+//
 function_hide_pointer cp pointer_new_x pointer_x
                       cp pointer_new_y pointer_y
 
@@ -88,6 +92,9 @@ _keep_new_p_color     cp pointer_color color_black
 
                       ret function_hide_pointer_ra
 
+//
+// Show the pointer.
+//
 function_show_pointer cp pointer_new_x pointer_x
                       cp pointer_new_y pointer_y
 
