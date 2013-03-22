@@ -50,11 +50,11 @@ chary .data 121
 charz .data 122
 
 // Special keys
-key_up    .data 0
-key_down  .data 0
-key_left  .data 0
-key_right .data 0
-key_enter .data 0
+key_up    .data 119
+key_down  .data 115
+key_left  .data 97
+key_right .data 100
+key_enter .data 102
 
 // Colors
 color_white  .data 255
