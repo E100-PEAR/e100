@@ -1,7 +1,7 @@
 menu call function_add_pointer function_add_pointer_ra
 
 // Let the user move/select the pointer using the arrow keys.
-read_key call function_key_press function_key_press_ra
+read_key call function_keyboard_on_press function_keyboard_on_press_ra
          be move_left    keyboard_value key_left
          be move_right   keyboard_value key_right
          be move_up      keyboard_value key_up
