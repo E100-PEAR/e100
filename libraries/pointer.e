@@ -118,6 +118,7 @@ pointer_top     .data 50
 pointer_bottom  .data 100
 
 function_prepare_pointer_ra       .data 0
+function_add_pointer_ra           .data 0
 function_move_pointer_ra          .data 0
 function_change_pointer_color_ra  .data 0
 function_hide_pointer_ra          .data 0
