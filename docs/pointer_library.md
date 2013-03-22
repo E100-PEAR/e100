@@ -4,6 +4,17 @@ The pointer library uses the VGA driver to create a small square on the screen.
 The square can be "moved" and can act as a pointer to demonstrate which menu is
 currently selected.
 
+## Add the Pointer
+
+Add the pointer to the screen with the `add_pointer` function.
+
+```
+cp pointer_x num10
+cp pointer_y num20
+
+call function_add_pointer function_add_pointer_ra
+```
+
 ## Moving the Pointer
 
 The `move_pointer` function can be used to move the pointer on the screen.
