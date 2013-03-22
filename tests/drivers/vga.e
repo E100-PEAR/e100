@@ -11,4 +11,5 @@ twenty      .data   20
 sixty       .data   60
 eighty      .data   80
 
-#include ../../bootstrap.e
+#include ../../constants.e
+#include ../../drivers/vga.e

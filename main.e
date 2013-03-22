@@ -4,6 +4,10 @@
 #include controllers/playback.e
 #include controllers/record.e
 
-#include libraries/pointer.e
+#include constants.e
 
-#include bootstrap.e
+#include drivers/keyboard.e
+#include drivers/sd.e
+#include drivers/vga.e
+
+#include libraries/pointer.e

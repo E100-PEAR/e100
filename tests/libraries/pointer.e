@@ -36,5 +36,7 @@ show_pointer call function_show_pointer function_show_pointer_ra
              be move_pointer num0 num0
 end halt
 
+#include ../../constants.e
+#include ../../drivers/vga.e
+#include ../../drivers/keyboard.e
 #include ../../libraries/pointer.e
-#include ../../bootstrap.e
