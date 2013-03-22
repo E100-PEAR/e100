@@ -59,4 +59,5 @@ true  .data 1
 false .data 0
 
 #include drivers/keyboard.e
+#include drivers/sd.e
 #include drivers/vga.e
