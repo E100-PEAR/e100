@@ -28,7 +28,7 @@ function_prepare_pointer cp vga_x1 pointer_x
 function_add_pointer call function_prepare_pointer function_prepare_pointer_ra
                      call function_vga function_vga_ra
 
-                     ret function_add_pointer
+                     ret function_add_pointer_ra
 
 //
 // Move the pointer. This "erases" the previous pointer by drawing
@@ -100,8 +100,8 @@ _show_pointer         call function_change_pointer_color function_change_pointer
 
                       ret function_show_pointer_ra
 
-pointer_x .data 50
-pointer_y .data 50
+pointer_x .data 0
+pointer_y .data 0
 
 pointer_height .data 10
 pointer_width .data 10
