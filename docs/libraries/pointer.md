@@ -17,7 +17,20 @@ call function_add_pointer function_add_pointer_ra
 
 ## Moving the Pointer
 
-The `move_pointer` function can be used to move the pointer on the screen.
+The pointer can be moved around using the `move_pointer_left`, `move_pointer_right`,
+`move_pointer_up`, and `move_pointer_down` methods.` The different locations the pointer
+can be moved to can be changed by editing the `pointer_left`, `pointer_right`, `pointer_top`,
+and `pointer_bottom` variables.
+
+```
+call function_move_pointer_left function_move_pointer_left_ra
+call function_move_pointer_right function_move_pointer_right_ra
+call function_move_pointer_up function_move_pointer_up_ra
+```
+
+## Manually Moving the Pointer
+
+The `move_pointer` function can also be used to move the pointer on the screen.
 
 ```
 // Move the pointer 10 pixels down and to the right.
