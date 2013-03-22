@@ -107,6 +107,38 @@ _show_pointer         call function_change_pointer_color function_change_pointer
 
                       ret function_show_pointer_ra
 
+//
+// Move the pointer to the left.
+//
+function_move_pointer_left cp pointer_new_x pointer_left
+                           call function_move_pointer function_move_pointer_ra
+                           
+                           ret function_move_pointer_down_ra
+
+//
+// Move the pointer to the right.
+//
+function_move_pointer_right cp pointer_new_x pointer_right
+                           call function_move_pointer function_move_pointer_ra
+                           
+                           ret function_move_pointer_right_ra
+
+//
+// Move the pointer up.
+//
+function_move_pointer_up cp pointer_new_y pointer_up
+                           call function_move_pointer function_move_pointer_ra
+                           
+                           ret function_move_pointer_down_ra
+
+//
+// Move the pointer down.
+//
+function_move_pointer_down cp pointer_new_y pointer_down
+                           call function_move_pointer function_move_pointer_ra
+                           
+                           ret function_move_pointer_down_ra
+
 pointer_x .data 0
 pointer_y .data 0
 
@@ -130,3 +162,7 @@ function_move_pointer_ra          .data 0
 function_change_pointer_color_ra  .data 0
 function_hide_pointer_ra          .data 0
 function_show_pointer_ra          .data 0
+function_move_pointer_left_ra     .data 0
+function_move_pointer_right_ra    .data 0
+function_move_pointer_up_ra       .data 0
+function_move_pointer_down_ra     .data 0
