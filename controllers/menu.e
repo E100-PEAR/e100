@@ -29,7 +29,9 @@ move_down  cp pointer_new_y pointer_bottom
            be read_key true true
 
 // Select the menu that the pointer is on.
-select_menu be select_right_menu pointer_x pointer_right
+select_menu call function_hide_pointer function_hide_pointer_ra
+            call function_clear_screen function_clear_screen_ra
+            be select_right_menu pointer_x pointer_right
 
 select_left_menu be record   pointer_y pointer_top
                  be playback true true
