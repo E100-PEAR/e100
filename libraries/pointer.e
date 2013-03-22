@@ -100,8 +100,8 @@ _show_pointer         call function_change_pointer_color function_change_pointer
 
                       ret function_show_pointer_ra
 
-pointer_x .data 0
-pointer_y .data 0
+pointer_x .data 50
+pointer_y .data 50
 
 pointer_height .data 10
 pointer_width .data 10
@@ -111,6 +111,11 @@ pointer_new_y .data 0
 
 pointer_color .data 255
 pointer_new_color .data 0
+
+pointer_left    .data 50
+pointer_right   .data 100
+pointer_top     .data 50
+pointer_bottom  .data 100
 
 function_prepare_pointer_ra       .data 0
 function_move_pointer_ra          .data 0
