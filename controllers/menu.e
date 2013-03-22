@@ -31,8 +31,8 @@ move_down  cp pointer_y_new pointer_bottom
 // Select the menu that the pointer is on.
 select_menu be select_right_menu pointer_x pointer_right
 
-select_left_menu record   be pointer_y pointer_top
-                 playback be true true
+select_left_menu be record   pointer_y pointer_top
+                 be playback true true
 
-select_right_menu comparison be pointer_y pointer_top
-                  analysis be true true
+select_right_menu be comparison pointer_y pointer_top
+                  be analysis   true true
