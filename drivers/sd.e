@@ -33,5 +33,3 @@ numread         .data   0
 color_num       .data   0
 sd_addr_low     .data   0
 sd_addr_high    .data   0
-
-#include bootstrap.e
