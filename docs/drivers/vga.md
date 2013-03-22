@@ -2,9 +2,9 @@
 
 The VGA driver handles displaying objects on the screen.
 
-## VGA function
+## Displaying Rectangles
 
-Displays a rectangle on the screen.
+A rectangle can be shown on the screen with the `vga` function.
 
 ```
 // Set the start and end x-coordinate of the rectangle.
