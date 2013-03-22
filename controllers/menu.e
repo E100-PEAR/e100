@@ -7,7 +7,7 @@ menu call function_clear_screen function_clear_screen_ra
      // The initial position also is the default next position.
      // When a key is pressed, the next position will be updated
      // according.
-	 cp pointer_new_x pointer_left
+     cp pointer_new_x pointer_left
      cp pointer_new_y pointer_top
 
      call function_add_pointer function_add_pointer_ra
