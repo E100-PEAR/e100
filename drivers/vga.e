@@ -50,5 +50,8 @@ vga_y2        .data   0
 vga_color     .data   0
 vga_response  .data   0
 
+screen_width  .data 1000
+screen_height .data 1000
+
 function_vga_ra .data   0
 function_clear_screen_ra .data 0
