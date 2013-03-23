@@ -28,6 +28,22 @@ vga_wait1 in  61        vga_response
 vga_quit  ret function_vga_write_ra   
 
 //
+// Read the values currently on the VGA screen.
+//
+function_vga_read   in 61   vga_response
+                    be      function_vga_read   vga_response    true
+
+vga_request         out     62                  false
+                    out     60                  true
+                    in      61                  vga_response
+                    bne     vga_request         vga_response    true
+                    in      68                  color_num
+                    out     60                  false
+                    in      61                  vga_response
+                    add     x_count             x_count         num1
+                    ret     function_vga_read_ra 
+
+//
 // Set the entire screen to black.
 //
 // screen_width:  the width of the screen
@@ -53,5 +69,6 @@ vga_response  .data   0
 screen_width  .data 1000
 screen_height .data 1000
 
-function_vga_write_ra .data   0
-function_clear_screen_ra .data 0
+function_vga_write_ra    .data  0
+function_vga_read_ra     .data  0
+function_clear_screen_ra .data  0
