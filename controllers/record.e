@@ -8,7 +8,7 @@ reset_x_count   add     y_count                 y_count                 num1
                 cp      x_count                 num0
                 be      row_loop                true                    true
 
-                call    function_vga_read       function_record_ra
+                call    function_vga_read       function_vga_read_ra
                 be      col_loop                true                    true       
                 
 reset_y_count   cp      y_count                 num0
