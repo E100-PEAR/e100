@@ -6,6 +6,7 @@
 
 #include constants.e
 
+#include drivers/camera.e
 #include drivers/keyboard.e
 #include drivers/sd.e
 #include drivers/vga.e
