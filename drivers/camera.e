@@ -10,7 +10,7 @@ cam_request     out     132             x_cord
                 bne     cam_request     cam_response    true
                 out     130             false
                 in      131             cam_response
-                be      row_loop        true            true
+                ret     function_camera_ra       
 
 cam_response    .data    0
 
