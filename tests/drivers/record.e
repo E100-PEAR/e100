@@ -14,6 +14,8 @@ reset_x_count   add     y_count                 y_count                 num1
 reset_y_count   cp      y_count                 num0
                 be      function_record         true                    true
 
+vga_response            .data   0
+
 color_num               .data   0
 
 resX                    .data   79
