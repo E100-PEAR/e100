@@ -1,4 +1,4 @@
-function_record call    function_camera         function_record_ra
+function_record call    function_camera         function_camera_ra
 
 row_loop        be      reset_y_count           y_count                 resY
 col_loop        be      reset_x_count           x_count                 resX        
@@ -18,5 +18,3 @@ resX                    .data   79
 resY                    .data   59
 x_count                 .data   0
 y_count                 .data   0
-
-function_record_ra      .data   0
