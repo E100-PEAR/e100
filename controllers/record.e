@@ -24,10 +24,11 @@ reset_y_count   cp      y_count         num0
 vga_response    .data   0
 
 color_num       .data   0
+
 resX            .data   79
 resY            .data   59
 x_count         .data   0
 y_count         .data   0
 
-#include bootstrap.e
-
+#include ../constants.e
+#include ../drivers/camera.e
