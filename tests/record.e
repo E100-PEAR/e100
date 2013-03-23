@@ -25,4 +25,4 @@ function_record_ra      .data   0
 
 #include ../constants.e
 #include ../drivers/camera.e
-#include ../drivers/vga_read.e
+#include ../drivers/vga.e
