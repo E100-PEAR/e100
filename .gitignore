@@ -1,3 +1,4 @@
 *.mif
 *.labels
+*.e~
 .DS_Store

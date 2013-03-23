@@ -13,7 +13,7 @@ call function_clear_screen function_clear_screen_ra
 
 ## Displaying Rectangles
 
-A rectangle can be shown on the screen with the `vga` function.
+A rectangle can be shown on the screen with the `vga_write` function.
 
 ```
 // Set the start and end x-coordinate of the rectangle.
@@ -27,5 +27,5 @@ cp vga_y2  num12
 // Set the color of the rectangle.
 cp vga_color  color_green
 
-call function_vga function_vga_ra
+call function_vga_write function_vga_write_ra
 ```
