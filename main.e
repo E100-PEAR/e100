@@ -10,6 +10,5 @@
 #include drivers/keyboard.e
 #include drivers/sd.e
 #include drivers/vga.e
-#include drivers/vga_read.e
 
 #include libraries/pointer.e
