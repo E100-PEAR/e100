@@ -29,6 +29,3 @@ resX            .data   79
 resY            .data   59
 x_count         .data   0
 y_count         .data   0
-
-#include ../constants.e
-#include ../drivers/camera.e
