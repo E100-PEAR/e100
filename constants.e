@@ -1,4 +1,5 @@
 // Numbers 1 - 20
+num0 .data 0
 num1 .data 1
 num2 .data 2
 num3 .data 3
@@ -48,4 +49,18 @@ charx .data 120
 chary .data 121
 charz .data 122
 
-#include drivers/keyboard.e
+// Special keys
+key_up    .data 119
+key_down  .data 115
+key_left  .data 97
+key_right .data 100
+key_enter .data 102
+
+// Colors
+color_white  .data 255
+color_green  .data 20
+color_black  .data 0
+
+// Booleans
+true  .data 1
+false .data 0
