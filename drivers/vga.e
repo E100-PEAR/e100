@@ -90,12 +90,12 @@ function_clear_screen cp vga_x1 num0
 
                       ret function_clear_screen_ra
 
-vga_x1        .data   0
-vga_y1        .data   0
-vga_x2        .data   0
-vga_y2        .data   0
-vga_color     .data   0
-vga_response  .data   0
+//vga_x1        .data   0
+//vga_y1        .data   0
+//vga_x2        .data   0
+//vga_y2        .data   0
+//vga_color     .data   0
+//vga_response  .data   0
 
 screen_width  .data 1000
 screen_height .data 1000
