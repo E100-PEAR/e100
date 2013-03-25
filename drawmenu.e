@@ -29,6 +29,7 @@ menu_button	cp	vga_x1		but1x1
 		sub	vga_x2		vga_x1		buttonhgap
 		sub	vga_x1		vga_x2		buttonwidth
 		call	function_vga_write	function_vga_write_ra
+        call    function_menu_write  function_menu_write_ra
 		halt
 
 men_fin		.data	6
