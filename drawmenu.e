@@ -3,7 +3,7 @@ menu_home	cp	vga_x1		num0
 		cp	vga_x2		six39
 		cp	vga_y2 		four79
 		cp	vga_color	liteblue
-		call	vga_init	vga_ret
+		call	function_vga_write	function_vga_write_ra
 		cp	men_iloop	num0
 menu_bkgloop	blt	menu_done1	men_fin		men_iloop
 		add	vga_x1		vga_x1		gradsize
@@ -11,7 +11,7 @@ menu_bkgloop	blt	menu_done1	men_fin		men_iloop
 		sub	vga_x2		vga_x2		gradsize
 		sub	vga_y2		vga_y2		gradsize
 		add	vga_color	vga_color	redincr
-		call	vga_init	vga_ret
+		call	function_vga_write	function_vga_write_ra
 		add	men_iloop	men_iloop	num1
 		bne	menu_bkgloop	num1		num0
 menu_done1	cp	vga_color	green
@@ -19,16 +19,16 @@ menu_button	cp	vga_x1		but1x1
 		add	vga_x2		vga_x1		buttonwidth
 		cp	vga_y1		but1y1
 		add	vga_y2		vga_y1		buttonheight
-		call	vga_init	vga_ret
+		call	function_vga_write	function_vga_write_ra
 		add	vga_x1		vga_x2		buttonhgap
 		add	vga_x2		vga_x1		buttonwidth
-		call	vga_init	vga_ret
+		call	function_vga_write	function_vga_write_ra
 		add	vga_y1		vga_y2		buttonvgap
 		add	vga_y2		vga_y1		buttonheight
-		call	vga_init	vga_ret
+		call	function_vga_write	function_vga_write_ra
 		sub	vga_x2		vga_x1		buttonhgap
 		sub	vga_x1		vga_x2		buttonwidth
-		call	vga_init	vga_ret
+		call	function_vga_write	function_vga_write_ra
 		halt
 
 men_fin		.data	6

@@ -1,33 +1,33 @@
 //THIS IS THE VGA DRIVER
-vga_init        blt     vga_quit    vga_x2      vga_x1
-                blt     vga_quit    vga_y2      vga_y1
-    	    	out 	62  		vga_zero
-	        	out     63          vga_x1
-                out     64          vga_y1
-                out     65          vga_x2
-                out     66          vga_y2
-	        	out 	62	    	vga_one
-	        	out     67	    	vga_color
-		        out 	60	    	vga_one
-vga_wait0	    in	    61	    	vga_resp
-	        	bne 	vga_wait0	vga_resp	num1
-		        out 	60  		vga_zero
-vga_wait1	    in  	61	    	vga_resp
-	    	    bne 	vga_wait1	vga_resp	num0
-vga_quit        ret     vga_ret   
- 
+//vga_init        blt     vga_quit    vga_x2      vga_x1
+//               blt     vga_quit    vga_y2      vga_y1
+//    	    	out 	62  		num0
+//	        	out     63          vga_x1
+//                out     64          vga_y1
+//               out     65          vga_x2
+//                out     66          vga_y2
+//	        	out 	62	    	num1
+//	        	out     67	    	vga_color
+//		        out 	60	    	num1
+//vga_wait0	    in	    61	    	vga_resp
+//	        	bne 	vga_wait0	vga_resp	num1
+//		        out 	60  		num0
+//vga_wait1	    in  	61	    	vga_resp
+//	    	    bne 	vga_wait1	vga_resp	num0
+//vga_quit        ret     vga_ret   
+// 
+//
+//
+//
+//
+//vga_x1      .data   0
+//vga_y1      .data   0
+//vga_x2      .data   20
+//vga_y2      .data   20
+//vga_color   .data   50
+//vga_resp    .data   0
 
-
-
-
-vga_x1      .data   0
-vga_y1      .data   0
-vga_x2      .data   20
-vga_y2      .data   20
-vga_color   .data   50
-vga_resp    .data   0
-
-vga_ret     .data   0
+//vga_ret     .data   0
 =======
 //
 // Draw a rectangle on the VGA.
@@ -37,26 +37,26 @@ vga_ret     .data   0
 // vga_y1: the starting y-coordinate
 // vga_y2: the ending y-coordinate
 //
-//function_vga_write blt vga_quit vga_x2 vga_x1
-//                   blt vga_quit vga_y2 vga_y1
+function_vga_write blt vga_quit vga_x2 vga_x1
+                   blt vga_quit vga_y2 vga_y1
 
-//                   out 62 num0
-//                   out 63 vga_x1
-//                   out 64 vga_y1
-//                   out 65 vga_x2
-//                   out 66 vga_y2
-//                   out 62 num1
-//                   out 67	vga_color
-//                   out 60	num1
+                   out 62 num0
+                   out 63 vga_x1
+                   out 64 vga_y1
+                   out 65 vga_x2
+                   out 66 vga_y2
+                   out 62 num1
+                   out 67	vga_color
+                   out 60	num1
 
-//vga_wait0 in 61         vga_response
-//          bne vga_wait0 vga_response num1
-//          out 60        num0
+vga_wait0 in 61         vga_response
+          bne vga_wait0 vga_response num1
+          out 60        num0
 
-//vga_wait1 in  61        vga_response
-//          bne vga_wait1	vga_response num0
+vga_wait1 in  61        vga_response
+          bne vga_wait1	vga_response num0
 
-//vga_quit  ret function_vga_write_ra   
+vga_quit  ret function_vga_write_ra   
 
 //
 // Read the values currently on the VGA screen.
@@ -76,10 +76,10 @@ vga_request         out     62                  false
 
 //
 // Set the entire screen to black.
-//
+
 // screen_width:  the width of the screen
 // screen_height: the height of the screen.
-//
+
 function_clear_screen cp vga_x1 num0
                       cp vga_y1 num0
                       cp vga_x2 screen_width
@@ -90,12 +90,12 @@ function_clear_screen cp vga_x1 num0
 
                       ret function_clear_screen_ra
 
-//vga_x1        .data   0
-//vga_y1        .data   0
-//vga_x2        .data   0
-//vga_y2        .data   0
-//vga_color     .data   0
-//vga_response  .data   0
+vga_x1        .data   0
+vga_y1        .data   0
+vga_x2        .data   0
+vga_y2        .data   0
+vga_color     .data   0
+vga_response  .data   0
 
 screen_width  .data 1000
 screen_height .data 1000
