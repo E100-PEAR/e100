@@ -48,5 +48,6 @@ buttonheight	.data	60	//height of each button
 buttonhgap	.data	40	//horizontal gap between buttons
 buttonvgap	.data	40	//vertical gap between buttons
 
-#include vgadriver.e
+#include main.e
+#include ../letters/writeMenu.e
 

@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+//THIS IS THE VGA DRIVER
 vga_init        blt     vga_quit    vga_x2      vga_x1
                 blt     vga_quit    vga_y2      vga_y1
     	    	out 	62  		vga_zero
