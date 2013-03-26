@@ -5,6 +5,8 @@ function_menu_write     cp     menu_write_counter      num0
                      cp     vga_y2      but1y1
                     add     menu_write_xend     but1x1      buttonwidth
                     add     menu_write_yend     but1y1      buttonheight
+                    sub     menu_write_xend     menu_write_xend     num1
+                    sub     menu_write_yend     menu_write_yend     num1
 menu_write_loop     cpfa    vga_color   playvideo_array     menu_write_counter
                     be      menu_write_skip  vga_color       color_white
                     call    function_vga_write    function_vga_write_ra
