@@ -1,0 +1,5 @@
+The words that will be written onto the buttons in the writeMenu file
+are being loaded as image files.  Each file is too big to be stored in
+FPGA memory, so they will need to be read from the SD card.
+
+Rename variables in the drawmenu.e and writeMenu.e files
