@@ -22,7 +22,7 @@ menu_write_dropx        cp      vga_x1      but1x1
                         add     vga_y1      vga_y1      num1
                         cp      vga_y2      vga_y1
                         bne     menu_write_loop     num1    num0
-menu_write_done         halt
+menu_write_done         ret     function_menu_write_ra
 
 function_menu_write_ra      .data   0
 

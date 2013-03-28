@@ -30,7 +30,7 @@ menu_button	cp	vga_x1		but1x1
 		sub	vga_x1		vga_x2		buttonwidth
 		call	function_vga_write	function_vga_write_ra
         call    function_menu_write  function_menu_write_ra
-		halt
+		ret     function_drawmenu_ra
 
 function_drawmenu_ra .data 0
 men_fin		.data	6

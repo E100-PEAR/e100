@@ -1,4 +1,5 @@
 menu call function_clear_screen function_clear_screen_ra
+     call function_drawmenu function_drawmenu_ra
      
      // Set the initial position of the pointer.
      cp pointer_x pointer_left
