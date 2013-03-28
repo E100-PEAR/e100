@@ -153,8 +153,8 @@ pointer_new_color .data 0
 
 pointer_left    .data 80
 pointer_right   .data 320
-pointer_top     .data 176
-pointer_bottom  .data 276
+pointer_top     .data 196
+pointer_bottom  .data 296
 
 function_prepare_pointer_ra       .data 0
 function_add_pointer_ra           .data 0
