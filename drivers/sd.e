@@ -19,7 +19,7 @@ checkres1   in          81              sd_response               //checks what 
 //            add         sd_addr_low     sd_addr_low   num1        //increments addr_low by 1
 return1     ret         function_sd_ra                            //return to where sd_driver was called
 
-//read driver to come
+//read driver
 sd_read     out         82              num0                      //sets sd to read
             out         83              sd_addr_low               //sets low address
             out         84              sd_addr_high              //sets high address
