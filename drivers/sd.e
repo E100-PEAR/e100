@@ -17,13 +17,22 @@ checkres1   in          81              sd_response               //checks what 
             out         80              num0                      //turn command off
             be          reset_low       sd_addr_low   sd_addr_max //checks if sd_addr_low is at the max
 //            add         sd_addr_low     sd_addr_low   num1        //increments addr_low by 1
-return      ret         function_sd_ra                            //return to where sd_driver was called
+return1     ret         function_sd_ra                            //return to where sd_driver was called
 
 //read driver to come
+sd_read     out         82              num0                      //sets sd to read
+            out         83              sd_addr_low               //sets low address
+            out         84              sd_addr_high              //sets high address
+            out         80              num1                      //puts command on
+checkres    in          81              sd_response               //checks what sd_response is
+            be          checkres        sd_response      num0     //keeps checking until sd_response is 1
+            in          86              numread                   //sets numread to the memory value it read
+            out         80              num0                      //turns command off
+return      ret         function_sd_ra                            //return to where sd_driver was called
 
 reset_low   cp          sd_addr_low     num0                      //sets sd_addr_low to 0
-            add         sd_addr_high    sd_addr_high  num1        //increments sd_addr_high by one
-            be          return          num1          num1        //goes to return to return in program
+            add         sd_addr_high    sd_addr_high     num1     //increments sd_addr_high by one
+            be          return          num1             num1     //goes to return to return in program
 
 sd_addr_max     .data   32767
 function_sd_ra  .data   0
