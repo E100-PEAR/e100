@@ -76,10 +76,10 @@ vga_request         out     62                  false
 
 //
 // Set the entire screen to black.
-
+//
 // screen_width:  the width of the screen
 // screen_height: the height of the screen.
-
+//
 function_clear_screen cp vga_x1 num0
                       cp vga_y1 num0
                       cp vga_x2 screen_width
@@ -90,6 +90,24 @@ function_clear_screen cp vga_x1 num0
 
                       ret function_clear_screen_ra
 
+//
+// Draw image.
+//
+//
+// vga_image_width:  the width of the image (in pixels)
+// vga_image_height: the height of the image (in pixels)
+// vga_image:        the image to display
+//
+function_draw_image cp vga_image_counter num0
+                    be vga_draw_image vga_image_counter vga_image
+
+
+
+vga_draw_image      
+
+                    ret function_draw_image_ra
+
+
 vga_x1        .data   0
 vga_y1        .data   0
 vga_x2        .data   0
@@ -97,9 +115,16 @@ vga_y2        .data   0
 vga_color     .data   0
 vga_response  .data   0
 
+vga_image        .data 0
+vga_image_width  .data 0
+vga_image_height .data 0
+
+vga_image_counter .data 0
+
 screen_width  .data 1000
 screen_height .data 1000
 
 function_vga_write_ra    .data  0
 function_vga_read_ra     .data  0
 function_clear_screen_ra .data  0
+function_draw_image_ra   .data  0
