@@ -1,4 +1,4 @@
-function_record cp      readwrite               num1
+record cp      readwrite               num1
                 
                 call    function_camera         function_camera_ra
 
@@ -16,8 +16,10 @@ reset_x_count   add     y_count                 y_count                 num1
                 be      col_loop                true                    true       
                 
 reset_y_count   cp      y_count                 num0
-                be      function_record         true                    true
+                be      record                  true                    true
 
+
+                halt
 resX                    .data   79
 resY                    .data   59
 x_count                 .data   0
