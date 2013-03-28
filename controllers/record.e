@@ -1,5 +1,5 @@
 record cp      readwrite               num1
-                
+                cp	cam_scale		num3 
                 call    function_camera         function_camera_ra
 
 row_loop        be      reset_y_count           y_count                 resY
