@@ -3,6 +3,7 @@
 #include controllers/comparison.e
 #include controllers/playback.e
 #include controllers/record.e
+#include controllers/drawmenu.e
 
 #include constants.e
 
