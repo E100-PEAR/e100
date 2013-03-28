@@ -40,8 +40,10 @@ move_down  call function_move_pointer_down function_move_pointer_down_ra
 select_menu call function_clear_screen function_clear_screen_ra
             be select_right_menu pointer_x pointer_right
 
-select_left_menu be function_record   pointer_y pointer_top
+select_left_menu be record   pointer_y pointer_top
                  be playback true true
 
 select_right_menu be comparison pointer_y pointer_top
                   be analysis   true true
+    
+    halt
