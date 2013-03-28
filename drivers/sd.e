@@ -25,7 +25,7 @@ reset_low   cp          sd_addr_low     num0                      //sets sd_addr
             add         sd_addr_high    sd_addr_high  num1        //increments sd_addr_high by one
             be          return          num1          num1        //goes to return to return in program
 
-sd_addr_max     .data   0
+sd_addr_max     .data   32767
 function_sd_ra  .data   0
 readwrite       .data   0
 sd_response     .data   0
