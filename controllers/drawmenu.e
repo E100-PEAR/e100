@@ -14,7 +14,8 @@ menu_bkgloop	blt	menu_done1	men_fin		men_iloop
 		call	function_vga_write	function_vga_write_ra
 		add	men_iloop	men_iloop	num1
 		bne	menu_bkgloop	num1		num0
-menu_done1	cp	vga_color	green
+menu_done1	cp  menu_bkg_color  vga_color
+            cp	vga_color	menu_button_color
 menu_button	cp	vga_x1		but1x1
 		add	vga_x2		vga_x1		buttonwidth
 		cp	vga_y1		but1y1
@@ -32,6 +33,8 @@ menu_button	cp	vga_x1		but1x1
         call    function_menu_write  function_menu_write_ra
 		ret     function_drawmenu_ra
 
+menu_bkg_color  .data   0
+menu_button_color   .data   28
 function_drawmenu_ra .data 0
 men_fin		.data	6
 men_iloop	.data	0
