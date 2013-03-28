@@ -148,8 +148,8 @@ pointer_width .data 10
 pointer_new_x .data 0
 pointer_new_y .data 0
 
-pointer_color .data 0
-pointer_new_color .data 255
+pointer_color .data 255
+pointer_new_color .data 0
 
 pointer_left    .data 80
 pointer_right   .data 320
