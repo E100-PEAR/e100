@@ -4,7 +4,7 @@ loop	cp		color_num		write_num
 		call	function_sd		function_sd_ra
 		out		1				numread
 		add		addr_low		addr_low			num1
-		bne		loop			addr_low			loop_end
+		bne		loop			addr_low			sd_addr_max
 loop2	cp		color_num		write_num
 		cp		sd_addr_high	addr_high
 		cp		readwrite		read_write
@@ -15,7 +15,6 @@ loop2	cp		color_num		write_num
 		bne		loop			addr_high			loop2_end
 		halt
 
-loop_end	.data	32767
 loop2_end	.data	80
 read_write	.data	0
 write_num	.data	5
