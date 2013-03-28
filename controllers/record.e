@@ -13,6 +13,8 @@ reset_x_count   add     y_count                 y_count                 num1
                 call    function_vga_read       function_vga_read_ra
                 call    function_sd             function_sd_ra
 
+                add     sd_addr_low             sd_addr_low             num1
+
                 be      col_loop                true                    true       
                 
 reset_y_count   cp      y_count                 num0
