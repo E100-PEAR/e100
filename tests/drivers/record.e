@@ -9,12 +9,11 @@ reset_x_count   add     y_count                 y_count                 num1
                 be      row_loop                true                    true
 
                 call    function_vga_read       function_record_ra
+                
                 be      col_loop                true                    true       
                 
 reset_y_count   cp      y_count                 num0
                 be      function_record         true                    true
-
-vga_response            .data   0
 
 color_num               .data   0
 
@@ -27,4 +26,4 @@ function_record_ra      .data   0
 
 #include ../../constants.e
 #include ../../drivers/camera.e
-#include ../../drivers/vga_read.e
+#include ../../drivers/vga.e
