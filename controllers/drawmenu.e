@@ -1,4 +1,4 @@
-menu_home	cp	vga_x1		num0
+function_drawmenu	cp	vga_x1		num0
 		cp	vga_y1		num0
 		cp	vga_x2		num639
 		cp	vga_y2 		num479
@@ -32,6 +32,7 @@ menu_button	cp	vga_x1		but1x1
         call    function_menu_write  function_menu_write_ra
 		halt
 
+function_drawmenu_ra .data 0
 men_fin		.data	6
 men_iloop	.data	0
 menu_gradsize	.data	8
