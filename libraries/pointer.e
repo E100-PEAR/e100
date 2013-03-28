@@ -151,10 +151,10 @@ pointer_new_y .data 0
 pointer_color .data 255
 pointer_new_color .data 0
 
-pointer_left    .data 100
-pointer_right   .data 350
-pointer_top     .data 190
-pointer_bottom  .data 290
+pointer_left    .data 80
+pointer_right   .data 320
+pointer_top     .data 180
+pointer_bottom  .data 280
 
 function_prepare_pointer_ra       .data 0
 function_add_pointer_ra           .data 0
