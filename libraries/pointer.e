@@ -148,13 +148,13 @@ pointer_width .data 10
 pointer_new_x .data 0
 pointer_new_y .data 0
 
-pointer_color .data 255
-pointer_new_color .data 0
+pointer_color .data 0
+pointer_new_color .data 255
 
 pointer_left    .data 80
 pointer_right   .data 320
-pointer_top     .data 180
-pointer_bottom  .data 280
+pointer_top     .data 176
+pointer_bottom  .data 276
 
 function_prepare_pointer_ra       .data 0
 function_add_pointer_ra           .data 0
