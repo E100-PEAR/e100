@@ -20,7 +20,8 @@ num17 .data 17
 num18 .data 18
 num19 .data 19
 num20 .data 20
-
+num479 .data 479
+num639 .data 639
 // Characters a - z
 chara .data 97
 charb .data 98

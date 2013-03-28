@@ -1,15 +1,15 @@
 menu_home	cp	vga_x1		num0
 		cp	vga_y1		num0
-		cp	vga_x2		six39
-		cp	vga_y2 		four79
+		cp	vga_x2		num639
+		cp	vga_y2 		num479
 		cp	vga_color	liteblue
 		call	function_vga_write	function_vga_write_ra
 		cp	men_iloop	num0
 menu_bkgloop	blt	menu_done1	men_fin		men_iloop
-		add	vga_x1		vga_x1		gradsize
-		add	vga_y1		vga_y1		gradsize
-		sub	vga_x2		vga_x2		gradsize
-		sub	vga_y2		vga_y2		gradsize
+		add	vga_x1		vga_x1		menu_gradsize
+		add	vga_y1		vga_y1		menu_gradsize
+		sub	vga_x2		vga_x2		menu_gradsize
+		sub	vga_y2		vga_y2		menu_gradsize
 		add	vga_color	vga_color	redincr
 		call	function_vga_write	function_vga_write_ra
 		add	men_iloop	men_iloop	num1
@@ -34,9 +34,7 @@ menu_button	cp	vga_x1		but1x1
 
 men_fin		.data	6
 men_iloop	.data	0
-six39		.data	639	//last writable horizontal pixel
-four79		.data	479	//last writable vertical pixel
-gradsize	.data	8
+menu_gradsize	.data	8
 redincr		.data	32	//this is the value used to increment red by 1
 grnincr		.data	4	//increment green by 1 
 liteblue	.data	27	//starting color for color gradient
