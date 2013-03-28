@@ -49,5 +49,5 @@ buttonhgap	.data	40	//horizontal gap between buttons
 buttonvgap	.data	40	//vertical gap between buttons
 
 #include main.e
-#include images/writeMenu.e
+#include ../images/writeMenu.e
 
