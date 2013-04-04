@@ -68,7 +68,7 @@ key_enter .data 10
 
 // Colors
 color_white         .data 255
-color_green         .data 20
+color_green         .data 24
 color_black         .data 0
 color_blue          .data 39
 color_purple        .data 183
