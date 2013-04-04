@@ -1,0 +1,32 @@
+sd memory allocation setup
+
+IGNORE THIS WARNING NOW BECAUSE WE ARE ALLOCATING TWO MEMORY ADDRESS'S TO EACH 
+STARTING AND ENDING ADDRESS 
+(I left it in there though so you understand why we are using two addrs for each)
+
+WARNING: BECAUSE WE ARE USING ONLY ONE ADDRESS FOR STARTING AND ENDING ADDRESS
+         VALUES OF VIDEOS THE ADDRESS'S CAN'T BE ABOVE 16 BITS
+         (NUMBERS-WISE THAT MEANS THE MAX NUMBER IS 65535)
+         (which only correlates to 131070 pixels)
+         (which correlates to 27 frames of 80 by 40 video)
+
+address 0 stores the # of the most recently saved video (0-5)
+address 1&2 stores the starting addr (x2) of video 1
+address 3&4 stores the ending value (x3) of video 1
+address 5&6 stores the starting value (x4) of video 2
+address 7&8 stores the ending value (x5) of video 2
+address 9&10 stores the starting value (x6) of video 3
+address 11&12 stores the ending value (x7) of video 3
+address 13&14 stores the starting value (x8) of video 4
+address 15&16 stores the ending value (x9) of video 4
+address 17&18 stores the starting value (x10) of video 5
+address 19&20 stores the ending value (x11) of video 5
+
+adress's 21- x1 store the visual GUI implementations and things that won't change 
+
+address x2-x3 stores the data of saved video 1
+address x4-x5 stores the data of saved video 2
+address x6-x7 stores the data of saved video 3
+address x8-x9 stores the data of saved video 4
+address x10-x11 stores the data of saved video 5
+address x12-end store the live recording of the video playback (temporary location)
