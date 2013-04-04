@@ -4,7 +4,8 @@
 // After the function runs, sqrt_output will contain the squareroot 
 // of the input.
 
-function_sqrt	mult	sqrt_temp	sqrt_output	sqrt_output
+function_sqrt	cp	sqrt_output	num0
+		mult	sqrt_temp	sqrt_output	sqrt_output
 sqrt_loop	blt	sqrt_finaltest	sqrt_input	sqrt_temp
 		add	sqrt_output	sqrt_output	num1
 		mult	sqrt_temp	sqrt_output	sqrt_output
