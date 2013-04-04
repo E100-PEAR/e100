@@ -43,7 +43,8 @@ vga_request         out     62                  false
                     add     x_count             x_count         num1
                     ret     function_vga_read_ra 
 
-
+x_count .data	0
+color_num .data	0
 //
 // Set the entire screen to black.
 //
