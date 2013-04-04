@@ -25,6 +25,7 @@ num18 .data 18
 num19 .data 19
 num20 .data 20
 num25 .data 25
+num50 .data 50
 num60 .data 60
 num410 .data 410
 num435 .data 435
