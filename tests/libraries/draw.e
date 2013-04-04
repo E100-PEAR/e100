@@ -1,9 +1,11 @@
+	// Clear the screen.
     cp vga_x1 num0
     cp vga_x2 num639
     cp vga_y1 num0
     cp vga_y2 num639
-    cp vga_color color_green
+    cp vga_color color_white
 
+    // Draw the first image
     call function_vga_write function_vga_write_ra
 
     cpfa draw_image images num0
