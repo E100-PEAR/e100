@@ -1,6 +1,33 @@
 menu call function_clear_screen function_clear_screen_ra
-     call function_drawmenu function_drawmenu_ra
-     
+     call function_draw_background function_draw_background_ra
+
+     cp draw_image_width num200
+     cp draw_image_height num60
+     cp draw_skip_color color_white
+
+     // Draw the first button
+     cp draw_x button_x1
+     cp draw_y button_y1
+     cp draw_image num0
+
+     call function_draw_button function_draw_button_ra
+     call function_draw_image  function_draw_image_ra
+
+     // Draw the second button.
+     cp draw_x button_x2
+
+     call function_draw_button function_draw_button_ra
+
+     // Draw the third button.
+     cp draw_y button_y2
+
+     call function_draw_button function_draw_button_ra
+
+     // Draw the fourth button.
+     cp draw_x button_x1
+
+     call function_draw_button function_draw_button_ra
+
      // Set the initial position of the pointer.
      cp pointer_x pointer_left
      cp pointer_y pointer_top
@@ -53,3 +80,7 @@ select_right_menu be comparison pointer_y pointer_top
     
     halt
 
+button_x1      .data   99
+button_y1      .data   169
+button_x2      .data   339
+button_y2      .data   269
