@@ -1,8 +1,15 @@
-    cp draw_image playvideo_array
+	call function_clear_screen function_clear_screen_ra
+
+	// Clear the screen.
+	call function_draw_background function_draw_background_ra
+
+    cpfa draw_image images num0
     cp draw_image_x num60
     cp draw_image_y num60
 
-    call function_draw function_draw_ra
+    cp draw_skip_color color_white
+
+    call function_draw_image function_draw_image_ra
 
     halt
 

@@ -21,6 +21,10 @@ read_key call function_keyboard_on_press function_keyboard_on_press_ra
          be move_down    keyboard_value key_down
          be select_menu  keyboard_value key_enter
 
+         // The key that was pressed does not do anything. Wait for the user to
+         // press another key.
+         be read_key true true
+
 // Move the pointer to the left-side of the menu.
 move_left  call function_move_pointer_left function_move_pointer_left_ra
            be read_key true true
