@@ -10,6 +10,7 @@ reset_x_count   add     y_count                 y_count                 num1
                 be      record_row_loop         true                    true
 
                 call    function_vga_read       function_vga_read_ra
+                cp      sd_write_data           vga_read_data
                 call    function_sd_write       function_sd_write_ra
 
                 add     sd_addr_low             sd_addr_low             num1
