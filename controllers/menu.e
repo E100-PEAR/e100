@@ -1,13 +1,13 @@
 menu call function_draw_background function_draw_background_ra
 
-     cp draw_image_width num200
+     cp draw_image_width  num200
      cp draw_image_height num60
      cp draw_skip_color color_white
 
      // Draw the first button
      cp draw_x button_x1
      cp draw_y button_y1
-     cp draw_image num0
+     cpfa draw_image images num0
 
      call function_draw_button function_draw_button_ra
      call function_draw_image  function_draw_image_ra
