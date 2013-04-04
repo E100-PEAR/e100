@@ -1,10 +1,10 @@
 	cp      circle_radius           num25
-    cp      circle_center_x         screen_height
+    cp      circle_center_x         screen_width
     cp      circle_center_y         num435
-    cp      circle_color            num219
+    cp      circle_color            color_light_purple
     call	function_draw_circle	function_draw_circle_ra
     cp      circle_radius           num10
-    cp      circle_color            num160
+    cp      circle_color            color_red
     call    function_draw_circle    function_draw_circle_ra
     cp      play_color      color_green
     cp      play_initial_y  num410

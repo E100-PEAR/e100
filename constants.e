@@ -1,6 +1,6 @@
 // Screen constants
-screen_width  .data 479
-screen_height .data 639
+screen_width  .data 639
+screen_height .data 479
 
 // Numbers 1 - 20
 num0 .data 0
@@ -79,5 +79,4 @@ color_red           .data 160
 true  .data 1
 false .data 0
 
-// Images
-images .data playvideo_array
+
