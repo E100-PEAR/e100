@@ -3,7 +3,7 @@
 //will read the value stored at that address save it in sd_read_data and returns
 
 function_sd_read        in          81                      sd_response               //checks what sd_response is
-                        be          function_sd             sd_response   num1        //if sd_response is 0 it advances
+                        be          function_sd_read        sd_response   num1        //if sd_response is 0 it advances
 
 sd_read                 out         82                      num0                      //sets sd to read
                         out         83                      sd_addr_low               //sets low address
@@ -15,8 +15,6 @@ checkres                in          81                      sd_response         
                         out         80                      num0                      //turns command off
 return                  ret         function_sd_read_ra                               //return to where was called
 
-reset_low               cp          sd_addr_low             num0                      //sets sd_addr_low to 0
+read_reset_low          cp          sd_addr_low             num0                      //sets sd_addr_low to 0
                         add         sd_addr_high            sd_addr_high     num1     //increments sd_addr_high by one
                         be          return                  num1             num1     //goes to return to return in program
-
-#include sd_vars.e

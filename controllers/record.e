@@ -1,5 +1,4 @@
-function_record cp      readwrite               num1
-                cp	cam_scale		num0 
+function_record cp	cam_scale		num0 
                 call    function_camera         function_camera_ra
 
 record_row_loop be      reset_y_count           y_count                 resY
@@ -11,7 +10,7 @@ reset_x_count   add     y_count                 y_count                 num1
                 be      record_row_loop         true                    true
 
                 call    function_vga_read       function_vga_read_ra
-                call    function_sd             function_sd_ra
+                call    function_sd_write       function_sd_write_ra
 
                 add     sd_addr_low             sd_addr_low             num1
                 add     x_count                 x_count                 num1
