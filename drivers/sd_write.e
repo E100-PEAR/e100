@@ -8,7 +8,7 @@ function_sd_write       in              81                      sd_response     
 sd_write                out             82                      num1                      //sets sd to write
                         out             83                      sd_addr_low               //sets low address
                         out             84                      sd_addr_high              //sets high address
-                        out             85                      sd_write_data             //writes the color pixel #
+                        out             85                      sd_write_data             //writes the data to the card
                         out             80                      num1                      //puts command on
 checkres1               in              81                      sd_response               //checks what sd_response is
                         be              checkres1               sd_response   num0        //keep checking until sd_response = 1
