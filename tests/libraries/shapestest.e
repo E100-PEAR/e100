@@ -1,5 +1,5 @@
 	cp      circle_radius           num25
-    cp      circle_center_x         num479
+    cp      circle_center_x         screen_height
     cp      circle_center_y         num435
     cp      circle_color            num219
     call	function_draw_circle	function_draw_circle_ra
