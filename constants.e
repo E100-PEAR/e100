@@ -67,3 +67,6 @@ color_black  .data 0
 // Booleans
 true  .data 1
 false .data 0
+
+// Images
+images .data playvideo_array
