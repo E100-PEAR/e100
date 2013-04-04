@@ -84,8 +84,8 @@ draw_y            .data 0
 draw_skip_color   .data 500
 draw_image_pixel  .data 0
 draw_image_pixels .data 0
-draw_image_width  .data 200
-draw_image_height .data 60
+draw_image_width  .data 0
+draw_image_height .data 0
 
 draw_image_x_offset .data 0
 draw_image_y_offset .data 0
