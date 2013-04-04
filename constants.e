@@ -80,4 +80,6 @@ color_red           .data 160
 true  .data 1
 false .data 0
 
-
+// Resulotion
+resX    .data   79
+resY    .data   59
