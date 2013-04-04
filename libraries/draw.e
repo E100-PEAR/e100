@@ -4,7 +4,7 @@ function_draw_background cp vga_x1 num0
                          cp vga_y1 num0
                          cp vga_y2 screen_height
 
-                         cp vga_color color_white
+                         cp vga_color color_light_purple
                          
                          call function_vga_write  function_vga_write_ra
                         
