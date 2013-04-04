@@ -18,4 +18,4 @@ return1                 ret             function_sd_write_ra                    
 
 write_reset_low         cp              sd_addr_low             num0                      //sets sd_addr_low to 0
                         add             sd_addr_high            sd_addr_high     num1     //increments sd_addr_high by one
-                        be              return                  num1             num1     //goes to return to return in program
+                        be              return1                 num1             num1     //goes to return to return in program

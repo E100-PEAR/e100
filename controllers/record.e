@@ -21,8 +21,6 @@ reset_record_x_count    add     record_y_count          record_y_count          
 reset_record_y_count    cp      record_y_count          num0
                         be      function_record         true                    true
 
-                halt
-
 resX                    .data   79
 resY                    .data   59
 
