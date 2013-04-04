@@ -1,6 +1,6 @@
 // Screen constants
-screen_width  .data 1000
-screen_height .data 1000
+screen_width  .data 479
+screen_height .data 639
 
 // Numbers 1 - 20
 num0 .data 0
@@ -24,9 +24,11 @@ num17 .data 17
 num18 .data 18
 num19 .data 19
 num20 .data 20
+num25 .data 25
 num60 .data 60
-num479 .data 479
-num639 .data 639
+num410 .data 410
+num435 .data 435
+num520 .data 520
 
 // Characters a - z
 chara .data 97
@@ -70,6 +72,7 @@ color_black         .data 0
 color_blue          .data 39
 color_purple        .data 183
 color_light_purple  .data 219
+color_red           .data 160
 
 // Booleans
 true  .data 1
