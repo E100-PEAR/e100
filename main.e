@@ -10,7 +10,9 @@
 #include drivers/camera.e
 #include drivers/keyboard.e
 #include drivers/mouse.e
-#include drivers/sd.e
+#include drivers/sd_vars.e
+#include drivers/sd_write.e
+#include drivers/sd_read.e
 #include drivers/vga.e
 
 #include libraries/pointer.e

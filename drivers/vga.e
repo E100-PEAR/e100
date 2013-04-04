@@ -37,7 +37,7 @@ vga_request         out     62                  false
                     out     60                  true
                     in      61                  vga_response
                     bne     vga_request         vga_response    true
-                    in      68                  color_num
+                    in      68                  sd_write_data
                     out     60                  false
                     in      61                  vga_response
                     add     x_count             x_count         num1
