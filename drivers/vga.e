@@ -44,6 +44,7 @@ vga_request         out     62                  false
                     ret     function_vga_read_ra 
 
 vga_read_data       .data   0
+x_count             .data   0
 //
 // Set the entire screen to black.
 //
