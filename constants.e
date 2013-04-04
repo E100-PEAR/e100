@@ -20,8 +20,19 @@ num17 .data 17
 num18 .data 18
 num19 .data 19
 num20 .data 20
+num25 .data 25
+num40 .data 40
+num50 .data 50
 num60 .data 60
+num80 .data 80
+num160 .data 160
+num219 .data 219
+num410 .data 410
+num435 .data 435
 num479 .data 479
+num500 .data 500
+num520 .data 520
+num600 .data 600
 num639 .data 639
 
 // Characters a - z
@@ -61,7 +72,7 @@ key_enter .data 10
 
 // Colors
 color_white  .data 255
-color_green  .data 20
+color_green  .data 28
 color_black  .data 0
 
 // Booleans
