@@ -1,5 +1,4 @@
-menu call function_clear_screen function_clear_screen_ra
-     call function_draw_background function_draw_background_ra
+menu call function_draw_background function_draw_background_ra
 
      cp draw_image_width num200
      cp draw_image_height num60
