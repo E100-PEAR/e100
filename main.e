@@ -16,4 +16,4 @@
 #include libraries/draw.e
 
 #include constants.e
-#include images/playvideo.jpg.e
+#include images/images.e

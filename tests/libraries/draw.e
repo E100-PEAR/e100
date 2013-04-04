@@ -1,5 +1,3 @@
-	call function_clear_screen function_clear_screen_ra
-	
 	// Draw the background.
 	call function_draw_background function_draw_background_ra
 
@@ -21,6 +19,6 @@
     halt
 
 #include ../../constants.e
+#include ../../images/images.e
 #include ../../drivers/vga.e
 #include ../../libraries/draw.e
-#include ../../images/playvideo.jpg.e
