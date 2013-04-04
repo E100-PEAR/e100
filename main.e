@@ -3,9 +3,6 @@
 #include controllers/comparison.e
 #include controllers/playback.e
 #include controllers/record.e
-#include controllers/drawmenu.e
-
-#include constants.e
 
 #include drivers/camera.e
 #include drivers/keyboard.e
@@ -16,3 +13,7 @@
 #include drivers/vga.e
 
 #include libraries/pointer.e
+#include libraries/draw.e
+
+#include constants.e
+#include images/playvideo.jpg.e
