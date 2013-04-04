@@ -1,3 +1,7 @@
+// Screen constants
+screen_width  .data 1000
+screen_height .data 1000
+
 // Numbers 1 - 20
 num0 .data 0
 num1 .data 1
@@ -60,9 +64,12 @@ key_right .data 100
 key_enter .data 10
 
 // Colors
-color_white  .data 255
-color_green  .data 20
-color_black  .data 0
+color_white         .data 255
+color_green         .data 20
+color_black         .data 0
+color_blue          .data 39
+color_purple        .data 183
+color_light_purple  .data 219
 
 // Booleans
 true  .data 1

@@ -75,9 +75,6 @@ vga_image_height .data 0
 
 vga_image_counter .data 0
 
-screen_width  .data 1000
-screen_height .data 1000
-
 function_vga_write_ra    .data  0
 function_vga_read_ra     .data  0
 function_clear_screen_ra .data  0

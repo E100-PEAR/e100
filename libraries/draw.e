@@ -1,3 +1,22 @@
+function_draw_background cp vga_y1 num0
+                         cp vga_y2 screen_height
+
+                         cp vga_x1 num0
+                         cp vga_y2 screen_width
+
+                         cp vga_color color_light_purple
+                         
+                         call function_vga_write  function_vga_write_ra
+                        
+                         // Creates a rectangle at the top of the screen to hold the
+                         // Golfintosh name.
+                         cp vga_y2 num60
+                         cp vga_color color_blue
+                         
+                         call function_vga_write function_vga_write_ra
+
+                         ret function_draw_background_ra
+
 function_draw_image cp draw_image_x_offset num0
                     cp draw_image_y_offset num0
                     cp draw_image_pixel draw_image
@@ -56,4 +75,5 @@ draw_image_height .data 60
 draw_image_x_offset .data 0
 draw_image_y_offset .data 0
 
-function_draw_image_ra .data 0
+function_draw_image_ra      .data 0
+function_draw_background_ra .data 0
