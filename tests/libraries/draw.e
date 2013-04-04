@@ -1,11 +1,18 @@
 	call function_clear_screen function_clear_screen_ra
-
-	// Clear the screen.
+	
+	// Draw the background.
 	call function_draw_background function_draw_background_ra
 
+	// Draw a button.
+	cp draw_x num60
+	cp draw_y num60
+
+	call function_draw_button function_draw_button_ra
+
+	// Draw an image.
     cpfa draw_image images num0
-    cp draw_image_x num60
-    cp draw_image_y num60
+    cp draw_x num60
+    cp draw_y num60
 
     cp draw_skip_color color_white
 
