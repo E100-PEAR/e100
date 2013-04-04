@@ -16,7 +16,7 @@ cam_response            .data    0
 
 x_cord                  .data    0
 y_cord                  .data    0
-cam_scale               .data    3
+cam_scale               .data    0
 cam_flip                .data    1
 
 function_camera_ra      .data   0
