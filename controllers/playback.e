@@ -19,19 +19,12 @@ set_pixel_data          cp      vga_x1                  vga_write_x_count
                         bne     playback_col_loop       addr_low_count          sd_addr_max
 
 reset_addr_low_count    add     addr_high_count         addr_high_count         num1
-<<<<<<< HEAD
                         cp      addr_low_count          num0
-=======
->>>>>>> useless commit cuz sud already pushed it
                         cp      sd_addr_high            addr_high_count
                         call    get_pixel_color         get_pixel_color_ra       
                         call    set_pixel_data          set_pixel_data_ra
 
-<<<<<<< HEAD
                         add     addr_low_count          addr_low_count          num1
-=======
-                        cp      addr_low_count          num0
->>>>>>> useless commit cuz sud already pushed it
 
                         be      playback_col_loop       true                    true          
 
