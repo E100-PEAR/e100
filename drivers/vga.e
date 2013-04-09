@@ -34,8 +34,8 @@ function_vga_read   in 61   vga_response
                     be      function_vga_read   vga_response    true
 
 vga_request         out     62                  false
-                    out     63                  vga_read_x_count
-                    out     64                  vga_read_y_count
+                    out     63                  record_x_count
+                    out     64                  record_y_count
                     out     60                  true
                     in      61                  vga_response
                     bne     vga_request         vga_response    true
@@ -46,8 +46,6 @@ vga_request         out     62                  false
                     ret     function_vga_read_ra 
 
 vga_read_data       .data   0
-vga_read_x_count    .data   0
-vga_read_y_count    .data   0
 
 x_count             .data   0
 //

@@ -20,9 +20,6 @@ reset_record_x_count    add     record_y_count          record_y_count          
 reset_record_y_count    cp      record_y_count          num0
                         be      function_record         true                    true
 
-resX                    .data   79
-resY                    .data   59
-
 record_x_count          .data   0
 record_y_count          .data   0
 

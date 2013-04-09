@@ -1,21 +1,26 @@
-function_record cp      cam_scale		        num0 
+function_record cp      cam_scale                       num0 
                 call    function_camera                 function_camera_ra
 
-record_row_loop be      reset_vga_read_y_count          vga_read_y_count        resY
-record_col_loop be      reset_vga_read_x_count          vga_read_x_count        resX        
+record_row_loop be      reset_record_y_count            record_y_count          resY
+record_col_loop be      reset_record_x_count            record_x_count          resX        
 
                         call    function_vga_read       function_vga_read_ra
+
+                        out     3                       vga_read_data
                         cp      sd_write_data           vga_read_data
                         call    function_sd_write       function_sd_write_ra
 
                         add     sd_addr_low             sd_addr_low             num1
-                        add     vga_read_x_count        vga_read_x_count        num1
+                        add     record_x_count          record_x_count          num1
 
-                        be      record_col_loop         true                    true      
+                        be      record_col_loop         true                    true  
 
-reset_vga_read_x_count  add     vga_read_y_count        vga_read_y_count        num1
-                        cp      vga_read_x_count        num0
-                        be      playback_row_loop       true                    true 
+reset_record_x_count    add     record_y_count          record_y_count          num1
+                        cp      record_x_count          num0
+                        be      record_row_loop         true                    true     
                 
-reset_vga_read_y_count  cp      vga_read_y_count        num0
-                        be      function_record         true                    true
+reset_record_y_count    cp      record_y_count          num0
+                        be      function_record         record_y_count          num0
+
+record_x_count          .data   0
+record_y_count          .data   0
