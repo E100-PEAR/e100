@@ -3,6 +3,9 @@ function_record cp      cam_scale                       num0
 
 record_row_loop be      reset_record_y_count            record_y_count          resY
 record_col_loop be      reset_record_x_count            record_x_count          resX        
+                        
+                        cp      vga_read_x_count        record_x_count
+                        cp      vga_read_y_count        record_y_count
 
                         call    function_vga_read       function_vga_read_ra
                         cp      sd_write_data           vga_read_data

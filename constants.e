@@ -28,6 +28,7 @@ num25 .data 25
 num50 .data 50
 num60 .data 60
 num200 .data 200
+num256 .data 256
 num410 .data 410
 num435 .data 435
 num520 .data 520
