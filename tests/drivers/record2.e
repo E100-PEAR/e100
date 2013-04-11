@@ -2,11 +2,11 @@ function_record         cp      cam_scale                       num0
                         call    function_camera                 function_camera_ra
 
 record_row_loop         be      reset_record_y_count            record_y_count          resY
-record_col_loop         be      reset_record_x_count            record_x_count          resX        
-
+record_col_loop         be      reset_record_x_count            record_x_count          resX
 
 get_vga_data            cp      vga_read_x_count        record_x_count
                         cp      vga_read_y_count        record_y_count
+
                         call    function_vga_read       function_vga_read_ra
                         cp      temp_sd_write_data      vga_read_data
 
@@ -27,6 +27,7 @@ reset_record_x_count    add     record_y_count          record_y_count          
                         be      record_row_loop         true                    true    
                 
 reset_record_y_count    cp      record_y_count          num0
+                        cp      record_x_count          num0
                         be      function_record         true                    true
 
 set_low_eight           cp      sd_write_data           temp_sd_write_data

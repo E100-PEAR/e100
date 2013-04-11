@@ -10,12 +10,12 @@ set_pixel_data          cp      vga_x1                  vga_write_x_count
                         cp      vga_y1                  vga_write_y_count
                         cp      vga_x2                  vga_write_x_count
                         cp      vga_y2                  vga_write_y_count
-                        cp      vga_color               sd_read_data
                         
-                        call    function_vga_write      function_vga_write_ra
-                        call    function_vga_write      function_vga_write_ra
-                        call    function_vga_write      function_vga_write_ra
-                        call    function_vga_write      function_vga_write_ra                        
+                        cp      vga_color               sd_read_data       
+                        be      low_vga_write_data      vga_write_counter       num0
+                        be      high_vga_write_data     vga_write_counter       num1   
+
+call_vga_write          call    function_vga_write      function_vga_write_ra
                         
                         add     addr_low_count          addr_low_count          num1         
                         add     vga_write_x_count       vga_write_x_count       num1
@@ -40,6 +40,17 @@ reset_vga_write_y_count cp      vga_write_y_count       num0
                         cp      vga_write_x_count       num0
                         be      function_playback       true                    true
 
+low_vga_write_data      and     vga_color               vga_color               num255
+                        add     vga_write_counter       vga_write_counter       num1
+                        be      call_vga_write          true                    true
+
+high_vga_write_data     and     vga_color               vga_color               num65280
+                        div     vga_color               vga_color               num256
+                        cp      vga_write_counter       num0
+                        be      call_vga_write          true                    true
+
+vga_write_counter       .data   0
+
 addr_low_count  .data   0
 addr_high_count .data   0
 
@@ -48,3 +59,8 @@ vga_write_y_count       .data   0
 
 get_pixel_color_ra      .data   0
 set_pixel_data_ra       .data   0
+
+#include ../../constants.e
+#include ../../drivers/vga.e
+#include ../../drivers/sd_read.e
+#include ../../drivers/sd_vars.e
