@@ -74,7 +74,7 @@ select_menu call function_clear_screen function_clear_screen_ra
 select_left_menu be function_playback pointer_y pointer_top
                  be function_record   true      true
 
-select_right_menu be comparison pointer_y pointer_top
+select_right_menu be function_comparison pointer_y pointer_top
                   be analysis   true true
     
     halt
