@@ -75,7 +75,7 @@ select_left_menu be function_playback pointer_y pointer_top
                  be function_record   true      true
 
 select_right_menu be function_comparison pointer_y pointer_top
-                  be analysis   true true
+                  be function_analysis   true true
     
     halt
 

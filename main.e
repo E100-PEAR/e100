@@ -14,6 +14,8 @@
 
 #include libraries/pointer.e
 #include libraries/draw.e
+#include libraries/keyboard.e
 
 #include constants.e
+#include variables.e
 #include images/images.e

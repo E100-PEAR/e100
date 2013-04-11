@@ -71,6 +71,7 @@ key_down  .data 115
 key_left  .data 97
 key_right .data 100
 key_enter .data 10
+key_space .data 10
 
 // Colors
 color_white         .data 255
