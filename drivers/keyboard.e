@@ -6,19 +6,59 @@
 //
 // key_value: The ASCII value of the pressed key.
 //
-function_keyboard out 20 num1
-keyboard_read in 21 keyboard_response
+function_keyboard
 
-    blt keyboard_read keyboard_response num1
+            // Tell the keyboard we're waiting for the data. 
+            out 20 num1
 
-    in 22 keyboard_pressed
-    in 23 keyboard_value
-	out 20 num0
+            cp keyboard_counter num0
+            cp keyboard_max_count num5
 
-keyboard_finish in 21 keyboard_response
-	bne keyboard_finish keyboard_response num0
+            // If this is blocking, the driver will wait until the keyboard returns
+            // data before continuing. Otherwise, the keyboard will attempt to read data
+            // up to five times before returning. 
+            be keyboard_infinite keyboard_wait num1
 
-    ret function_keyboard_ra
+            // Otherwise, let's start reading.
+            be keyboard_read true true
+
+            // We want to the driver to keep reading from the keyboard until some data
+            // is returned. Let's set the max count to a negative number so that
+            // the counter will never hit it.
+keyboard_infinite cp keyboard_max_count neg1
+
+keyboard_read
+
+            // If the keyboard counter has hit the max count, return
+            // out of here.
+            be keyboard_return keyboard_counter keyboard_max_count
+
+            // We're not done with the loop. Increment the counter.
+            add keyboard_counter keyboard_counter num1
+
+            in 21 keyboard_response
+
+            // The keyboard will return 1 if the data is ready. If it isn't, let's
+            // loop back up to the beginning.
+            bne keyboard_read keyboard_response num1
+
+            // The keyboard is ready. Let's fetch the keyboard's data.
+            in 22 keyboard_pressed
+            in 23 keyboard_value
+
+keyboard_return
+
+            out 20 num0
+
+keyboard_finish
+
+            // Let's make sure that they keyboard is no longer sending data. This ensures
+            // That the current data isn't fetched the next time the keyboard driver is used.
+            in 21 keyboard_response
+
+            be keyboard_finish keyboard_response num1
+
+            ret function_keyboard_ra
 
 //
 // Handle a pressed-key event on the keyboard.
@@ -40,11 +80,14 @@ function_keyboard_on_release call function_keyboard function_keyboard_ra
 
 	ret function_keyboard_on_release_ra
 
-function_keyboard_ra .data 0
-keyboard_response .data 0
-keyboard_pressed .data 0
-keyboard_value .data 0
+keyboard_wait      .data 1
+keyboard_counter   .data 0
+keyboard_max_count .data 5
+keyboard_response  .data 0
+keyboard_pressed   .data 0
+keyboard_value     .data 0
 
-function_keyboard_on_press_ra .data 0
-function_keyboard_on_release_ra .data 0
+function_keyboard_ra             .data 0
+function_keyboard_on_press_ra    .data 0
+function_keyboard_on_release_ra  .data 0
 

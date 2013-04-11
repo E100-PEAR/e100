@@ -2,7 +2,9 @@
 screen_width  .data 639
 screen_height .data 1000
 
-// Numbers 1 - 20
+// Numbers
+neg1 .data -1
+
 num0 .data 0
 num1 .data 1
 num2 .data 2
