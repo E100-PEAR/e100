@@ -16,4 +16,5 @@ _analysis_read
 			ret function_keyboard_analysis_ra
 
 
+function_keyboard_playback_ra .data 0
 function_keyboard_analysis_ra .data 0
