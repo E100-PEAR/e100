@@ -6,7 +6,7 @@
 
 function_comparison             cp      second_vga_write_x_count        resX
                                 add     second_vga_write_x_count        second_vga_write_x_count        num1
-                                be      comp_playback_row_loop          true                            true 
+comparison_start                be      comp_playback_row_loop          true                            true 
 
 comp_playback_row_loop          be      comp_reset_vga_write_y_count    vga_write_y_count               resY
 comp_playback_col_loop          be      comp_reset_vga_write_x_count    vga_write_x_count               resX        
@@ -59,7 +59,7 @@ comp_reset_vga_write_x_count    add     vga_write_y_count               vga_writ
                 
 comp_reset_vga_write_y_count    cp      vga_write_y_count               num0
                                 cp      vga_write_x_count               num0
-                                be      function_comparison             true                            true
+                                be      comparison_start                true                            true
 
 second_addr_high_count          .data   35
 
