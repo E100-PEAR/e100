@@ -41,7 +41,7 @@ reset_vga_write_y_count cp      vga_write_y_count       num0
                         be      function_playback       true                    true
 
 addr_low_count  .data   0
-addr_high_count .data   0
+addr_high_count .data   10
 
 vga_write_x_count       .data   0
 vga_write_y_count       .data   0
