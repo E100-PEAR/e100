@@ -42,6 +42,7 @@ reset_vga_write_y_count cp      vga_write_y_count       num0
 
 addr_low_count  .data   0
 addr_high_count .data   19
+second_addr_high_count  .data   35
 
 vga_write_x_count       .data   0
 vga_write_y_count       .data   0

@@ -1,32 +1,32 @@
 sd memory allocation setup
 
-IGNORE THIS WARNING NOW BECAUSE WE ARE ALLOCATING TWO MEMORY ADDRESS'S TO EACH 
-STARTING AND ENDING ADDRESS 
-(I left it in there though so you understand why we are using two addrs for each)
+IMPORTANT: As it turns out space does not appear to be a major issue 
+            we have decided to only start new videos on a completely
+            new addr_high. for example if the previous video ended on
+            addr_high of 10 and addr_low of 1 we are still starting the 
+            next video on addr_high of 11 and addr_low of 0. 
+            If space becomes an issue later we can try to change this
 
-WARNING: BECAUSE WE ARE USING ONLY ONE ADDRESS FOR STARTING AND ENDING ADDRESS
-         VALUES OF VIDEOS THE ADDRESS'S CAN'T BE ABOVE 16 BITS
-         (NUMBERS-WISE THAT MEANS THE MAX NUMBER IS 65535)
-         (which only correlates to 131070 pixels)
-         (which correlates to 27 frames of 80 by 40 video)
+307200 = 640*480 (screen resolution)
 
-address 0-153600 store the visual GUI implementations and things that won't change (initial pic)
-address 153601 stores the # of the most recently saved video (0-5)
+address 0-307200 store the visual GUI implementations and things that won't change (initial pic)
+address 307201 stores the # of the most recently saved video (0-5)
 
 The above line will be a pointer to where to start the recording/playback
 
-address 153602 & 153603 stores the starting addr (x2) of video 1
-address 153604 & 153605 stores the ending value (x3) of video 1
-address 153606 & 153607 stores the starting value (x4) of video 2
-address 153608 & 153609 stores the ending value (x5) of video 2
-address 153610 & 153611 stores the starting value (x6) of video 3
-address 153612 & 153613 stores the ending value (x7) of video 3
-address 153614 & 153615 stores the starting value (x8) of video 4
-address 153616 & 153617 stores the ending value (x9) of video 4
-address 153618 & 153619 stores the starting value (x10) of video 5
-address 153620 & 153621 stores the ending value (x11) of video 5
+address 307202 stores the starting addr of video 1
+address 307203 stores the ending value (x1) of video 1
+address 307204 stores the starting value (x2) of video 2
+address 307205 stores the ending value (x3) of video 2
+address 307206 stores the starting value (x4) of video 3
+address 307207 stores the ending value (x5) of video 3
+address 307208 stores the starting value (x6) of video 4
+address 307209 stores the ending value (x7) of video 4
+address 307210 stores the starting value (x8) of video 5
+address 307211 stores the ending value (x9) of video 5
 
-address 163840-x1 stores the data of saved video 1 (that address is when addr_high is 10 and addr_low is 0)
+311296 = addr_high of 19 and addr_low of 0
+address 311296-x1 stores the data of saved video 1 (that address is when addr_high is 10 and addr_low is 0)
 address x2-x3 stores the data of saved video 2
 address x4-x5 stores the data of saved video 3
 address x6-x7 stores the data of saved video 4
