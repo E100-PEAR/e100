@@ -19,7 +19,7 @@ function_keyboard
             // If this is blocking, the driver will wait until the keyboard returns
             // data before continuing. Otherwise, the keyboard will attempt to read data
             // up to five times before returning. 
-            be keyboard_infinite keyboard_wait num1
+            be keyboard_infinite keyboard_wait true
 
             // Otherwise, let's start reading.
             be keyboard_read true true
@@ -29,20 +29,28 @@ function_keyboard
             // the counter will never hit it.
 keyboard_infinite cp keyboard_max_count neg1
 
+keyboard_loop
+
+            // We're not done with the loop. Increment the counter.
+            add keyboard_counter keyboard_counter num1
+
+            // If the counter hits 200 we will reset the counter. This ensures that
+            // the loop will not fail because of overflow.
+            blt keyboard_read keyboard_counter num200
+
+            cp keyboard_counter num0
+
 keyboard_read
 
             // If the keyboard counter has hit the max count, return
             // out of here.
             be keyboard_return keyboard_counter keyboard_max_count
 
-            // We're not done with the loop. Increment the counter.
-            add keyboard_counter keyboard_counter num1
-
             in 21 keyboard_response
 
             // The keyboard will return 1 if the data is ready. If it isn't, let's
             // loop back up to the beginning.
-            bne keyboard_read keyboard_response num1
+            bne keyboard_loop keyboard_response num1
 
             // The keyboard is ready. Let's fetch the keyboard's data.
             in 22 keyboard_pressed
