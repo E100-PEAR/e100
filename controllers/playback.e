@@ -25,12 +25,7 @@ set_pixel_data          cp      vga_x1                  vga_write_x_count
 reset_addr_low_count    add     addr_high_count         addr_high_count         num1
                         cp      addr_low_count          num0
                         cp      sd_addr_high            addr_high_count
-                        call    get_pixel_color         get_pixel_color_ra       
-                        call    set_pixel_data          set_pixel_data_ra
-
-                        add     addr_low_count          addr_low_count          num1
-
-                        be      playback_col_loop       true                    true          
+                        be      get_pixel_color         true                    true                 
 
 reset_vga_write_x_count add     vga_write_y_count       vga_write_y_count       num1
                         cp      vga_write_x_count       num0
