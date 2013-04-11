@@ -11,7 +11,9 @@ function_keyboard
             // Tell the keyboard we're waiting for the data. 
             out 20 num1
 
-            cp keyboard_counter num0
+            cp keyboard_counter   num0
+            cp keyboard_pressed   num0
+            cp keyboard_value     num0
             cp keyboard_max_count num5
 
             // If this is blocking, the driver will wait until the keyboard returns
