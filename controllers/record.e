@@ -35,4 +35,4 @@ reset_record_y_count    cp      record_y_count          num0
 record_x_count          .data   0
 record_y_count          .data   0
 
-sd_addr_high_count      .data   19
+sd_addr_high_count      .data   60

@@ -1,34 +1,21 @@
 sd memory allocation setup
 
-IMPORTANT: As it turns out space does not appear to be a major issue 
-            we have decided to only start new videos on a completely
-            new addr_high. for example if the previous video ended on
-            addr_high of 10 and addr_low of 1 we are still starting the 
-            next video on addr_high of 11 and addr_low of 0. 
-            If space becomes an issue later we can try to change this
+Menu GUI implementations
+------------------------
+FIRST ONE AT ADDR 0
+SECOND ONE AT ADDR_HIGH 20
+THIRD ONE AT ADDR_HIGH 40
 
-307200 = 640*480 (screen resolution)
+Saved Video storage
+-----------------------------------------
+VIDEO 1 STARTS AT ADDR_HIGH OF 60
+VIDEO 2 STARTS AT ADDR_HIGH OF 80
+TIGER1 VIDEO STARTS AT ADDR_HIGH OF 100
+TIGER2 VIDEO STARTS AT ADDR_HIGH OF 120
 
-address 0-307200 store the visual GUI implementations and things that won't change (initial pic)
-address 307201 stores the # of the most recently saved video (0-5)
+With all videos they will force stop recording once it reaches the start of the next video.
+For example if when recording video 1 you get to addr_high of 79 and a full addr_low
+the video will stop recording. Or you could manually stop the recording before that point.
 
-The above line will be a pointer to where to start the recording/playback
+this means each video will be able to record for a max of (TO BE DETERMINED) seconds
 
-address 307202 stores the starting addr of video 1
-address 307203 stores the ending value (x1) of video 1
-address 307204 stores the starting value (x2) of video 2
-address 307205 stores the ending value (x3) of video 2
-address 307206 stores the starting value (x4) of video 3
-address 307207 stores the ending value (x5) of video 3
-address 307208 stores the starting value (x6) of video 4
-address 307209 stores the ending value (x7) of video 4
-address 307210 stores the starting value (x8) of video 5
-address 307211 stores the ending value (x9) of video 5
-
-311296 = addr_high of 19 and addr_low of 0
-address 311296-x1 stores the data of saved video 1 (that address is when addr_high is 10 and addr_low is 0)
-address x2-x3 stores the data of saved video 2
-address x4-x5 stores the data of saved video 3
-address x6-x7 stores the data of saved video 4
-address x8-x9 stores the data of saved video 5
-address x10-end store the live recording of the video playback (temporary location)

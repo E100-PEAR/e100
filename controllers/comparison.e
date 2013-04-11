@@ -56,6 +56,6 @@ comp_reset_vga_write_y_count    cp      vga_write_y_count               num0
                                 cp      vga_write_x_count               num0
                                 be      function_comparison             true                            true
 
-second_addr_high_count          .data   35
+second_addr_high_count          .data   80
 
 second_vga_write_x_count        .data   0
