@@ -39,7 +39,7 @@ a_reset_vga_write_x_count   add     vga_write_y_count           vga_write_y_coun
 a_reset_vga_write_y_count   cp      vga_write_y_count           num0
                             cp      vga_write_x_count           num0
      
-                            call    function_analysis_key_press function_analysis_key_press_ra
+                            call    function_analysis_key_press function_keyboard_key_press_ra
 
                             be      function_analysis           true                    true
 
