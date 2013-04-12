@@ -4,9 +4,9 @@ function_analysis_key_press
 
 call_analysis_read
 
-			call     function_keyboard               function_keyboard_ra
-            be      menu                             keyboard_value         key_escape
-			bne      call_analysis_read              keyboard_value         key_space  
+			call     function_keyboard         function_keyboard_ra
+            be      menu                             keyboard_value    key_escape
+			bne      call_analysis_read        keyboard_value    key_space  
 			ret      function_keyboard_key_press_ra
 
 function_keybaord_playback
@@ -41,8 +41,6 @@ call_pause_read
 external_stop_video
             
             cp      keyboard_wait                   true
-            cp      sd_addr_high_count              num0
-            cp      sd_addr_low                     num0
 
 call_stop_read
 
