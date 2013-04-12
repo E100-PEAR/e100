@@ -78,8 +78,3 @@ select_right_menu be function_comparison pointer_y pointer_top
                   be function_analysis   true true
     
     halt
-
-button_x1      .data   99
-button_y1      .data   169
-button_x2      .data   339
-button_y2      .data   269

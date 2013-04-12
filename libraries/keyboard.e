@@ -1,20 +1,29 @@
-function_keyboard_analysis
+function_analysis_key_press
 
-			// Make sure the keyboard waits until the user presses a key.
-			cp keyboard_wait true
+			cp       keyboard_wait true
 
-_analysis_read
+call_analysis_read
 
-			// Keep reading the keyboard input until we hit a space.
-			// Hitting the spacebar will display the next frame.
-			call function_keyboard function_keyboard_ra
+			call     function_keyboard               function_keyboard_ra
+			bne      call_analysis_read              keyboard_value          key_space  
+			ret      function_analysis_key_press_ra
 
-			bne _analysis_read keyboard_value key_space  
+function_keybaord_playback
 
-			// The user pressed the spacebar. Stop blocking the thread
-			// and let the next frame be displayed.
-			ret function_keyboard_analysis_ra
+            cp      keyboard_wait                    false
+            call    function_keyboard                function_keyboard_ra 
 
+            be      external_pause_video             keyboard_value          chary
+            be      menu                             keyboard_value          key_escape
 
-function_keyboard_playback_ra .data 0
-function_keyboard_analysis_ra .data 0
+            ret     function_keybaord_playback_ra
+
+external_pause_video
+
+            cp      keyboard_wait                    true
+
+call_pause_read
+
+            call    function_keyboard                function_keyboard_ra
+            bne     call_pause_read                  keyboard_value         charg
+            ret     function_keybaord_playback_ra

@@ -1,8 +1,8 @@
-function_record cp      cam_scale                       num0 
-                call    function_camera                 function_camera_ra
+function_record         cp      cam_scale                       num0 
+                        call    function_camera                 function_camera_ra
 
-record_row_loop be      reset_record_y_count            record_y_count          resY
-record_col_loop be      reset_record_x_count            record_x_count          resX        
+record_row_loop         be      reset_record_y_count            record_y_count          resY
+record_col_loop         be      reset_record_x_count            record_x_count          resX        
                         
                         cp      vga_read_x_count        record_x_count
                         cp      vga_read_y_count        record_y_count
@@ -31,8 +31,3 @@ reset_record_x_count    add     record_y_count          record_y_count          
                 
 reset_record_y_count    cp      record_y_count          num0
                         be      function_record         true                    true
-
-record_x_count          .data   0
-record_y_count          .data   0
-
-sd_addr_high_count      .data   60
