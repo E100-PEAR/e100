@@ -8,14 +8,19 @@ THIRD ONE AT ADDR_HIGH 40
 
 Saved Video storage
 -----------------------------------------
-VIDEO 1 STARTS AT ADDR_HIGH OF 60
-VIDEO 2 STARTS AT ADDR_HIGH OF 80
-TIGER1 VIDEO STARTS AT ADDR_HIGH OF 100
-TIGER2 VIDEO STARTS AT ADDR_HIGH OF 120
+TIGER1 VIDEO STARTS AT ADDR_HIGH OF 60
+TIGER2 VIDEO STARTS AT ADDR_HIGH OF 80
+VIDEO 1 STARTS AT ADDR_HIGH OF 100
+VIDEO 2 STARTS AT ADDR_HIGH OF 120
 
 With all videos they will force stop recording once it reaches the start of the next video.
 For example if when recording video 1 you get to addr_high of 79 and a full addr_low
 the video will stop recording. Or you could manually stop the recording before that point.
 
 this means each video will be able to record for a max of (TO BE DETERMINED) seconds
+
+Notes: 1 gigabyte is 1073741824 bytes. This corresponds to 536870912 addresses.
+        However the max number of address's our device can write to is 268435455
+        Which is addr_high of 16383 and addr_low of 16383
+        Which is 536870910 bytes which is 510 MB (actually 511.9 but lets just say 510)
 
