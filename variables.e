@@ -1,9 +1,8 @@
 addr_low_count      .data   0
 addr_low_count_2    .data   0
 
-addr_high_count         .data   0
-addr_high_count_2       .data   20
-sd_addr_high_count      .data   0
+addr_high_count         .data   100
+addr_high_count_2       .data   120
 temp_addr_high_count    .data   0
 current_sd_addr_high    .data   100
 
