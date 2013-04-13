@@ -1,15 +1,21 @@
-function_analysis           be      analysis_row_loop           true                    true 
+function_analysis           add     temp_addr_high_count        addr_high_count         num20
+                            mult    analysis_resY               resY                    num3
+                            mult    analysis_resX               resX                    num3
+function_analysis_start     be      analysis_row_loop           true                    true 
 
-analysis_row_loop           be      a_reset_vga_write_y_count   vga_write_y_count       resY
-analysis_col_loop           be      a_reset_vga_write_x_count   vga_write_x_count       resX        
+analysis_row_loop           be      a_reset_vga_write_y_count   vga_write_y_count       analysis_resY
+analysis_col_loop           be      a_reset_vga_write_x_count   vga_write_x_count       analysis_resX        
 
 a_get_pixel_color           cp      sd_addr_low                 addr_low_count
                             call    function_sd_read            function_sd_read_ra 
 
 a_set_pixel_data            cp      vga_x1                      vga_write_x_count
                             cp      vga_y1                      vga_write_y_count
+                            add     vga_write_y_count           vga_write_y_count       num2
+                            add     vga_write_x_count           vga_write_x_count       num2
                             cp      vga_x2                      vga_write_x_count
                             cp      vga_y2                      vga_write_y_count
+                            sub     vga_write_y_count           vga_write_y_count       num2
                             cp      vga_color                   sd_read_data
                         
                             call    function_vga_write          function_vga_write_ra
@@ -32,7 +38,7 @@ a_reset_addr_low_count      add     addr_high_count             addr_high_count 
 
                             be      analysis_col_loop           true                    true          
 
-a_reset_vga_write_x_count   add     vga_write_y_count           vga_write_y_count       num1
+a_reset_vga_write_x_count   add     vga_write_y_count           vga_write_y_count       num3
                             cp      vga_write_x_count           num0
                             be      analysis_row_loop           true                    true 
                 
@@ -41,7 +47,7 @@ a_reset_vga_write_y_count   cp      vga_write_y_count           num0
      
                             call    function_analysis_key_press function_keyboard_key_press_ra
 
-                            be      function_analysis           true                    true
+                            be      function_analysis_start     true                    true
 
 
                             halt
