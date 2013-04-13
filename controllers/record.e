@@ -35,5 +35,3 @@ reset_record_y_count    cp      record_y_count                  num0
                         call    function_keyboard_record        function_keyboard_key_press_ra
                         be      function_record_start           true                            true
 
-temp_addr_high_count    .data   0
-
