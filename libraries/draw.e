@@ -96,6 +96,14 @@ draw_move_down
 draw_end
     ret function_draw_image_ra
 
+//
+// Draw an image off of an SD card.
+//
+function_sd_draw
+    call function_sd_read function_sd_read_ra 
+
+    ret function_sd_draw_ra
+
 button_width  .data 200
 button_height .data 60
 
@@ -114,3 +122,4 @@ draw_image_y_offset .data 0
 function_draw_background_ra .data 0
 function_draw_button_ra     .data 0
 function_draw_image_ra      .data 0
+function_sd_draw_ra         .data 0
