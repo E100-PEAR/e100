@@ -5,13 +5,14 @@ Menu GUI implementations
 FIRST ONE AT ADDR 0
 SECOND ONE AT ADDR_HIGH 20
 THIRD ONE AT ADDR_HIGH 40
+FOURTH MENU AT ADDR_HIGH OF 60
 
 Saved Video storage
 -----------------------------------------
-TIGER1 VIDEO STARTS AT ADDR_HIGH OF 60
-TIGER2 VIDEO STARTS AT ADDR_HIGH OF 80
-VIDEO 1 STARTS AT ADDR_HIGH OF 100
-VIDEO 2 STARTS AT ADDR_HIGH OF 120
+TIGER1 VIDEO STARTS AT ADDR_HIGH OF 80
+TIGER2 VIDEO STARTS AT ADDR_HIGH OF 100
+VIDEO 1 STARTS AT ADDR_HIGH OF 120
+VIDEO 2 STARTS AT ADDR_HIGH OF 140
 
 With all videos they will force stop recording once it reaches the start of the next video.
 For example if when recording video 1 you get to addr_high of 79 and a full addr_low
