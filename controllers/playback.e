@@ -1,6 +1,6 @@
-function_playback       be      playback_row_loop               true                    true 
-                        mult    playback_resY                   resY                    num3
+function_playback       mult    playback_resY                   resY                    num3
                         mult    playback_resX                   resX                    num3
+                        be      playback_row_loop               true                    true 
 
 playback_row_loop       be      reset_vga_write_y_count         vga_write_y_count       playback_resY
 playback_col_loop       be      reset_vga_write_x_count         vga_write_x_count       playback_resX        
