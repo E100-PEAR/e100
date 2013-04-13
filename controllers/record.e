@@ -1,4 +1,5 @@
-function_record         cp      cam_scale                       num0 
+function_record         add     temp_addr_high_count            sd_addr_high_count              num20
+function_record_start   cp      cam_scale                       num0 
                         call    function_camera                 function_camera_ra
 
 record_row_loop         be      reset_record_y_count            record_y_count                  resY
@@ -23,6 +24,7 @@ increm_record_x_count   add     record_x_count                  record_x_count  
 
 reset_sd_addr_low       add     sd_addr_high_count              sd_addr_high_count              num1
                         cp      sd_addr_low                     num0
+                        be      external_stop_video             temp_addr_high_count            sd_addr_high_count 
                         be      increm_record_x_count           true                            true
 
 reset_record_x_count    add     record_y_count                  record_y_count                  num1
@@ -31,5 +33,7 @@ reset_record_x_count    add     record_y_count                  record_y_count  
                 
 reset_record_y_count    cp      record_y_count                  num0
                         call    function_keyboard_record        function_keyboard_key_press_ra
-                        be      function_record                 true                            true
+                        be      function_record_start           true                            true
+
+temp_addr_high_count    .data   0
 
