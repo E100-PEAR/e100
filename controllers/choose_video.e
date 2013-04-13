@@ -8,7 +8,7 @@ function_playback_menu
 
     be function_playback true true
 
-    ret function_playback_menu
+    ret function_playback_menu_ra
 
 //
 // Select the video to compare the latest recorded video to.
@@ -20,7 +20,7 @@ function_comparison_menu
 
     be function_comparison true true
 
-    ret function_comparison_menu
+    ret function_comparison_menu_ra
 
 //
 // Show the video menu's pointer. Start it at the top.
