@@ -34,6 +34,7 @@ external_stop_video     cp      keyboard_wait         true
 call_stop_read          call    function_keyboard     function_keyboard_ra
                         be      instant_playback      keyboard_value            charp
                         be      menu                  keyboard_value            key_escape
+                        be      save_video            keyboard_value            key_return 
                         bne     call_stop_read        keyboard_value            charr
                         ret     function_keyboard_key_press_ra
 
@@ -62,4 +63,26 @@ addr_high_120       cp  addr_high_count         num120
                     be  function_playback       true                    true
 
 
+save_video          cp      sd_addr_low             num0
+                    be      menu                    addr_high_count         num80
+                    be      menu                    addr_high_count         num100
+                    be      menu                    addr_high_count         num120
+                    be      menu                    addr_high_count         num140
+                    blt     save_addr_high_80       sd_addr_high            num80
+                    blt     save_addr_high_100      sd_addr_high            num100
+                    blt     save_addr_high_120      sd_addr_high            num120
+                    blt     save_addr_high_140      sd_addr_high            num140
+                    cp      sd_addr_high            num60
+                    be      menu                    true                    true
 
+save_addr_high_80   cp      sd_addr_high            num80
+                    be      menu                    true                    true
+
+save_addr_high_100  cp      sd_addr_high            num100
+                    be      menu                    true                    true
+
+save_addr_high_120  cp      sd_addr_high            num120
+                    be      menu                    true                    true
+
+save_addr_high_140  cp      sd_addr_high            num140
+                    be      menu                    true                    true
