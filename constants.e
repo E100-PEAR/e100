@@ -29,6 +29,10 @@ num20 .data 20
 num25 .data 25
 num50 .data 50
 num60 .data 60
+num80 .data 80
+num100 .data 100
+num120 .data 120
+num140 .data 140
 num200 .data 200
 num255 .data 255
 num256 .data 256

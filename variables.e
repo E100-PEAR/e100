@@ -1,8 +1,10 @@
 addr_low_count      .data   0
 addr_low_count_2    .data   0
 
-addr_high_count     .data   0
-addr_high_count_2   .data   20
+addr_high_count         .data   0
+addr_high_count_2       .data   20
+sd_addr_high_count      .data   0
+temp_addr_high_count    .data   0
 
 vga_write_x_count   .data   0
 vga_write_x_count_2 .data   0
@@ -14,8 +16,6 @@ record_y_count  .data   0
 
 playback_resX           .data   0
 playback_resY           .data   0
-
-sd_addr_high_count  .data  0
 
 comparison_counter  .data   0
 

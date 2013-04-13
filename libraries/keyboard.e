@@ -35,23 +35,40 @@ call_pause_read
 
             call    function_keyboard       function_keyboard_ra
             be      menu                    keyboard_value        key_escape
-            bne     call_pause_read         keyboard_value        charg
+            bne     call_pause_read        keyboard_value        charg
             ret     function_keyboard_key_press_ra
 
 external_stop_video
             
-            cp      keyboard_wait           true
+            cp      keyboard_wait         true
 
 call_stop_read
 
-            call    function_keyboard       function_keyboard_ra
-            be      instant_playback_record keyboard_value        charp
-            be      menu                    keyboard_value        key_escape
+            call    function_keyboard     function_keyboard_ra
+            be      instant_playback      keyboard_value        charp
+            be      menu                  keyboard_value        key_escape
             bne     call_stop_read          keyboard_value        charr
             ret     function_keyboard_key_press_ra
 
-instant_playback_record
+instant_playback    cp      sd_addr_low             num0
+                    blt     addr_high_60            sd_addr_high            num80
+                    blt     addr_high_80            sd_addr_high            num100
+                    blt     addr_high_100           sd_addr_high            num120
+                    blt     addr_high_120           sd_addr_high            num140
+                    cp      sd_addr_high            num60
+                    be      function_playback       true                    true
 
-            cp      sd_addr_low             num0
-            cp      sd_addr_high_count      num0
-            be      function_playback       true                  true
+addr_high_60        cp  addr_high_count         num60
+                    be  function_playback       true                    true
+
+addr_high_80        cp  addr_high_count         num80
+                    be  function_playback       true                    true
+
+addr_high_100       cp  addr_high_count         num100
+                    be  function_playback       true                    true
+
+addr_high_120       cp  addr_high_count         num120
+                    be  function_playback       true                    true
+
+
+
