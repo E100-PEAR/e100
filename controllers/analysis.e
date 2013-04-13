@@ -8,6 +8,7 @@ analysis_col_loop           be      a_reset_vga_write_x_count   vga_write_x_coun
 
 a_get_pixel_color           cp      sd_addr_low                 addr_low_count
                             call    function_sd_read            function_sd_read_ra 
+                            be      external_stop_video         sd_read_data            num256
 
 a_set_pixel_data            cp      vga_x1                      vga_write_x_count
                             cp      vga_y1                      vga_write_y_count
