@@ -7,7 +7,8 @@ analysis_row_loop           be      a_reset_vga_write_y_count   vga_write_y_coun
 analysis_col_loop           be      a_reset_vga_write_x_count   vga_write_x_count       analysis_resX        
 
 a_get_pixel_color           cp      sd_addr_low                 addr_low_count
-                            call    function_sd_read            function_sd_read_ra 
+                            call    function_sd_read            function_sd_read_ra
+                            cp      play_or_compare             num2 
                             be      external_stop_video         sd_read_data            num256
 
 a_set_pixel_data            cp      vga_x1                      vga_write_x_count
@@ -32,6 +33,8 @@ a_set_pixel_data            cp      vga_x1                      vga_write_x_coun
 a_reset_addr_low_count      add     addr_high_count             addr_high_count         num1
                             cp      addr_low_count              num0
                             cp      sd_addr_high                addr_high_count
+                            cp      play_or_compare             num2
+                            be      external_stop_video         temp_addr_high_count    addr_high_count
                             call    a_get_pixel_color           get_pixel_color_ra       
                             call    a_set_pixel_data            set_pixel_data_ra
 
@@ -45,7 +48,8 @@ a_reset_vga_write_x_count   add     vga_write_y_count           vga_write_y_coun
                 
 a_reset_vga_write_y_count   cp      vga_write_y_count           num0
                             cp      vga_write_x_count           num0
-     
+
+                            cp      play_or_compare             num2
                             call    function_analysis_key_press function_keyboard_key_press_ra
 
                             be      function_analysis_start     true                    true

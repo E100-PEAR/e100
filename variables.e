@@ -19,6 +19,8 @@ playback_resY           .data   0
 analysis_resX           .data   0
 analysis_resY           .data   0
 
+play_or_compare         .data   0
+
 comparison_counter  .data   0
 
 button_x1   .data   99

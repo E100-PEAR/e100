@@ -48,7 +48,10 @@ instant_playback    cp      sd_addr_low             num0
                     blt     addr_high_120           sd_addr_high            num140
                     be      addr_high_120           addr_high_count         num140
                     cp      sd_addr_high            num60
-                    be      function_playback       true                    true
+                    be      function_playback       play_or_compare         num1
+                    be      function_comparison     play_or_compare         num0
+                    be      function_analysis       play_or_compare         num2
+                    be      menu                    true                    true
 
 addr_high_60        cp  addr_high_count         num60
                     be  function_playback       true                    true

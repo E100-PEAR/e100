@@ -80,6 +80,7 @@ reset_vga_write_x_count_2   add     vga_write_y_count           vga_write_y_coun
 reset_vga_write_y_count_2   cp      vga_write_y_count           num0
                             cp      vga_write_x_count           num0
                             cp      comparison_counter          num0
+                            cp      play_or_compare             false
                             call    function_keyboard_playback  function_keyboard_key_press_ra 
                             be      function_comparison         true                   true
 
