@@ -48,22 +48,22 @@ instant_playback    cp      sd_addr_low             num0
                     blt     addr_high_120           sd_addr_high            num140
                     be      addr_high_120           addr_high_count         num140
                     cp      sd_addr_high            num60
-                    be      function_playback       play_or_compare         num1
+where_to_go         be      function_playback       play_or_compare         num1
                     be      function_comparison     play_or_compare         num0
                     be      function_analysis       play_or_compare         num2
                     be      menu                    true                    true
 
 addr_high_60        cp  addr_high_count         num60
-                    be  function_playback       true                    true
+                    be  where_to_go             true                    true
 
 addr_high_80        cp  addr_high_count         num80
-                    be  function_playback       true                    true
+                    be  where_to_go             true                    true
 
 addr_high_100       cp  addr_high_count         num100
-                    be  function_playback       true                    true
+                    be  where_to_go             true                    true
 
 addr_high_120       cp  addr_high_count         num120
-                    be  function_playback       true                    true
+                    be  where_to_go             true                    true
 
 
 save_video          be      menu                    addr_high_count         num80
@@ -80,23 +80,23 @@ save_video          be      menu                    addr_high_count         num8
 save_addr_high_80   cp      sd_write_data           num256
                     call    function_sd_write       function_sd_write_ra
                     cp      sd_addr_low             num0
-                    cp      sd_addr_high            num80
+                    cp      current_sd_addr_high    num80
                     be      menu                    true                    true
 
 save_addr_high_100  cp      sd_write_data           num256
                     call    function_sd_write       function_sd_write_ra
                     cp      sd_addr_low             num0
-                    cp      sd_addr_high            num100
+                    cp      current_sd_addr_high    num100
                     be      menu                    true                    true
 
 save_addr_high_120  cp      sd_write_data           num256
                     call    function_sd_write       function_sd_write_ra
                     cp      sd_addr_low             num0
-                    cp      sd_addr_high            num120
+                    cp      current_sd_addr_high    num120
                     be      menu                    true                    true
 
 save_addr_high_140  cp      sd_write_data           num256
                     call    function_sd_write       function_sd_write_ra
                     cp      sd_addr_low             num0
-                    cp      sd_addr_high            num140
+                    cp      current_sd_addr_high    num140
                     be      menu                    true                    true

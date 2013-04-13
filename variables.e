@@ -5,6 +5,7 @@ addr_high_count         .data   0
 addr_high_count_2       .data   20
 sd_addr_high_count      .data   0
 temp_addr_high_count    .data   0
+current_sd_addr_high    .data   100
 
 vga_write_x_count   .data   0
 vga_write_x_count_2 .data   0

@@ -1,4 +1,5 @@
 function_record         add     temp_addr_high_count            sd_addr_high_count              num20
+                        cp      sd_addr_high                    current_sd_addr_high
 function_record_start   cp      cam_scale                       num0 
                         call    function_camera                 function_camera_ra
 
@@ -24,6 +25,7 @@ increm_record_x_count   add     record_x_count                  record_x_count  
 
 reset_sd_addr_low       add     sd_addr_high_count              sd_addr_high_count              num1
                         cp      sd_addr_low                     num0
+                        cp      play_or_compare                 num1
                         be      external_stop_video             temp_addr_high_count            sd_addr_high_count 
                         be      increm_record_x_count           true                            true
 
@@ -32,6 +34,7 @@ reset_record_x_count    add     record_y_count                  record_y_count  
                         be      record_row_loop                 true                            true     
                 
 reset_record_y_count    cp      record_y_count                  num0
+                        cp      play_or_compare                 num1
                         call    function_keyboard_record        function_keyboard_key_press_ra
                         be      function_record_start           true                            true
 
