@@ -24,8 +24,8 @@ button_y1   .data   169
 button_x2   .data   339
 button_y2   .data   269
 
-// The video to play.
-video_num .data 0
+// The ID of the video that is currently selected.
+selected_video .data 1
 
 // Change color scheme by changing these values     
 drawmenu_top_color  .data   39        // top rectangle

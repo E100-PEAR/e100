@@ -61,7 +61,6 @@ video_menu_down
     be function_video_menu_handle_input true true
 
 video_menu_select
-    call function_select_video function_select_video_ra
 
     // We're done if a video is selected.
     ret function_video_menu_handle_input_ra
@@ -105,18 +104,6 @@ function_move_video_pointer_down
 pointer_down_return
 
     ret function_move_video_pointer_down_ra
-
-//
-// Select the current video.
-//
-function_select_video
-
-    cp video_num selected_video
-
-    ret function_select_video_ra
-
-// The ID of the video that is currently selected.
-selected_video .data 1
 
 function_playback_menu_ra            .data 0
 function_comparison_menu_ra          .data 0
