@@ -1,4 +1,5 @@
-function_playback       mult    playback_resY               resY                    num3
+function_playback       add     temp_addr_high_count        addr_high_count         num20
+                        mult    playback_resY               resY                    num3
                         mult    playback_resX               resX                    num3
                         be      playback_row_loop           true                    true 
 
@@ -30,6 +31,7 @@ set_pixel_data          cp      vga_x1                      vga_write_x_count
 reset_addr_low_count    add     addr_high_count             addr_high_count         num1
                         cp      addr_low_count              num0
                         cp      sd_addr_high                addr_high_count
+                        be      external_stop_video         temp_addr_high_count    addr_high_count
                         be      get_pixel_color             true                    true                 
 
 reset_vga_write_x_count add     vga_write_y_count           vga_write_y_count       num3

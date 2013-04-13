@@ -49,6 +49,7 @@ instant_playback        cp      sd_addr_low             num0
                         cp      sd_addr_high            num60
                         be      function_playback       true                    true
 
+<<<<<<< HEAD
 addr_high_60            cp      addr_high_count         num60
                         be      function_playback       true                    true
 
@@ -60,6 +61,19 @@ addr_high_100           cp      addr_high_count         num100
 
 addr_high_120           cp      addr_high_count         num120
                         be      function_playback       true                    true
+=======
+addr_high_60        cp  sd_addr_high            num60
+                    be  function_playback       true                    true
+
+addr_high_80        cp  sd_addr_high            num80
+                    be  function_playback       true                    true
+
+addr_high_100       cp  sd_addr_high            num100
+                    be  function_playback       true                    true
+
+addr_high_120       cp  sd_addr_high            num120
+                    be  function_playback       true                    true
+>>>>>>> 2f67b983be1ec7f14838bb6398809bc3f5fc0c59
 
 
 
