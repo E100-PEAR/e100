@@ -33,7 +33,7 @@ external_stop_video     cp      keyboard_wait         true
 
 call_stop_read          call    function_keyboard     function_keyboard_ra
                         be      instant_playback      keyboard_value            charp
-                        be      menu                  keyboard_value            key_escape
+                        be      goto_menu             keyboard_value            key_escape
                         be      save_video            keyboard_value            key_enter 
                         bne     call_stop_read        keyboard_value            charr
                         ret     function_keyboard_key_press_ra
@@ -93,4 +93,7 @@ save_addr_high_140  cp      sd_write_data           num256
                     call    function_sd_write       function_sd_write_ra
                     cp      sd_addr_low             num0
                     cp      current_sd_addr_high    num140
+                    be      menu                    true                    true
+
+goto_menu           cp      addr_high_count         current_sd_addr_high
                     be      menu                    true                    true
