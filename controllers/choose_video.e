@@ -23,6 +23,17 @@ function_comparison_menu
     ret function_comparison_menu_ra
 
 //
+// Select the video to do frame by fram analysis on.
+//
+function_frame_menu
+
+    call function_show_video_menu_pointer function_show_video_menu_pointer_ra 
+    call function_video_menu_handle_input function_video_menu_handle_input_ra
+
+    be function_analysis true true
+
+    ret function_frame_menu_ra
+//
 // Show the video menu's pointer. Start it at the top.
 //
 function_show_video_menu_pointer
@@ -107,6 +118,7 @@ pointer_down_return
 
 function_playback_menu_ra            .data 0
 function_comparison_menu_ra          .data 0
+function_frame_menu_ra               .data 0
 function_video_menu_handle_input_ra  .data 0
 function_show_video_menu_pointer_ra  .data 0
 function_move_video_pointer_up_ra    .data 0
