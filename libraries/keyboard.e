@@ -34,7 +34,7 @@ external_stop_video     cp      keyboard_wait         true
 call_stop_read          call    function_keyboard     function_keyboard_ra
                         be      instant_playback      keyboard_value            charp
                         be      menu                  keyboard_value            key_escape
-                        be      save_video            keyboard_value            key_return 
+                        be      save_video            keyboard_value            key_enter 
                         bne     call_stop_read        keyboard_value            charr
                         ret     function_keyboard_key_press_ra
 
