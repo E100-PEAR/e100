@@ -1,79 +1,100 @@
-function_draw_background cp vga_x1 num0
-                         cp vga_x2 screen_width
+//
+// Draw the background of a menu.
+//
+function_draw_background
 
-                         cp vga_y1 num0
-                         cp vga_y2 screen_height
+    cp vga_x1 num0
+    cp vga_x2 screen_width
 
-                         cp vga_color color_light_purple
-                         
-                         call function_vga_write  function_vga_write_ra
-                        
-                         // Creates a rectangle at the top of the screen to hold the
-                         // Golfintosh name.
-                         cp vga_y2 num60
-                         cp vga_color color_blue
-                         
-                         call function_vga_write function_vga_write_ra
+    cp vga_y1 num0
+    cp vga_y2 screen_height
 
-                         ret function_draw_background_ra
+    cp vga_color color_light_purple
 
-function_draw_button cp  vga_x1 draw_x
-                     add vga_x2 draw_x button_width
+    call function_vga_write  function_vga_write_ra
 
-                     cp  vga_y1 draw_y
-                     add vga_y2 draw_y button_height
+    // Creates a rectangle at the top of the screen to hold the
+    // Golfintosh name.
+    cp vga_y2 num60
+    cp vga_color color_blue
 
-                     cp vga_color color_purple
+    call function_vga_write function_vga_write_ra
 
-                     call function_vga_write function_vga_write_ra
+    ret function_draw_background_ra
 
-                     ret function_draw_button_ra
+//
+// Draw a button for a menu.
+//
+function_draw_button
 
-function_draw_image cp draw_image_x_offset num0
-                    cp draw_image_y_offset num0
-                    cp draw_image_pixel draw_image
+    cp  vga_x1 draw_x
+    add vga_x2 draw_x button_width
 
-                    sub draw_image_width  draw_image_width  num1
-                    sub draw_image_height draw_image_height num1
+    cp  vga_y1 draw_y
+    add vga_y2 draw_y button_height
 
-                    // Send the current pixel's information to the VGA driver.
-send_pixel          add vga_x1 draw_x draw_image_x_offset
-                    cp vga_x2 vga_x1
+    cp vga_color color_purple
 
-                    add vga_y1 draw_y draw_image_y_offset
-                    cp vga_y2 vga_y1
+    call function_vga_write function_vga_write_ra
 
-                    // cpfa vga_color playvideo_array draw_image_pixel 
-                    cpfa vga_color 0 draw_image_pixel
+    ret function_draw_button_ra
 
-                    // Skip the current pixel if its color is meant to be skipped. 
-                    be draw_prepare vga_color draw_skip_color
+//
+// Draw an image.
+//
+function_draw_image
 
-                    // Draw the pixel.
-                    call function_vga_write function_vga_write_ra
+    cp draw_image_x_offset num0
+    cp draw_image_y_offset num0
+    cp draw_image_pixel draw_image
 
-                    // Prepare the next pixel.
-draw_prepare        add draw_image_pixel draw_image_pixel num1
+    sub draw_image_width  draw_image_width  num1
+    sub draw_image_height draw_image_height num1
 
-                    // Draw the next row of pixels if we're at the end of the current one.
-                    be draw_move_down draw_image_width draw_image_x_offset
+    // Send the current pixel's information to the VGA driver.
+send_pixel
 
-                    add draw_image_x_offset draw_image_x_offset num1
+    add vga_x1 draw_x draw_image_x_offset
+    cp vga_x2 vga_x1
 
-                    // Loop back to the beginning to draw the next pixel.
-                    be send_pixel true true
+    add vga_y1 draw_y draw_image_y_offset
+    cp vga_y2 vga_y1
 
-                    // We're done if the image is at the end of the rows.
-draw_move_down      be draw_end draw_image_height draw_image_y_offset
+    // cpfa vga_color playvideo_array draw_image_pixel 
+    cpfa vga_color 0 draw_image_pixel
 
-                    // Otherwise, move on to the next row.
-                    cp  draw_image_x_offset num0
-                    add draw_image_y_offset draw_image_y_offset num1
+    // Skip the current pixel if its color is meant to be skipped. 
+    be draw_prepare vga_color draw_skip_color
 
-                    // Loop back to the beginning to draw the next pixel.
-                    be send_pixel true true
+    // Draw the pixel.
+    call function_vga_write function_vga_write_ra
 
-draw_end            ret function_draw_image_ra
+    // Prepare the next pixel.
+draw_prepare
+    add draw_image_pixel draw_image_pixel num1
+
+    // Draw the next row of pixels if we're at the end of the current one.
+    be draw_move_down draw_image_width draw_image_x_offset
+
+    add draw_image_x_offset draw_image_x_offset num1
+
+    // Loop back to the beginning to draw the next pixel.
+    be send_pixel true true
+
+    // We're done if the image is at the end of the rows.
+draw_move_down
+
+    be draw_end draw_image_height draw_image_y_offset
+
+    // Otherwise, move on to the next row.
+    cp  draw_image_x_offset num0
+    add draw_image_y_offset draw_image_y_offset num1
+
+    // Loop back to the beginning to draw the next pixel.
+    be send_pixel true true
+
+draw_end
+    ret function_draw_image_ra
 
 button_width  .data 200
 button_height .data 60
