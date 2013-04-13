@@ -1,4 +1,5 @@
 #include controllers/menu.e
+#include controllers/choose_video.e
 #include controllers/analysis.e
 #include controllers/comparison.e
 #include controllers/playback.e
