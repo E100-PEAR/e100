@@ -12,10 +12,12 @@ vga_write_y_count   .data   0
 record_x_count  .data   0
 record_y_count  .data   0
 
+playback_resX           .data   0
+playback_resY           .data   0
+
 sd_addr_high_count  .data  0
 
-comparison_counter              .data   0
-second_vga_write_x_count        .data   0
+comparison_counter  .data   0
 
 button_x1   .data   99
 button_y1   .data   169

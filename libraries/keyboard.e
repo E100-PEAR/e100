@@ -9,7 +9,7 @@ call_analysis_read
 			bne      call_analysis_read        keyboard_value    key_space  
 			ret      function_keyboard_key_press_ra
 
-function_keybaord_playback
+function_keyboard_playback
 
             cp      keyboard_wait                    false
             call    function_keyboard                function_keyboard_ra 
