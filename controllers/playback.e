@@ -7,6 +7,7 @@ playback_row_loop       be      reset_vga_write_y_count     vga_write_y_count   
 playback_col_loop       be      reset_vga_write_x_count     vga_write_x_count       playback_resX        
 
 get_pixel_color         cp      sd_addr_low                 addr_low_count
+                        cp      sd_addr_high                addr_high_count
                         call    function_sd_read            function_sd_read_ra 
 
 set_pixel_data          cp      vga_x1                      vga_write_x_count

@@ -56,6 +56,7 @@ addr_high_60            cp      addr_high_count         num60
 addr_high_80            cp      addr_high_count         num80
                         be      function_playback       true                    true
 
+<<<<<<< HEAD
 addr_high_100           cp      addr_high_count         num100
                         be      function_playback       true                    true
 
@@ -63,15 +64,30 @@ addr_high_120           cp      addr_high_count         num120
                         be      function_playback       true                    true
 =======
 addr_high_60        cp  sd_addr_high            num60
+=======
+instant_playback    cp      sd_addr_low             num0
+                    blt     addr_high_60            sd_addr_high            num80
+                    be      addr_high_60            addr_high_count         num80
+                    blt     addr_high_80            sd_addr_high            num100
+                    be      addr_high_80            addr_high_count         num100
+                    blt     addr_high_100           sd_addr_high            num120
+                    be      addr_high_100           addr_high_count         num120
+                    blt     addr_high_120           sd_addr_high            num140
+                    be      addr_high_120           addr_high_count         num140
+                    cp      sd_addr_high            num60
+                    be      function_playback       true                    true
+
+addr_high_60        cp  addr_high_count         num60
+>>>>>>> bug fixes
                     be  function_playback       true                    true
 
-addr_high_80        cp  sd_addr_high            num80
+addr_high_80        cp  addr_high_count         num80
                     be  function_playback       true                    true
 
-addr_high_100       cp  sd_addr_high            num100
+addr_high_100       cp  addr_high_count         num100
                     be  function_playback       true                    true
 
-addr_high_120       cp  sd_addr_high            num120
+addr_high_120       cp  addr_high_count         num120
                     be  function_playback       true                    true
 >>>>>>> 2f67b983be1ec7f14838bb6398809bc3f5fc0c59
 
