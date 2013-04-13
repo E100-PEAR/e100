@@ -1,5 +1,5 @@
-function_record         add     temp_addr_high_count            sd_addr_high_count              num20
-                        cp      sd_addr_high                    current_sd_addr_high
+function_record         cp      sd_addr_high_count              current_sd_addr_high
+                        add     temp_addr_high_count            sd_addr_high_count              num20
 function_record_start   cp      cam_scale                       num0 
                         call    function_camera                 function_camera_ra
 
