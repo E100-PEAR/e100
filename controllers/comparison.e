@@ -1,4 +1,6 @@
-function_comparison         be      comparison_row_loop_1      comparison_counter      num0
+function_comparison         mult    comparison_resY            resY                    num3
+                            mult    comparison_resX            resX                    num3
+                            be      comparison_row_loop_1      comparison_counter      num0
                             be      comparison_second_frame    comparison_counter      num1
  
 comparison_row_loop_1       be      reset_vga_write_y_count_1  vga_write_y_count       resY
@@ -9,8 +11,11 @@ comp_get_pixel_color_1      cp      sd_addr_low                addr_low_count
 
 comp_set_pixel_data_1       cp      vga_x1                      vga_write_x_count
                             cp      vga_y1                      vga_write_y_count
+                            add     vga_write_y_count           vga_write_y_count       num2
+                            add     vga_write_x_count           vga_write_x_count       num2
                             cp      vga_x2                      vga_write_x_count
                             cp      vga_y2                      vga_write_y_count
+                            sub     vga_write_y_count           vga_write_y_count       num2
                             cp      vga_color                   sd_read_data
                         
                             call    function_vga_write          function_vga_write_ra                             
@@ -25,7 +30,7 @@ reset_addr_low_count_1      add     addr_high_count             addr_high_count 
                             cp      sd_addr_high                addr_high_count
                             be      comp_get_pixel_color_1      true                    true                 
 
-reset_vga_write_x_count_1   add     vga_write_y_count           vga_write_y_count       num1
+reset_vga_write_x_count_1   add     vga_write_y_count           vga_write_y_count       num3
                             cp      vga_write_x_count           num0
                             be      comparison_row_loop_1       true                    true 
                 
@@ -34,12 +39,12 @@ reset_vga_write_y_count_1   cp      vga_write_y_count           num0
                             add     comparison_counter          comparison_counter      num1
                             be      function_comparison         true                    true
 
-comparison_second_frame     cp      vga_write_x_count_2         resX
+comparison_second_frame     cp      vga_write_x_count_2         comparison_resX
                             add     vga_write_x_count_2         vga_write_x_count_2     num1
                             be      comparison_row_loop_2       true                    true 
 
-comparison_row_loop_2       be      reset_vga_write_y_count_2   vga_write_y_count       resY
-comparison_col_loop_2       be      reset_vga_write_x_count_2   vga_write_x_count       resX        
+comparison_row_loop_2       be      reset_vga_write_y_count_2   vga_write_y_count       comparison_resY
+comparison_col_loop_2       be      reset_vga_write_x_count_2   vga_write_x_count       comparison_resX        
 
 comp_get_pixel_color_2      cp      sd_addr_low                 addr_low_count_2
                             cp      sd_addr_high                addr_high_count_2
@@ -47,8 +52,11 @@ comp_get_pixel_color_2      cp      sd_addr_low                 addr_low_count_2
 
 comp_set_pixel_data_2       cp      vga_x1                      vga_write_x_count_2
                             cp      vga_y1                      vga_write_y_count
+                            add     vga_write_y_count           vga_write_y_count       num2
+                            add     vga_write_x_count_2         vga_write_x_count_2     num2
                             cp      vga_x2                      vga_write_x_count_2
                             cp      vga_y2                      vga_write_y_count
+                            sub     vga_write_y_count           vga_write_y_count       num2
                             cp      vga_color                   sd_read_data   
                         
                             call    function_vga_write          function_vga_write_ra                      
@@ -63,8 +71,8 @@ reset_addr_low_count_2      add     addr_high_count_2           addr_high_count_
                             cp      addr_low_count_2            num0
                             be      comp_get_pixel_color_2      true                    true                 
 
-reset_vga_write_x_count_2   add     vga_write_y_count           vga_write_y_count       num1
-                            cp      vga_write_x_count_2         resX
+reset_vga_write_x_count_2   add     vga_write_y_count           vga_write_y_count       num3
+                            cp      vga_write_x_count_2         comparison_resX
                             add     vga_write_x_count_2         vga_write_x_count_2     num1
                             cp      vga_write_x_count           num0
                             be      comparison_row_loop_2       true                    true 
@@ -73,3 +81,6 @@ reset_vga_write_y_count_2   cp      vga_write_y_count           num0
                             cp      vga_write_x_count           num0
                             cp      comparison_counter          num0
                             be      function_comparison         true                    true
+
+comparison_resX           .data   0
+comparison_resY           .data   0
