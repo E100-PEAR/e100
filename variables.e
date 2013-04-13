@@ -1,7 +1,12 @@
-addr_low_count  .data   0
-addr_high_count .data   0
+addr_low_count      .data   0
+addr_low_count_2    .data   0
+
+addr_high_count     .data   0
+addr_high_count_2   .data   20
 
 vga_write_x_count   .data   0
+vga_write_x_count_2 .data   0
+
 vga_write_y_count   .data   0
 
 record_x_count  .data   0
@@ -10,8 +15,6 @@ record_y_count  .data   0
 sd_addr_high_count  .data  0
 
 comparison_counter              .data   0
-comp_addr_low_count_2           .data   0
-second_addr_high_count          .data   20
 second_vga_write_x_count        .data   0
 
 button_x1   .data   99
