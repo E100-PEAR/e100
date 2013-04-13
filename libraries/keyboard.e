@@ -52,9 +52,13 @@ call_stop_read
 
 instant_playback    cp      sd_addr_low             num0
                     blt     addr_high_60            sd_addr_high            num80
+                    be      addr_high_60            sd_addr_high            num80
                     blt     addr_high_80            sd_addr_high            num100
+                    be      addr_high_80            sd_addr_high            num100
                     blt     addr_high_100           sd_addr_high            num120
+                    be      addr_high_100           sd_addr_high            num120
                     blt     addr_high_120           sd_addr_high            num140
+                    be      addr_high_120           sd_addr_high            num140
                     cp      sd_addr_high            num60
                     be      function_playback       true                    true
 
