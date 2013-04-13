@@ -62,7 +62,7 @@ comp_set_pixel_data_2       cp      vga_x1                      vga_write_x_coun
                             call    function_vga_write          function_vga_write_ra                      
                         
                             add     addr_low_count_2            addr_low_count_2        num1         
-                            add     vga_write_x_count           vga_write_x_count       num1
+                            add     vga_write_x_count           vga_write_x_count       num3
                             add     vga_write_x_count_2         vga_write_x_count_2     num1
 
                             bne     comparison_col_loop_2       addr_low_count_2        sd_addr_max
