@@ -78,17 +78,9 @@ save_video          be      menu                    addr_high_count         num8
                     cp      sd_addr_high            num60
                     be      menu                    true                    true
 
-save_addr_high_80   cp      sd_write_data           num256
-                    call    function_sd_write       function_sd_write_ra
-                    cp      sd_addr_low             num0
-                    cp      current_sd_addr_high    num80
-                    be      menu                    true                    true
+save_addr_high_80   be      menu                    true                    true
 
-save_addr_high_100  cp      sd_write_data           num256
-                    call    function_sd_write       function_sd_write_ra
-                    cp      sd_addr_low             num0
-                    cp      current_sd_addr_high    num100
-                    be      menu                    true                    true
+save_addr_high_100  be      menu                    true                    true
 
 save_addr_high_120  cp      sd_write_data           num256
                     call    function_sd_write       function_sd_write_ra
