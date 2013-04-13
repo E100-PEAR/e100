@@ -24,6 +24,9 @@ button_y1   .data   169
 button_x2   .data   339
 button_y2   .data   269
 
+// The video to play.
+video_num .data 0
+
 // Change color scheme by changing these values     
 drawmenu_top_color  .data   39        // top rectangle
 drawmenu_bkg_color  .data   219       // background color
