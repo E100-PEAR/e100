@@ -63,8 +63,7 @@ addr_high_120       cp  addr_high_count         num120
                     be  function_playback       true                    true
 
 
-save_video          cp      sd_addr_low             num0
-                    be      menu                    addr_high_count         num80
+save_video          be      menu                    addr_high_count         num80
                     be      menu                    addr_high_count         num100
                     be      menu                    addr_high_count         num120
                     be      menu                    addr_high_count         num140
@@ -75,14 +74,26 @@ save_video          cp      sd_addr_low             num0
                     cp      sd_addr_high            num60
                     be      menu                    true                    true
 
-save_addr_high_80   cp      sd_addr_high            num80
+save_addr_high_80   cp      sd_write_data           num256
+                    call    function_sd_write       function_sd_write_ra
+                    cp      sd_addr_low             num0
+                    cp      sd_addr_high            num80
                     be      menu                    true                    true
 
-save_addr_high_100  cp      sd_addr_high            num100
+save_addr_high_100  cp      sd_write_data           num256
+                    call    function_sd_write       function_sd_write_ra
+                    cp      sd_addr_low             num0
+                    cp      sd_addr_high            num100
                     be      menu                    true                    true
 
-save_addr_high_120  cp      sd_addr_high            num120
+save_addr_high_120  cp      sd_write_data           num256
+                    call    function_sd_write       function_sd_write_ra
+                    cp      sd_addr_low             num0
+                    cp      sd_addr_high            num120
                     be      menu                    true                    true
 
-save_addr_high_140  cp      sd_addr_high            num140
+save_addr_high_140  cp      sd_write_data           num256
+                    call    function_sd_write       function_sd_write_ra
+                    cp      sd_addr_low             num0
+                    cp      sd_addr_high            num140
                     be      menu                    true                    true
