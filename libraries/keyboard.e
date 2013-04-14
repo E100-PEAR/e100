@@ -98,4 +98,7 @@ save_addr_high_160  cp      sd_write_data           num256
 
 goto_menu           cp      addr_high_count         current_sd_addr_high
                     cp      addr_low_count          num0
+                    cp      vga_write_x_count       num0
+                    cp      vga_write_x_count_2     num0
+                    cp      vga_write_y_count       num0
                     be      menu                    true                    true
