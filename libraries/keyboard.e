@@ -35,7 +35,7 @@ call_stop_read          call    function_keyboard     function_keyboard_ra
                         be      instant_playback      keyboard_value            charp
                         be      goto_menu             keyboard_value            key_escape
                         be      save_video            keyboard_value            key_enter 
-                        bne     call_stop_read        keyboard_value            charr
+                        be      call_stop_read        true                      true
                         ret     function_keyboard_key_press_ra
 
 instant_playback    cp      addr_low_count              num0
