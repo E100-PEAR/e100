@@ -2,4 +2,4 @@
 *.labels
 *.e~
 .DS_Store
-sd_datafile*
+sd_datafile

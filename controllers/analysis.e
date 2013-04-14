@@ -9,7 +9,8 @@ function_analysis_start     be      analysis_row_loop           true            
 analysis_row_loop           be      a_reset_vga_write_y_count   vga_write_y_count       analysis_resY
 analysis_col_loop           be      a_reset_vga_write_x_count   vga_write_x_count       analysis_resX        
 
-a_get_pixel_color           cp      sd_addr_low                 addr_low_count
+a_get_pixel_color           cp      sd_addr_high                addr_high_count
+                            cp      sd_addr_low                 addr_low_count
                             call    function_sd_read            function_sd_read_ra
                             cp      play_or_compare             num2 
                             be      external_stop_video         sd_read_data            num256
