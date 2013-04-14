@@ -1,7 +1,6 @@
 function_playback       mult    playback_resY               resY                    num3
                         mult    playback_resX               resX                    num3  
-
-                        add     temp_addr_high_count        addr_high_count         num19 
+                        add     temp_addr_high_count        addr_high_count         num20 
                         cp      addr_low_count              num0             
 
 function_playback_start be      playback_row_loop           true                    true 
