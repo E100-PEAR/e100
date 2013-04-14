@@ -75,11 +75,10 @@ save_video          be      goto_menu               addr_high_count         num8
                     be      goto_menu               addr_high_count         num100
                     be      goto_menu               addr_high_count         num120
                     be      goto_menu               addr_high_count         num140
-                    blt     save_addr_high_80       sd_addr_high            num80
-                    blt     save_addr_high_100      sd_addr_high            num100
-                    blt     save_addr_high_120      sd_addr_high            num120
-                    blt     save_addr_high_140      sd_addr_high            num140
-                    cp      sd_addr_high            num60
+                    blt     save_addr_high_80       addr_high_count         num80
+                    blt     save_addr_high_100      addr_high_count         num100
+                    blt     save_addr_high_120      addr_high_count         num120
+                    blt     save_addr_high_140      addr_high_count         num140
                     be      goto_menu               true                    true
 
 save_addr_high_80   be      goto_menu               true                    true
@@ -88,13 +87,13 @@ save_addr_high_100  be      goto_menu               true                    true
 
 save_addr_high_120  cp      sd_write_data           num256
                     call    function_sd_write       function_sd_write_ra
-                    cp      sd_addr_low             num0
+                    cp      addr_low_count          num0
                     cp      current_sd_addr_high    num120
                     be      goto_menu               true                    true
 
 save_addr_high_140  cp      sd_write_data           num256
                     call    function_sd_write       function_sd_write_ra
-                    cp      sd_addr_low             num0
+                    cp      addr_low_count          num0
                     cp      current_sd_addr_high    num140
                     be      goto_menu               true                    true
 
