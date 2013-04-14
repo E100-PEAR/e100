@@ -39,14 +39,14 @@ call_stop_read          call    function_keyboard     function_keyboard_ra
                         ret     function_keyboard_key_press_ra
 
 instant_playback    cp      sd_addr_low                 num0
-                    blt     addr_high_80                addr_high_count         num100
-                    blt     addr_high_100               addr_high_count         num120
-                    blt     addr_high_120               addr_high_count         num140
-                    blt     addr_high_140               addr_high_count         num160
                     be      addr_high_80                addr_high_count         num100
                     be      addr_high_100               addr_high_count         num120
                     be      addr_high_120               addr_high_count         num140
                     be      addr_high_140               addr_high_count         num160
+                    blt     addr_high_80                addr_high_count         num100
+                    blt     addr_high_100               addr_high_count         num120
+                    blt     addr_high_120               addr_high_count         num140
+                    blt     addr_high_140               addr_high_count         num160
 
 where_to_go         cp      addr_low_count              num0
                     cp      vga_write_x_count           num0
