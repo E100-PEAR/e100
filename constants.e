@@ -43,7 +43,7 @@ num435 .data 435
 num450 .data 450
 num460 .data 460
 num465 .data 465
-num480 .data 485
+num480 .data 480
 num495 .data 495
 num520 .data 520
 num540 .data 540

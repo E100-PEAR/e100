@@ -13,8 +13,8 @@ function_draw_record_buttons		cp      circle_radius           num25
     call    function_draw_circle    function_draw_circle_ra
 // drawing small inner circle for record button
 
-    cp      vga_x1					num540
-    cp      vga_x2					num590
+    cp      vga_x1		num540
+    cp      vga_x2		num590
     cp      vga_y1                  num410
     cp      vga_y2                  num460
     cp      vga_color               color_red
