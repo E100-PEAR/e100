@@ -27,7 +27,7 @@ increm_record_x_count   add     record_x_count                  record_x_count  
 reset_sd_addr_low       add     addr_high_count                 addr_high_count                 num1
                         cp      addr_low_count                  num0
                         cp      play_or_compare                 num1
-                        be      external_stop_video             temp_addr_high_count            addr_high_count    
+                        be      external_stop_video_prep        temp_addr_high_count            addr_high_count    
                         be      increm_record_x_count           true                            true
 
 reset_record_x_count    add     record_y_count                  record_y_count                  num1
@@ -38,4 +38,8 @@ reset_record_y_count    cp      record_y_count                  num0
                         cp      play_or_compare                 num1
                         call    function_keyboard_record        function_keyboard_key_press_ra
                         be      function_record_start           true                            true
+
+external_stop_video_prep        cp      record_y_count          num0
+                                cp      record_x_count          num0
+                                be      external_stop_video     true                            true
 

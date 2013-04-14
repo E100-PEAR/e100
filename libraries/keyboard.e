@@ -38,7 +38,7 @@ call_stop_read          call    function_keyboard     function_keyboard_ra
                         bne     call_stop_read        keyboard_value            charr
                         ret     function_keyboard_key_press_ra
 
-instant_playback    cp      sd_addr_low                 num0
+instant_playback    cp      addr_low_count              num0
                     be      addr_high_80                addr_high_count         num100
                     be      addr_high_100               addr_high_count         num120
                     be      addr_high_120               addr_high_count         num140
