@@ -97,6 +97,3 @@ reset_vga_write_y_count_2   cp      vga_write_y_count           num0
                             cp      play_or_compare             num0
                             call    function_keyboard_playback  function_keyboard_key_press_ra 
                             be      function_comparison_start   true                   true
-
-comparison_resX           .data   0
-comparison_resY           .data   0

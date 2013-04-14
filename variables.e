@@ -18,7 +18,8 @@ playback_resX           .data   0
 playback_resY           .data   0
 analysis_resX           .data   0
 analysis_resY           .data   0
-
+comparison_resX         .data   0
+comparison_resY         .data   0
 play_or_compare         .data   0
 
 comparison_counter  .data   0
