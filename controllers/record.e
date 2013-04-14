@@ -2,6 +2,8 @@ function_record         cp      addr_high_count                 current_sd_addr_
                         add     temp_addr_high_count            addr_high_count                 num20
                         cp      addr_low_count                  num0
 
+                        call    function_draw_record_buttons    function_draw_record_buttons_ra
+
 function_record_start   cp      cam_scale                       num0 
                         call    function_camera                 function_camera_ra
 
