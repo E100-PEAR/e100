@@ -16,6 +16,9 @@
 #include libraries/pointer.e
 #include libraries/draw.e
 #include libraries/keyboard.e
+#include libraries/shapes.e
+#include libraries/drawbuttons.e
+#include libraries/math.e
 
 #include constants.e
 #include variables.e

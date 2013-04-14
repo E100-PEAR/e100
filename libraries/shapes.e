@@ -86,4 +86,3 @@ function_draw_play_ra   .data   0
 /////////////////     END OF PLAY BUTTON   ///////////////////////////
 
 
-#include math.e
