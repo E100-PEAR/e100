@@ -31,7 +31,7 @@ circle_center_x	.data	350 // x coordinate of the origin of the circle
 circle_center_y	.data	320 // y coordinate of the origin of the circle
 circle_color	.data	120 // color of the circle
 
-// these are temporary variables.  don't touch them.  I'll kill you.
+// these are temporary variables.
 circle_last_y	.data	0
 circle_radius_squared	.data	0
 circle_y_squared	.data	0

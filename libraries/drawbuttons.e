@@ -2,7 +2,7 @@
 // draws a gray and red record button and a red stop button
 
 function_draw_record_buttons		cp      circle_radius           num25
-   	cp      circle_center_x         screen_height
+   	cp      circle_center_x         num465
     cp      circle_center_y         num435
     cp      circle_color            color_light_purple
     call	function_draw_circle	function_draw_circle_ra
