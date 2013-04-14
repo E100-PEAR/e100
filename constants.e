@@ -40,7 +40,14 @@ num255 .data 255
 num256 .data 256
 num410 .data 410
 num435 .data 435
+num450 .data 450
+num460 .data 460
+num465 .data 465
+num480 .data 485
+num495 .data 495
 num520 .data 520
+num540 .data 540
+num590 .data 590
 num65280 .data 65280
 num19200 .data 19200
 
@@ -89,6 +96,7 @@ color_blue          .data 39
 color_purple        .data 183
 color_light_purple  .data 219
 color_red           .data 160
+color_yellow        .data 252
 
 // Booleans
 true  .data 1
