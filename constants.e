@@ -33,6 +33,7 @@ num80 .data 80
 num100 .data 100
 num120 .data 120
 num140 .data 140
+num160 .data 160
 num200 .data 200
 num255 .data 255
 num256 .data 256

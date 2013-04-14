@@ -39,14 +39,15 @@ call_stop_read          call    function_keyboard     function_keyboard_ra
                         ret     function_keyboard_key_press_ra
 
 instant_playback    cp      sd_addr_low                 num0
-                    blt     addr_high_60                addr_high_count         num80
                     blt     addr_high_80                addr_high_count         num100
                     blt     addr_high_100               addr_high_count         num120
                     blt     addr_high_120               addr_high_count         num140
-                    be      addr_high_60                addr_high_count         num80
+                    blt     addr_high_140               addr_high_count         num160
                     be      addr_high_80                addr_high_count         num100
                     be      addr_high_100               addr_high_count         num120
                     be      addr_high_120               addr_high_count         num140
+                    be      addr_high_140               addr_high_count         num160
+
 where_to_go         cp      addr_low_count              num0
                     cp      vga_write_x_count           num0
                     cp      vga_write_x_count_2         num0
@@ -57,9 +58,6 @@ where_to_go         cp      addr_low_count              num0
                     be      function_analysis_start     play_or_compare         num2
                     be      goto_menu                   true                    true
 
-addr_high_60        cp  addr_high_count         num60
-                    be  where_to_go             true                    true
-
 addr_high_80        cp  addr_high_count         num80
                     be  where_to_go             true                    true
 
@@ -69,31 +67,33 @@ addr_high_100       cp  addr_high_count         num100
 addr_high_120       cp  addr_high_count         num120
                     be  where_to_go             true                    true
 
+addr_high_140       cp  addr_high_count         num140
+                    be  where_to_go             true                    true
 
-save_video          be      goto_menu               addr_high_count         num80
-                    be      goto_menu               addr_high_count         num100
+save_video          be      goto_menu               addr_high_count         num100
                     be      goto_menu               addr_high_count         num120
                     be      goto_menu               addr_high_count         num140
-                    blt     save_addr_high_80       addr_high_count         num80
+                    be      goto_menu               addr_high_count         num160
                     blt     save_addr_high_100      addr_high_count         num100
                     blt     save_addr_high_120      addr_high_count         num120
                     blt     save_addr_high_140      addr_high_count         num140
+                    blt     save_addr_high_160      addr_high_count         num160
                     be      goto_menu               true                    true
-
-save_addr_high_80   be      goto_menu               true                    true
 
 save_addr_high_100  be      goto_menu               true                    true
 
-save_addr_high_120  cp      sd_write_data           num256
-                    call    function_sd_write       function_sd_write_ra
-                    cp      addr_low_count          num0
-                    cp      current_sd_addr_high    num120
-                    be      goto_menu               true                    true
+save_addr_high_120  be      goto_menu               true                    true
 
 save_addr_high_140  cp      sd_write_data           num256
                     call    function_sd_write       function_sd_write_ra
                     cp      addr_low_count          num0
                     cp      current_sd_addr_high    num140
+                    be      goto_menu               true                    true
+
+save_addr_high_160  cp      sd_write_data           num256
+                    call    function_sd_write       function_sd_write_ra
+                    cp      addr_low_count          num0
+                    cp      current_sd_addr_high    num160
                     be      goto_menu               true                    true
 
 goto_menu           cp      addr_high_count         current_sd_addr_high
