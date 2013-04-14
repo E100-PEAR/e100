@@ -1,6 +1,9 @@
-function_analysis           add     temp_addr_high_count        addr_high_count         num20
-                            mult    analysis_resY               resY                    num3
+function_analysis           mult    analysis_resY               resY                    num3
                             mult    analysis_resX               resX                    num3
+
+                            cp      addr_low_count              num0
+                            add     temp_addr_high_count        addr_high_count         num19
+
 function_analysis_start     be      analysis_row_loop           true                    true 
 
 analysis_row_loop           be      a_reset_vga_write_y_count   vga_write_y_count       analysis_resY

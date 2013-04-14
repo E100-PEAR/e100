@@ -72,10 +72,10 @@ addr_high_140       cp  addr_high_count         num140
 
 save_video          be      goto_menu               addr_high_count         num100
                     be      goto_menu               addr_high_count         num120
-                    be      goto_menu               addr_high_count         num140
-                    be      goto_menu               addr_high_count         num160
-                    blt     save_addr_high_100      addr_high_count         num100
-                    blt     save_addr_high_120      addr_high_count         num120
+                    be      save_addr_high_140      addr_high_count         num140
+                    be      save_addr_high_160      addr_high_count         num160
+                    blt     goto_menu               addr_high_count         num100
+                    blt     goto_menu               addr_high_count         num120
                     blt     save_addr_high_140      addr_high_count         num140
                     blt     save_addr_high_160      addr_high_count         num160
                     be      goto_menu               true                    true

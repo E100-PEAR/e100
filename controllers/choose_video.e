@@ -3,12 +3,32 @@
 //
 function_playback_menu
 
-    call function_show_video_menu_pointer function_show_video_menu_pointer_ra
-    call function_video_menu_handle_input function_video_menu_handle_input_ra
+    // call function_show_video_menu_pointer function_show_video_menu_pointer_ra
+    // call function_video_menu_handle_input function_video_menu_handle_input_ra
 
-    be function_playback true true
+                            cp  keyboard_wait   true
 
-    ret function_playback_menu_ra
+call_keyboard_playback_menu call    function_keyboard   function_keyboard_ra
+
+                            be      play_profession_video_1         keyboard_value  chara
+                            be      play_profession_video_2         keyboard_value  chars
+                            be      play_recorded_video_1           keyboard_value  chard
+                            be      play_recorded_video_2           keyboard_value  charf
+                            be      call_keyboard_playback_menu     true            true
+
+play_profession_video_1     cp      addr_high_count                 num80
+                            be      function_playback               true            true
+
+play_profession_video_2     cp      addr_high_count                 num100
+                            be      function_playback               true            true
+
+play_recorded_video_1       cp      addr_high_count                 num120
+                            be      function_playback               true            true
+
+play_recorded_video_2       cp      addr_high_count                 num140
+                            be      function_playback               true            true
+
+                            ret     function_playback_menu_ra
 
 //
 // Select the video to compare the latest recorded video to.
@@ -27,12 +47,32 @@ function_comparison_menu
 //
 function_frame_menu
 
-    call function_show_video_menu_pointer function_show_video_menu_pointer_ra 
-    call function_video_menu_handle_input function_video_menu_handle_input_ra
+    // call function_show_video_menu_pointer function_show_video_menu_pointer_ra 
+    // call function_video_menu_handle_input function_video_menu_handle_input_ra
 
-    be function_analysis true true
 
-    ret function_frame_menu_ra
+
+call_keyboard_analysis_menu call    function_keyboard   function_keyboard_ra
+
+                            be      frame_profession_video_1        keyboard_value  chara
+                            be      frame_profession_video_2        keyboard_value  chars
+                            be      frame_recorded_video_1          keyboard_value  chard
+                            be      frame_recorded_video_2          keyboard_value  charf
+                            be      call_keyboard_analysis_menu     true            true
+
+frame_profession_video_1    cp      addr_high_count                 num80
+                            be      function_analysis               true            true
+
+frame_profession_video_2    cp      addr_high_count                 num100
+                            be      function_analysis               true            true
+
+frame_recorded_video_1      cp      addr_high_count                 num120
+                            be      function_analysis               true            true
+
+frame_recorded_video_2      cp      addr_high_count                 num140
+                            be      function_analysis               true            true
+
+                            ret     function_frame_menu_ra
 //
 // Show the video menu's pointer. Start it at the top.
 //

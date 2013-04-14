@@ -71,10 +71,10 @@ move_down  call function_move_pointer_down function_move_pointer_down_ra
 select_menu call function_clear_screen function_clear_screen_ra
             be select_right_menu pointer_x pointer_right
 
-select_left_menu be function_playback pointer_y pointer_top
+select_left_menu be function_playback_menu pointer_y pointer_top
                  be function_record   true      true
 
 select_right_menu be function_comparison pointer_y pointer_top
-                  be function_analysis   true true
+                  be function_frame_menu   true true
     
     halt

@@ -1,6 +1,15 @@
 function_comparison         mult    comparison_resY            resY                    num3
                             mult    comparison_resX            resX                    num3
-                            add     temp_addr_high_count       addr_high_count_2       num20
+
+                            add     temp_addr_high_count       addr_high_count_2       num19
+
+                            cp      addr_high_count            current_sd_addr_high
+                            sub     addr_high_count            addr_high_count         num20
+                            cp      addr_high_count_2          num140
+
+                            cp      addr_low_count             num0
+                            cp      addr_low_count_2           num0
+
 function_comparison_start   be      comparison_row_loop_1      comparison_counter      num0
                             be      comparison_second_frame    comparison_counter      num1
  
@@ -11,6 +20,7 @@ comp_get_pixel_color_1      cp      sd_addr_low                addr_low_count
                             cp      sd_addr_high               addr_high_count
                             call    function_sd_read           function_sd_read_ra
                             cp      play_or_compare            num0
+                            out     3                          num1
                             be      external_stop_video        sd_read_data            num256  
 
 comp_set_pixel_data_1       cp      vga_x1                     vga_write_x_count
@@ -56,6 +66,7 @@ comp_get_pixel_color_2      cp      sd_addr_low                addr_low_count_2
                             cp      sd_addr_high               addr_high_count_2
                             call    function_sd_read           function_sd_read_ra 
                             cp      play_or_compare            num0
+                            out     3                          num2
                             be      external_stop_video        sd_read_data            num256
 
 comp_set_pixel_data_2       cp      vga_x1                     vga_write_x_count_2
@@ -65,7 +76,8 @@ comp_set_pixel_data_2       cp      vga_x1                     vga_write_x_count
                             cp      vga_x2                     vga_write_x_count_2
                             cp      vga_y2                     vga_write_y_count
                             sub     vga_write_y_count          vga_write_y_count       num2
-                            cp      vga_color                  sd_read_data   
+                            cp      vga_color                  sd_read_data
+                            out     1                          sd_read_data   
                         
                             call    function_vga_write         function_vga_write_ra                      
                         

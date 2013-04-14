@@ -1,6 +1,9 @@
-function_playback       add     temp_addr_high_count        addr_high_count         num20
-                        mult    playback_resY               resY                    num3
-                        mult    playback_resX               resX                    num3
+function_playback       mult    playback_resY               resY                    num3
+                        mult    playback_resX               resX                    num3  
+
+                        add     temp_addr_high_count        addr_high_count         num19 
+                        cp      addr_low_count              num0             
+
 function_playback_start be      playback_row_loop           true                    true 
 
 playback_row_loop       be      reset_vga_write_y_count     vga_write_y_count       playback_resY

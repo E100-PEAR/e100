@@ -41,6 +41,7 @@ num410 .data 410
 num435 .data 435
 num520 .data 520
 num65280 .data 65280
+num19200 .data 19200
 
 // Characters a - z
 chara .data 97
