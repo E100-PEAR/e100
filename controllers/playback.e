@@ -3,6 +3,8 @@ function_playback       mult    playback_resY               resY                
                         add     temp_addr_high_count        addr_high_count         num20 
                         cp      addr_low_count              num0             
 
+                        call    function_draw_play_buttons  function_draw_play_buttons_ra
+                        
 function_playback_start be      playback_row_loop           true                    true 
 
 playback_row_loop       be      reset_vga_write_y_count     vga_write_y_count       playback_resY
