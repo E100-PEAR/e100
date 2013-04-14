@@ -17,7 +17,7 @@ function_keyboard_record
                         cp      keyboard_wait               false
                         call    function_keyboard           function_keyboard_ra    
 
-                        be      external_stop_video         keyboard_value          chars
+                        be      external_stop_video_2       keyboard_value          chars
                         be      goto_menu                   keyboard_value          key_escape
 
                         ret     function_keyboard_key_press_ra
@@ -109,3 +109,7 @@ goto_menu               cp      addr_high_count             current_sd_addr_high
                         cp      vga_write_x_count_2         num0
                         cp      vga_write_y_count           num0
                         be      menu                        true                true
+
+external_stop_video_2   cp      sd_write_data               num256
+                        call    function_sd_write           function_sd_write_ra
+                        be      external_stop_video         true                true

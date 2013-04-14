@@ -1,5 +1,5 @@
 function_record         cp      addr_high_count                 current_sd_addr_high
-                        add     temp_addr_high_count            addr_high_count                 num19
+                        add     temp_addr_high_count            addr_high_count                 num20
                         cp      addr_low_count                  num0
 
 function_record_start   cp      cam_scale                       num0 
