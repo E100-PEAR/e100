@@ -49,6 +49,9 @@ instant_playback    cp      sd_addr_low                 num0
                     be      addr_high_120               addr_high_count         num140
                     cp      sd_addr_high                num60
 where_to_go         cp      addr_low_count              num0
+                    cp      vga_write_x_count           num0
+                    cp      vga_write_x_count_2         num0
+                    cp      vga_write_y_count           num0
                     be      function_playback_start     play_or_compare         num1
                     cp      comparison_counter          num0
                     be      function_comparison_start   play_or_compare         num0
