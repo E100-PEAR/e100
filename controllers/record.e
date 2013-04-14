@@ -45,4 +45,3 @@ external_stop_video_prep
                         cp      record_y_count          num0
                         cp      record_x_count          num0
                         be      external_stop_video     true                            true
-
