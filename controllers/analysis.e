@@ -2,7 +2,7 @@ function_analysis           mult    analysis_resY               resY            
                             mult    analysis_resX               resX                    num3
 
                             cp      addr_low_count              num0
-                            add     temp_addr_high_count        addr_high_count         num19
+                            add     temp_addr_high_count        addr_high_count         num20
 
 function_analysis_start     be      analysis_row_loop           true                    true 
 
