@@ -2,7 +2,9 @@
 // Select a video to play.
 //
 function_playback_menu
-
+        
+     cp     addr_high_count     num20
+     call   function_sd_draw    function_sd_draw_ra
      call function_show_video_menu_pointer function_show_video_menu_pointer_ra
      call function_video_menu_handle_input function_video_menu_handle_input_ra
 
@@ -30,6 +32,8 @@ play_recorded_video_2       cp      addr_high_count                 num140
 //
 function_comparison_menu
 
+    cp     addr_high_count     num40
+    call   function_sd_draw    function_sd_draw_ra
     call function_show_video_menu_pointer function_show_video_menu_pointer_ra 
     call function_video_menu_handle_input function_video_menu_handle_input_ra
 
@@ -57,6 +61,8 @@ comp_recorded_video_2       cp      addr_high_count_2               num140
 //
 function_frame_menu
 
+     cp     addr_high_count     num60
+     call   function_sd_draw    function_sd_draw_ra
      call function_show_video_menu_pointer function_show_video_menu_pointer_ra 
      call function_video_menu_handle_input function_video_menu_handle_input_ra
 

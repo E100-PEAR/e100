@@ -1,31 +1,34 @@
-menu call function_draw_background function_draw_background_ra
+menu //call function_draw_background function_draw_background_ra
 
-     cp draw_image_width  num200
-     cp draw_image_height num60
-     cp draw_skip_color color_white
+//     cp draw_image_width  num200
+//     cp draw_image_height num60
+//    cp draw_skip_color color_white
 
      // Draw the first button
-     cp draw_x button_x1
-     cp draw_y button_y1
-     cpfa draw_image images num0
+//     cp draw_x button_x1
+//     cp draw_y button_y1
+//     cpfa draw_image images num0
 
-     call function_draw_button function_draw_button_ra
-     call function_draw_image  function_draw_image_ra
+//     call function_draw_button function_draw_button_ra
+//     call function_draw_image  function_draw_image_ra
 
      // Draw the second button.
-     cp draw_x button_x2
+//     cp draw_x button_x2
 
-     call function_draw_button function_draw_button_ra
+//     call function_draw_button function_draw_button_ra
 
      // Draw the third button.
-     cp draw_y button_y2
+//     cp draw_y button_y2
 
-     call function_draw_button function_draw_button_ra
+//     call function_draw_button function_draw_button_ra
 
      // Draw the fourth button.
-     cp draw_x button_x1
+//     cp draw_x button_x1
 
-     call function_draw_button function_draw_button_ra
+//     call function_draw_button function_draw_button_ra
+
+     cp     addr_high_count     num0
+     call   function_sd_draw    function_sd_draw_ra
 
      // Set the initial position of the pointer.
      cp pointer_x pointer_left
