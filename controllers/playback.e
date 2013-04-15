@@ -3,6 +3,7 @@ function_playback       mult    playback_resY               resY                
                         add     temp_addr_high_count        addr_high_count         num20 
                         cp      addr_low_count              num0             
 
+                        call    fucntion_erase_buttons      function_erase_buttons_ra
                         call    function_draw_play_buttons  function_draw_play_buttons_ra
                         
 function_playback_start be      playback_row_loop           true                    true 
