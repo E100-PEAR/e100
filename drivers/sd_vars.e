@@ -1,6 +1,6 @@
 //variables used by the sd drivers
 
-sd_addr_max             .data   16383
+sd_addr_max             .data   32768
 function_sd_write_ra    .data   0
 function_sd_read_ra     .data   0
 sd_response             .data   0
