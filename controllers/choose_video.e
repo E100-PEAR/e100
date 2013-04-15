@@ -182,3 +182,4 @@ function_show_video_menu_pointer_ra  .data 0
 function_move_video_pointer_up_ra    .data 0
 function_move_video_pointer_down_ra  .data 0
 function_select_video_ra             .data 0
+function_find_bkg_color_ra           .data 0
