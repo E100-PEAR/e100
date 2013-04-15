@@ -156,6 +156,24 @@ pointer_down_return
 
     ret function_move_video_pointer_down_ra
 
+//
+// Find the color of the current background
+// 
+function_find_bkg_color
+    
+    // Take color from point in bottom right corner of screen
+    cp      vga_read_x_count     num590
+    cp      vga_read_y_count     num465
+    
+    call    function_vga_read    function_vga_read_ra
+    
+    cp      bkg_color            vga_read_data
+    
+    ret     function_find_bkg_color_ra
+//
+//
+//
+
 function_playback_menu_ra            .data 0
 function_comparison_menu_ra          .data 0
 function_frame_menu_ra               .data 0
