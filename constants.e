@@ -1,6 +1,6 @@
 // Screen constants
 screen_width  .data 639
-screen_height .data 1000
+screen_height .data 479
 
 // Numbers
 neg1 .data -1
