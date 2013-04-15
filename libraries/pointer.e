@@ -44,9 +44,12 @@ function_add_pointer call function_prepare_pointer function_prepare_pointer_ra
 // pointer_new_y: the y-coordinate that the pointer will be moved to.
 //
 function_move_pointer call function_prepare_pointer function_prepare_pointer_ra
-                      cp vga_color color_light_purple
 
-                      // Draw the black rectangle over the previous pointer.
+
+                      call function_find_bkg_color  function_find_bkg_color_ra
+                      cp vga_color bkg_color
+
+                      // Draw rectangle over old pointer
                       call function_vga_write function_vga_write_ra
 
                       // Set the new pointer's coordinates.

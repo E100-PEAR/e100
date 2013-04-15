@@ -57,7 +57,7 @@ comp_recorded_video_2       cp      addr_high_count_2               num140
     ret function_comparison_menu_ra
 
 //
-// Select the video to do frame by fram analysis on.
+// Select the video to do frame by frame analysis on.
 //
 function_frame_menu
 
@@ -97,21 +97,7 @@ function_show_video_menu_pointer
     call function_add_pointer function_add_pointer_ra
 
     ret function_show_video_menu_pointer_ra
-//
-// Find the color of the current background
-// 
-function_find_bkg_color
     
-    // Take color from point in bottom right corner of screen
-    cp      vga_read_x_count     num590
-    cp      vga_read_y_count     num465
-    
-    call    function_vga_read    function_vga_read_ra
-    
-    cp      bkg_color            vga_read_data
-    
-    ret     function_find_bkg_color_ra
-
 //
 // Handle the keyboard's input to move around the pointer.
 //
@@ -180,6 +166,24 @@ function_move_video_pointer_down
 pointer_down_return
 
     ret function_move_video_pointer_down_ra
+    
+//
+// Find the color of the current background
+// 
+function_find_bkg_color
+    
+    // Take color from point in bottom right corner of screen
+    cp      vga_read_x_count     num590
+    cp      vga_read_y_count     num465
+    
+    call    function_vga_read    function_vga_read_ra
+    
+    cp      bkg_color            vga_read_data
+    
+    ret     function_find_bkg_color_ra
+//
+//
+//
 
 function_playback_menu_ra            .data 0
 function_comparison_menu_ra          .data 0
