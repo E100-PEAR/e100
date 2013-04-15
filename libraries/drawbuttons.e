@@ -53,5 +53,17 @@ function_draw_play_buttons     cp      play_color      color_green
 
 function_draw_play_buttons_ra  .data 0
 
-// note to self, dont forget to add num540, num590, num410, num460, num465, color_yellow, num480, num495 and 
-// color_red to constants.e
+/////////////////////////////////////////////////////////////////
+//function_erase_buttons erase the record/playback buttons
+// and replaces them with black
+
+function_erase_buttons  cp   vga_x1  num400
+                        cp   vga_x2  screen_width
+                        cp   vga_y1  num350
+                        cp   vga_y2  screen_height
+                        cp   vga_color color_black
+                        call function_vga_write function_vga_write_ra
+                        ret  function_erase_buttons_ra
+
+function_erase_buttons_ra .data 0
+
