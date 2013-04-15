@@ -91,6 +91,20 @@ function_show_video_menu_pointer
     call function_add_pointer function_add_pointer_ra
 
     ret function_show_video_menu_pointer_ra
+//
+// Find the color of the current background
+// 
+function_find_bkg_color
+    
+    // Take color from point in bottom right corner of screen
+    cp      vga_read_x_count     num590
+    cp      vga_read_y_count     num465
+    
+    call    function_vga_read    function_vga_read_ra
+    
+    cp      bkg_color            vga_read_data
+    
+    ret     function_find_bkg_color_ra
 
 //
 // Handle the keyboard's input to move around the pointer.
@@ -169,3 +183,4 @@ function_show_video_menu_pointer_ra  .data 0
 function_move_video_pointer_up_ra    .data 0
 function_move_video_pointer_down_ra  .data 0
 function_select_video_ra             .data 0
+function_find_bkg_color_ra           .data 0

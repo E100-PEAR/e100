@@ -38,6 +38,7 @@ drawmenu_bkg_color  .data   219       // background color
 menu_button_color   .data   183       // button color
 
 menu_bkg_color  .data   0
+bkg_color       .data   0   
 but1x1          .data   99  // x1 of first button
 but1y1          .data   169 // y1 of first button
 buttonwidth     .data   200 // width of each button
