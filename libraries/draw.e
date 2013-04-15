@@ -134,7 +134,7 @@ sd_draw_reset_vga_write_x_count add     vga_write_y_count           vga_write_y_
                         cp      vga_write_x_count           num0
                         be      sd_draw_row_loop            true                    true 
                 
-sd_draw_reset_vga_write_y_count cp      vga_write_y_count           num0
+end_sd_draw             cp      vga_write_y_count           num0
                         cp      vga_write_x_count           num0
                         ret     function_sd_draw_ra
 
