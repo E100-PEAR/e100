@@ -1,8 +1,10 @@
 Pressing escape from analysis takes us to the Main menu.
 It would be nice if it took us back to the analysis menu instead.
 
-Figure out bug that causes Tiger to move left and our images to
-slant a little bit.
+Figure out bug that causes Tiger to move left.
+
+Pointer isn't very well positioned for analysis and comparison
+menus.  Fix it.
 
 It would be nice if there was a replay button in playback and frame-
 by-frame. Even less important, it would be cool if we could rewind.
