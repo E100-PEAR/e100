@@ -28,6 +28,7 @@ num19 .data 19
 num20 .data 20
 num25 .data 25
 num28 .data 28
+num30 .data 30
 num37 .data 37
 num40 .data 40
 num50 .data 50
@@ -46,9 +47,11 @@ num200 .data 200
 num255 .data 255
 num256 .data 256
 num350 .data 350
+num390 .data 390
 num400 .data 400
 num410 .data 410
 num435 .data 435
+num440 .data 440
 num450 .data 450
 num460 .data 460
 num465 .data 465
