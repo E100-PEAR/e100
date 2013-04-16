@@ -55,7 +55,6 @@ function_comparison_menu    cp      addr_high_count                     comparis
                             be      comp_recorded_video_2               selected_video          num4
 
 comp_profession_video_1     cp      addr_high_count_2                   TigerFront_start_high
-
                             cp      addr_low_count_2		            TigerFront_start_low
                             be      function_comparison                 true                    true
 

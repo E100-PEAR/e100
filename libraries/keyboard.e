@@ -52,24 +52,21 @@ where_to_go             cp      vga_write_x_count           num0
                         be      function_playback           play_or_compare     num1
                         be      function_analysis_start     play_or_compare     num2
                         cp      comparison_counter          num0
-                        cp      addr_high_count             current_sd_addr_high
-                        cp      temp_addr_high_count        addr_high_count
-                        sub     addr_high_count             addr_high_count     num20
-                        cp      addr_high_count_2           num140
-                        cp      addr_low_count              num0
-                        cp      addr_low_count_2            num0
-
                         be      function_comparison_start   play_or_compare     num0
                         be      goto_menu                   true                true
 
 addr_high_55            cp      addr_high_count             TigerFront_start_high
                         cp      addr_low_count              TigerFront_start_low
+                        cp      addr_high_count_2           TigerFront_start_high
+                        cp      addr_low_count_2            TigerFront_start_low
                         cp      temp_addr_high_count        num67
                         cp      temp_addr_low_count         num0
                         be      where_to_go                 true                true
 
 addr_high_90            cp      addr_high_count             TigerBehind_start_high
                         cp      addr_low_count              TigerBehind_start_low
+                        cp      addr_high_count_2           TigerBehind_start_high
+                        cp      addr_low_count_2            TigerBehind_start_low
                         cp      temp_addr_high_count        num100
                         cp      temp_addr_low_count         num0
                         be      where_to_go                 true                true
