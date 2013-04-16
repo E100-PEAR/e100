@@ -96,8 +96,8 @@ function_show_video_menu_pointer
 
     cp selected_video num1
 
-    cp pointer_x num10
-    cp pointer_y num10
+    cp pointer_x num4
+    cp pointer_y num175
 
     call function_add_pointer function_add_pointer_ra
 
@@ -144,8 +144,8 @@ function_move_video_pointer_up
     // Stop if the selected video is already at the top video.
     be pointer_up_return selected_video num1
 
-    // Move the pointer up 10 pixels and update the selected video ID.
-    sub pointer_new_y pointer_y num10 
+    // Move the pointer up 80 pixels and update the selected video ID.
+    sub pointer_new_y pointer_y num80 
     sub selected_video selected_video num1
 
     call function_move_pointer function_move_pointer_ra
@@ -162,8 +162,8 @@ function_move_video_pointer_down
     // Stop if the selected video is already at the bottom video.
     be pointer_down_return selected_video num4
 
-    // Move the pointer down 10 pixels and update the selected video ID.
-    add pointer_new_y pointer_y num10
+    // Move the pointer down 80 pixels and update the selected video ID.
+    add pointer_new_y pointer_y num80
     add selected_video selected_video num1
 
     call function_move_pointer function_move_pointer_ra

@@ -28,6 +28,7 @@ menu //call function_draw_background function_draw_background_ra
 //     call function_draw_button function_draw_button_ra
 
      cp     addr_high_count     num0
+     cp     addr_low_count      num0
      call   function_sd_draw    function_sd_draw_ra
 
      // Set the initial position of the pointer.
