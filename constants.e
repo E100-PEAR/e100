@@ -34,6 +34,7 @@ num50 .data 50
 num60 .data 60
 num74 .data 74
 num80 .data 80
+num90 .data 90
 num100 .data 100
 num118 .data 118
 num120 .data 120

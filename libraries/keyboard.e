@@ -39,12 +39,10 @@ call_stop_read          call    function_keyboard           function_keyboard_ra
                         ret     function_keyboard_key_press_ra
 
 instant_playback        cp      addr_low_count              num0
-                        be      addr_high_80                addr_high_count     num100
-                        be      addr_high_100               addr_high_count     num120
                         be      addr_high_120               addr_high_count     num140
                         be      addr_high_140               addr_high_count     num160
-                        blt     addr_high_80                addr_high_count     num100
-                        blt     addr_high_100               addr_high_count     num120
+                        blt     addr_high_55                addr_high_count     num90
+                        blt     addr_high_90                addr_high_count     num120
                         blt     addr_high_120               addr_high_count     num140
                         blt     addr_high_140               addr_high_count     num160
 
@@ -65,10 +63,12 @@ where_to_go             cp      addr_low_count              num0
                         be      function_analysis_start     play_or_compare     num2
                         be      goto_menu                   true                true
 
-addr_high_80            cp      addr_high_count             num80
+addr_high_55            cp      addr_high_count             TigerFront_start_high
+                        cp      addr_low_count              TigerFront_start_low
                         be      where_to_go                 true                true
 
-addr_high_100           cp      addr_high_count             num100
+addr_high_90            cp      addr_high_count             num90
+                        cp      addr_low_count              TigerBehind_start_low
                         be      where_to_go                 true                true
 
 addr_high_120           cp      addr_high_count             num120
@@ -77,7 +77,7 @@ addr_high_120           cp      addr_high_count             num120
                         be      where_to_go                 true                true
 
 addr_high_140           cp      addr_high_count             num140
-                        cp      temp_addr_high_count        num140
+                        cp      temp_addr_high_count        num160
                         cp      temp_addr_low_count         num0
                         be      where_to_go                 true                true
 
