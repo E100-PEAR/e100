@@ -39,6 +39,7 @@ call_stop_read          call    function_keyboard           function_keyboard_ra
                         ret     function_keyboard_key_press_ra
 
 instant_playback        cp      addr_low_count              num0
+                        cp      addr_low_count_2            num0
                         be      comp_instant_playback       play_or_compare     num0
                         be      addr_high_120               addr_high_count     num140
                         be      addr_high_140               addr_high_count     num160
