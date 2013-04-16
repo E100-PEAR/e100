@@ -1,5 +1,14 @@
-The words that will be written onto the buttons in the writeMenu file
-are being loaded as image files.  Each file is too big to be stored in
-FPGA memory, so they will need to be read from the SD card.
+Pressing escape from analysis takes us to the Main menu.
+It would be nice if it took us back to the analysis menu instead.
 
-Rename variables in the drawmenu.e and writeMenu.e files
+Figure out bug that causes Tiger to move left and our images to
+slant a little bit.
+
+It would be nice if there was a replay button in playback and frame-
+by-frame. Even less important, it would be cool if we could rewind.
+
+Need to draw buttons on frame by frame screen.  Should only be one button
+because there is no play or pause, just next frame.
+
+Frame-by-frame would be better if it didn't change frames on button release
+as well as button press
