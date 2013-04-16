@@ -26,12 +26,7 @@ set_pixel_data          cp      vga_x1                      vga_write_x_count
                         cp      vga_y2                      vga_write_y_count
                         sub     vga_write_y_count           vga_write_y_count       num2
                         cp      vga_color                   sd_read_data
-
                         
-                        
-                        call    function_vga_write          function_vga_write_ra
-                        call    function_vga_write          function_vga_write_ra
-                        call    function_vga_write          function_vga_write_ra
                         call    function_vga_write          function_vga_write_ra
                          
                         add     addr_low_count              addr_low_count          num1         
@@ -66,7 +61,16 @@ reset_vga_write_x_count add     vga_write_y_count           vga_write_y_count   
                         cp      vga_write_x_count           num0
                         be      playback_row_loop           true                    true 
                 
-reset_vga_write_y_count cp      vga_write_y_count           num0
+reset_vga_write_y_count call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        cp      vga_write_y_count           num0
                         cp      vga_write_x_count           num0
                         cp      play_or_compare             num1
                         call    function_keyboard_playback  function_keyboard_key_press_ra
