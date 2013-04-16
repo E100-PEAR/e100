@@ -4,8 +4,8 @@ function_comparison
 		                    mult    comparison_resY            resY                    num3
                             mult    comparison_resX            resX                    num3
                             cp      addr_high_count            current_sd_addr_high
-                            cp      temp_addr_high             addr_high_count
-                            cp      temp_addr_low              num0
+                            cp      temp_addr_high_count       addr_high_count
+                            cp      temp_addr_low_count        num0
                             sub     addr_high_count            addr_high_count         num20
                             cp      addr_low_count             num0
 
