@@ -128,6 +128,7 @@ save_addr_high_160      cp      sd_write_data               num256
                         call    function_sd_write           function_sd_write_ra
                         cp      addr_low_count              num0
                         cp      current_sd_addr_high        num140
+                        cp      last_video_recorded         num2
                         be      goto_menu                   true                true
 
 goto_menu               cp      addr_high_count             current_sd_addr_high

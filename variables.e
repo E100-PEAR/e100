@@ -11,6 +11,8 @@ current_sd_addr_high    .data   120
 
 time_to_stop            .data   0
 
+last_video_recorded     .data   1
+
 vga_write_x_count   .data   0
 vga_write_x_count_2 .data   0
 
