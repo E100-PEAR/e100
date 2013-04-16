@@ -4,6 +4,10 @@
 function_playback_menu      cp      addr_high_count                     playback_start_high
                             cp	    addr_low_count                      playback_start_low
                             call    function_sd_draw                    function_sd_draw_ra
+
+                            cp      selected_video                      num1
+                            cp      video_pointer                       num0
+
                             call    function_show_video_menu_pointer    function_show_video_menu_pointer_ra
                             call    function_video_menu_handle_input    function_video_menu_handle_input_ra
 
@@ -13,7 +17,7 @@ function_playback_menu      cp      addr_high_count                     playback
                             be      play_recorded_video_2               selected_video          num4
 
 play_profession_video_1     cp      addr_high_count                     TigerFront_start_high
-	                         cp      addr_low_count		                  TigerFront_start_low
+	                        cp      addr_low_count		                  TigerFront_start_low
                             cp      temp_addr_high_count                num67
                             cp      temp_addr_low_count                 num0
                             cp      user_or_tiger_video                 num1
@@ -48,6 +52,10 @@ play_recorded_video_2       cp      addr_high_count                     num140
 function_comparison_menu    cp      addr_high_count                     comparison_start_high
                             cp      addr_low_count                      comparison_start_low
                             call    function_sd_draw                    function_sd_draw_ra
+
+                            cp      selected_video                      num1
+                            cp      video_pointer                       num1
+
                             call    function_show_video_menu_pointer    function_show_video_menu_pointer_ra 
                             call    function_video_menu_handle_input    function_video_menu_handle_input_ra
 
@@ -94,6 +102,10 @@ comp_recorded_video_2       cp      addr_high_count_2                   num140
 function_frame_menu         cp      addr_high_count                     framebyframe_start_high
                             cp      addr_low_count                      framebyframe_start_low
                             call    function_sd_draw                    function_sd_draw_ra
+                        
+                            cp      selected_video                      num1 
+                            cp      video_pointer                       num2
+
                             call    function_show_video_menu_pointer    function_show_video_menu_pointer_ra 
                             call    function_video_menu_handle_input    function_video_menu_handle_input_ra
 
@@ -138,8 +150,10 @@ function_show_video_menu_pointer
 
     cp selected_video num1
 
-    cp pointer_x num4
-    cp pointer_y num175
+    call function_set_pointer_coordinates function_set_pointer_coordinates_ra
+
+    cp pointer_x pointer_new_x
+    cp pointer_y pointer_new_y
 
     call function_add_pointer function_add_pointer_ra
 
@@ -185,12 +199,12 @@ function_move_video_pointer_up
 
     // Stop if the selected video is already at the top video.
     be pointer_up_return selected_video num1
-
-    // Move the pointer up 80 pixels and update the selected video ID.
-    sub pointer_new_y pointer_y num80
-    cp  pointer_new_x pointer_x
+    
+    // Internally select the previous video.
     sub selected_video selected_video num1
 
+    // Set the pointer's new coordinates and then move it.
+    call function_set_pointer_coordinates function_set_pointer_coordinates_ra
     call function_move_pointer function_move_pointer_ra
 
 pointer_up_return
@@ -205,11 +219,11 @@ function_move_video_pointer_down
     // Stop if the selected video is already at the bottom video.
     be pointer_down_return selected_video num4
 
-    // Move the pointer down 80 pixels and update the selected video ID.
-    add pointer_new_y pointer_y num80
-    cp  pointer_new_x pointer_x
+    // Internally select the next video.
     add selected_video selected_video num1
 
+    // Set the pointer's new coordinates and then move it.
+    call function_set_pointer_coordinates function_set_pointer_coordinates_ra
     call function_move_pointer function_move_pointer_ra
 
 pointer_down_return
@@ -230,9 +244,89 @@ function_find_bkg_color
     cp      bkg_color            vga_read_data
     
     ret     function_find_bkg_color_ra
+
 //
+// Each of the different x and y coordinate positions are
+// stored below in the array video_pointer_positions.
+// 
+// The pointer offset is calculated by:
 //
+//    x = (8*video_pointer) + (selected_video-1) * 2
+//    y = x + 1
 //
+function_set_pointer_coordinates
+
+    sub video_pointer_a selected_video num1              // selected_video - 1
+    mult video_pointer_a video_pointer_a num2            // (selected_video-1) * 2
+
+    mult video_pointer_b num8 video_pointer              // (8*video_pointer)
+    
+    add pointer_offset video_pointer_a video_pointer_b   // (8*video_pointer) + (selected_video-1) * 2
+
+    // Save the new x coordinate.
+    cpfa pointer_new_x video_pointer_positions pointer_offset
+
+    add pointer_offset pointer_offset num1
+
+    // Save the new y coordinate.
+    cpfa pointer_new_y video_pointer_positions pointer_offset
+
+    ret function_set_pointer_coordinates_ra
+
+// The current video pointer.
+//
+//    0  - Playback menu
+//    1  - Comparison menu
+//    2  - Analysis menu
+//
+video_pointer .data 0
+
+// Variables used to calculate the position of the
+// next pointer.
+video_pointer_a .data 0
+video_pointer_b .data 0
+pointer_offset  .data 0
+
+video_pointer_positions
+
+// Playback menu pointers
+    .data 4
+    .data 175
+
+    .data 4
+    .data 255
+
+    .data 4
+    .data 335
+
+    .data 4
+    .data 415
+
+// Comparison menu pointers
+    .data 20
+    .data 165
+
+    .data 20
+    .data 250
+
+    .data 20
+    .data 333
+
+    .data 20
+    .data 415
+
+// Analysis menu pointers
+    .data 20
+    .data 160
+
+    .data 20
+    .data 246
+
+    .data 20
+    .data 330
+
+    .data 20
+    .data 415
 
 function_playback_menu_ra            .data 0
 function_comparison_menu_ra          .data 0
@@ -243,3 +337,4 @@ function_move_video_pointer_up_ra    .data 0
 function_move_video_pointer_down_ra  .data 0
 function_select_video_ra             .data 0
 function_find_bkg_color_ra           .data 0
+function_set_pointer_coordinates_ra  .data 0
