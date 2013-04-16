@@ -1,8 +1,7 @@
 function_playback       call    function_clear_screen       function_clear_screen_ra
 			mult    playback_resY               resY                    num3
                         mult    playback_resX               resX                    num3  
-                        add     temp_addr_high_count        addr_high_count         num20 
-                        //cp      addr_low_count              num0             
+                        add     temp_addr_high_count        addr_high_count         num20           
 
                         call    function_erase_buttons      function_erase_buttons_ra
                         call    function_draw_play_buttons  function_draw_play_buttons_ra

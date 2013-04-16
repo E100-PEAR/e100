@@ -9,24 +9,26 @@ function_playback_menu
      call function_show_video_menu_pointer function_show_video_menu_pointer_ra
      call function_video_menu_handle_input function_video_menu_handle_input_ra
 
-                            be      play_profession_video_1         selected_video  num1
-                            be      play_profession_video_2         selected_video  num2
-                            be      play_recorded_video_1           selected_video  num3
-                            be      play_recorded_video_2           selected_video  num4
+                            be      play_profession_video_1         selected_video          num1
+                            be      play_profession_video_2         selected_video          num2
+                            be      play_recorded_video_1           selected_video          num3
+                            be      play_recorded_video_2           selected_video          num4
 
 play_profession_video_1     cp      addr_high_count                 TigerFront_start_high
-			    cp      addr_low_count		    TigerFront_start_low
-                            be      function_playback               true            true
+			                cp      addr_low_count		            TigerFront_start_low
+                            be      function_playback               true                    true
 
 play_profession_video_2     cp      addr_high_count                 TigerBehind_start_high
-			    cp      addr_low_count		    TigerBehind_start_low
-                            be      function_playback               true            true
+                            cp      addr_low_count		            TigerBehind_start_low
+                            be      function_playback               true                    true
 
 play_recorded_video_1       cp      addr_high_count                 num120
-                            be      function_playback               true            true
+                            cp      addr_low_count                  num0    
+                            be      function_playback               true                    true
 
 play_recorded_video_2       cp      addr_high_count                 num140
-                            be      function_playback               true            true
+                            cp      addr_low_count                  num0    
+                            be      function_playback               true                    true
 
                             ret     function_playback_menu_ra
 
