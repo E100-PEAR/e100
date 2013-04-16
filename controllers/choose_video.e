@@ -21,11 +21,15 @@ play_profession_video_2     cp      addr_high_count                     TigerBeh
                             be      function_playback                   true                    true
 
 play_recorded_video_1       cp      addr_high_count                     num120
-                            cp      addr_low_count                      num0    
+                            cp      addr_low_count                      num0
+                            cp      temp_addr_high_count                num140
+                            cp      temp_addr_low_count                 num0    
                             be      function_playback                   true                    true
 
 play_recorded_video_2       cp      addr_high_count                     num140
-                            cp      addr_low_count                      num0    
+                            cp      addr_low_count                      num0 
+                            cp      temp_addr_high_count                num160
+                            cp      temp_addr_low_count                 num0    
                             be      function_playback                   true                    true
 
                             ret     function_playback_menu_ra

@@ -1,9 +1,6 @@
 function_analysis           call    function_clear_screen       function_clear_screen_ra
-			    mult    analysis_resY               resY                    num3
+			                mult    analysis_resY               resY                    num3
                             mult    analysis_resX               resX                    num3
-
-
-                            add     temp_addr_high_count        addr_high_count         num20
 
 function_analysis_start     be      analysis_row_loop           true                    true 
 
