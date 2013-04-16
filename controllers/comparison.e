@@ -6,11 +6,11 @@ function_comparison
                             be      high_addr_compare          last_video_recorded     num2
                             cp      addr_high_count            current_sd_addr_high
                             cp      temp_addr_high_count       addr_high_count
+                            sub     addr_high_count            addr_high_count         num20
                             be      skip_to_low                last_video_recorded     num1
 high_addr_compare           cp      addr_high_count            num140
                             cp      temp_addr_high_count       num160                 
 skip_to_low                 cp      temp_addr_low_count        num0
-                            sub     addr_high_count            addr_high_count         num20
                             cp      addr_low_count             num0
 
                             call    function_erase_buttons     function_erase_buttons_ra
