@@ -16,6 +16,8 @@ get_pixel_color         cp      sd_addr_low                 addr_low_count
                         cp      play_or_compare             num1
                         be      external_stop_video         sd_read_data            num256 
 
+play_not_finished       be      check_finish                temp_addr_low_count     addr_low_count  
+
 set_pixel_data          cp      vga_x1                      vga_write_x_count
                         cp      vga_y1                      vga_write_y_count
                         add     vga_write_y_count           vga_write_y_count       num2
@@ -29,9 +31,7 @@ set_pixel_data          cp      vga_x1                      vga_write_x_count
                         call    function_vga_write          function_vga_write_ra
                         call    function_vga_write          function_vga_write_ra
                         call    function_vga_write          function_vga_write_ra
-
-play_not_finished       be      check_finish                temp_addr_low_count     addr_low_count                           
-                        
+                         
                         add     addr_low_count              addr_low_count          num1         
                         add     vga_write_x_count           vga_write_x_count       num1
 
