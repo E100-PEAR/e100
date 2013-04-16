@@ -3,7 +3,8 @@
 //
 function_playback_menu
         
-     cp     addr_high_count     num20
+     cp     addr_high_count     num28
+     cp	    addr_low_count      num4096
      call   function_sd_draw    function_sd_draw_ra
      call function_show_video_menu_pointer function_show_video_menu_pointer_ra
      call function_video_menu_handle_input function_video_menu_handle_input_ra
@@ -13,10 +14,12 @@ function_playback_menu
                             be      play_recorded_video_1           selected_video  num3
                             be      play_recorded_video_2           selected_video  num4
 
-play_profession_video_1     cp      addr_high_count                 num80
+play_profession_video_1     cp      addr_high_count                 num37
+			    cp      addr_low_count		    num16384
                             be      function_playback               true            true
 
-play_profession_video_2     cp      addr_high_count                 num100
+play_profession_video_2     cp      addr_high_count                 num74
+			    cp      addr_low_count		    num3968
                             be      function_playback               true            true
 
 play_recorded_video_1       cp      addr_high_count                 num120
@@ -32,7 +35,8 @@ play_recorded_video_2       cp      addr_high_count                 num140
 //
 function_comparison_menu
 
-    cp     addr_high_count     num40
+    cp     addr_high_count     num9
+    cp     addr_low_count      num12288
     call   function_sd_draw    function_sd_draw_ra
     call function_show_video_menu_pointer function_show_video_menu_pointer_ra 
     call function_video_menu_handle_input function_video_menu_handle_input_ra
@@ -61,7 +65,8 @@ comp_recorded_video_2       cp      addr_high_count_2               num140
 //
 function_frame_menu
 
-     cp     addr_high_count     num60
+     cp     addr_high_count     num18
+     cp     addr_low_count      num24576
      call   function_sd_draw    function_sd_draw_ra
      call function_show_video_menu_pointer function_show_video_menu_pointer_ra 
      call function_video_menu_handle_input function_video_menu_handle_input_ra
