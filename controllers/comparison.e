@@ -66,7 +66,7 @@ comp_get_pixel_color_2      cp      sd_addr_low                addr_low_count_2
                             cp      play_or_compare            num0
                             be      external_stop_video        sd_read_data            num256
 
-                            be      check_finish               temp_addr_low_count_2   addr_low_count_2
+                            be      comp_check_finish               temp_addr_low_count_2   addr_low_count_2
 
 comp_set_pixel_data_2       cp      vga_x1                     vga_write_x_count_2
                             cp      vga_y1                     vga_write_y_count
@@ -109,6 +109,6 @@ reset_vga_write_y_count_2   cp      vga_write_y_count           num0
 finish_comparison       cp      time_to_stop                num1
                         be      comp_pixel_continue         true                    true
 
-check_finish            bne     comp_set_pixel_data_2       time_to_stop            num1
+comp_check_finish            bne     comp_set_pixel_data_2       time_to_stop            num1
                         cp      time_to_stop                num0
                         be      external_stop_video         true                    true
