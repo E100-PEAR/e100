@@ -70,6 +70,70 @@ reset_vga_write_y_count call    function_vga_write          function_vga_write_r
                         call    function_vga_write          function_vga_write_ra
                         call    function_vga_write          function_vga_write_ra
                         call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
+                        call    function_vga_write          function_vga_write_ra
                         cp      vga_write_y_count           num0
                         cp      vga_write_x_count           num0
                         cp      play_or_compare             num1
