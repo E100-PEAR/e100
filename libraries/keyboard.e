@@ -72,6 +72,7 @@ addr_high_55            cp      addr_high_count             TigerFront_start_hig
                         cp      temp_addr_low_count         num0
                         cp      temp_addr_high_count_2      num67
                         cp      temp_addr_low_count_2       num0
+                        cp      user_or_tiger_video         num1
                         be      where_to_go                 true                true
 
 addr_high_90            cp      addr_high_count             TigerBehind_start_high
@@ -82,6 +83,7 @@ addr_high_90            cp      addr_high_count             TigerBehind_start_hi
                         cp      temp_addr_low_count         num0
                         cp      temp_addr_high_count_2      num100
                         cp      temp_addr_low_count_2       num0
+                        cp      user_or_tiger_video         num1
                         be      where_to_go                 true                true
 
 addr_high_120           cp      addr_high_count             num120
@@ -90,6 +92,7 @@ addr_high_120           cp      addr_high_count             num120
                         cp      temp_addr_low_count         num0
                         cp      temp_addr_high_count_2      num140
                         cp      temp_addr_low_count_2       num0
+                        cp      user_or_tiger_video         num0
                         be      where_to_go                 true                true
 
 addr_high_140           cp      addr_high_count             num140
@@ -98,6 +101,7 @@ addr_high_140           cp      addr_high_count             num140
                         cp      temp_addr_low_count         num0
                         cp      temp_addr_high_count_2      num160
                         cp      temp_addr_low_count_2       num0
+                        cp      user_or_tiger_video         num0
                         be      where_to_go                 true                true
 
 save_video              be      goto_menu                   addr_high_count     num100
