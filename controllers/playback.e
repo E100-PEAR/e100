@@ -28,12 +28,12 @@ set_pixel_data          cp      vga_x1                      vga_write_x_count
                         call    function_vga_write          function_vga_write_ra
                         call    function_vga_write          function_vga_write_ra
                         call    function_vga_write          function_vga_write_ra
-                        call    function_vga_write          function_vga_write_ra                           
+                        call    function_vga_write          function_vga_write_ra
+
+play_not_finished       be      check_finish                temp_addr_low_count     addr_low_count                           
                         
                         add     addr_low_count              addr_low_count          num1         
                         add     vga_write_x_count           vga_write_x_count       num1
-
-play_not_finished       be      check_finish                temp_addr_low_count     addr_low_count
 
                         bne     playback_col_loop           addr_low_count          sd_addr_max
 
