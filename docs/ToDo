@@ -1,7 +1,6 @@
 Pressing escape from analysis takes us to the Main menu.
 It would be nice if it took us back to the analysis menu instead.
-
-Figure out bug that causes Tiger to move left.
+This is true for all functions.
 
 Pointer isn't very well positioned for analysis and comparison
 menus.  Fix it.
@@ -13,4 +12,5 @@ Need to draw buttons on frame by frame screen.  Should only be one button
 because there is no play or pause, just next frame.
 
 Frame-by-frame would be better if it didn't change frames on button release
-as well as button press
+as well as button press.  This may or may not happen on the actual board.
+Wait until testing before bothering to attempt a fix for this.
