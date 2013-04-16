@@ -1,7 +1,8 @@
-imageNames = dir(fullfile('TWoodsFrontFrames','*.jpeg'));
+imageNames = dir(fullfile('TWoodsBehindFrames','*.jpeg'));
 imageNames = {imageNames.name}';
-cd('TWoodsFrontFrames');
+cd('TWoodsBehindFrames');
+
 for i = 1:length(imageNames)
-    disp imageNames{i};
-    color100(imageNames{i});
+    img = imageNames{i};
+    color100(img);
 end
