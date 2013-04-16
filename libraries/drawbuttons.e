@@ -1,3 +1,4 @@
+///////////////////////////RECORD//////////////////////////////////////
 // function_draw_record_buttons draws the buttons for the record screen
 // draws a gray and red record button and a red stop button
 
@@ -25,7 +26,7 @@ function_draw_record_buttons		cp      circle_radius           num25
 
 function_draw_record_buttons_ra  .data  0
 
-///////////////////////////////////////////////////////////////////////////
+//////////////////////////////PLAY////////////////////////////////
 // function_draw_play_buttons draws the buttons for the playback screen
 // draws a green play button, and a yellow pause button
 
@@ -53,7 +54,7 @@ function_draw_play_buttons     cp      play_color      color_green
 
 function_draw_play_buttons_ra  .data 0
 
-/////////////////////////////////////////////////////////////////
+////////////////////////ERASE//////////////////////////////
 //function_erase_buttons erase the record/playback buttons
 // and replaces them with black
 
@@ -67,3 +68,26 @@ function_erase_buttons  cp   vga_x1  num400
 
 function_erase_buttons_ra .data 0
 
+///////////////////////NEXT FRAME//////////////////////////////
+// function_draw_nextframe_button draws the button for the frame-by-frame
+// screen which is a bar with a triangle next to it.
+
+function_draw_nextframe_button
+                        cp   vga_x1  num540
+                        cp   vga_x2  num555
+                        cp   vga_y1  num410
+                        cp   vga_y2  num460
+                        cp   vga_color   color_yellow
+                        
+                        call  function_vga_write function_vga_write_ra
+                        
+                        cp   play_initial_x   num565
+                        cp   play_initial_y   num410
+                        cp   play_height   num50 
+                        cp   play_color    color_yellow
+                        
+                        call  function_draw_play function_draw_play_ra
+                        
+                        ret   function_draw_nextframe_button_ra
+
+function_draw_nextframe_button_ra  .data  0

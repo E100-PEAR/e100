@@ -56,6 +56,8 @@ num480 .data 480
 num495 .data 495
 num520 .data 520
 num540 .data 540
+num555 .data 555
+num565 .data 565
 num590 .data 590
 num2176 .data 2176
 num3968 .data 3968
