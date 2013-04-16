@@ -75,15 +75,15 @@ function_erase_buttons_ra .data 0
 // screen which is a bar with a triangle next to it.
 
 function_draw_nextframe_button
-                        cp   vga_x1  num540
-                        cp   vga_x2  num555
+                        cp   vga_x1  num450
+                        cp   vga_x2  num465
                         cp   vga_y1  num410
                         cp   vga_y2  num460
                         cp   vga_color   color_yellow
                         
                         call  function_vga_write function_vga_write_ra
                         
-                        cp   play_initial_x   num565
+                        cp   play_initial_x   num475
                         cp   play_initial_y   num410
                         cp   play_height   num50 
                         cp   play_color    color_yellow
