@@ -2,19 +2,16 @@
 // Select a video to play.
 //
 function_playback_menu
+        
+     cp     addr_high_count     num20
+     call   function_sd_draw    function_sd_draw_ra
+     call function_show_video_menu_pointer function_show_video_menu_pointer_ra
+     call function_video_menu_handle_input function_video_menu_handle_input_ra
 
-    // call function_show_video_menu_pointer function_show_video_menu_pointer_ra
-    // call function_video_menu_handle_input function_video_menu_handle_input_ra
-
-                            cp  keyboard_wait   true
-
-call_keyboard_playback_menu call    function_keyboard   function_keyboard_ra
-
-                            be      play_profession_video_1         keyboard_value  chara
-                            be      play_profession_video_2         keyboard_value  chars
-                            be      play_recorded_video_1           keyboard_value  chard
-                            be      play_recorded_video_2           keyboard_value  charf
-                            be      call_keyboard_playback_menu     true            true
+                            be      play_profession_video_1         selected_video  num1
+                            be      play_profession_video_2         selected_video  num2
+                            be      play_recorded_video_1           selected_video  num3
+                            be      play_recorded_video_2           selected_video  num4
 
 play_profession_video_1     cp      addr_high_count                 num80
                             be      function_playback               true            true
@@ -35,30 +32,44 @@ play_recorded_video_2       cp      addr_high_count                 num140
 //
 function_comparison_menu
 
+    cp     addr_high_count     num40
+    call   function_sd_draw    function_sd_draw_ra
     call function_show_video_menu_pointer function_show_video_menu_pointer_ra 
     call function_video_menu_handle_input function_video_menu_handle_input_ra
 
-    be function_comparison true true
+                            be      comp_profession_video_1         selected_video  num1
+                            be      comp_profession_video_2         selected_video  num2
+                            be      comp_recorded_video_1           selected_video  num3
+                            be      comp_recorded_video_2           selected_video  num4
+
+comp_profession_video_1     cp      addr_high_count_2               num80
+                            be      function_comparison             true            true
+
+comp_profession_video_2     cp      addr_high_count_2               num100
+                            be      function_comparison             true            true
+
+comp_recorded_video_1       cp      addr_high_count_2               num120
+                            be      function_comparison             true            true
+
+comp_recorded_video_2       cp      addr_high_count_2               num140
+                            be      function_comparison             true            true
 
     ret function_comparison_menu_ra
 
 //
-// Select the video to do frame by fram analysis on.
+// Select the video to do frame by frame analysis on.
 //
 function_frame_menu
 
-    // call function_show_video_menu_pointer function_show_video_menu_pointer_ra 
-    // call function_video_menu_handle_input function_video_menu_handle_input_ra
+     cp     addr_high_count     num60
+     call   function_sd_draw    function_sd_draw_ra
+     call function_show_video_menu_pointer function_show_video_menu_pointer_ra 
+     call function_video_menu_handle_input function_video_menu_handle_input_ra
 
-
-
-call_keyboard_analysis_menu call    function_keyboard   function_keyboard_ra
-
-                            be      frame_profession_video_1        keyboard_value  chara
-                            be      frame_profession_video_2        keyboard_value  chars
-                            be      frame_recorded_video_1          keyboard_value  chard
-                            be      frame_recorded_video_2          keyboard_value  charf
-                            be      call_keyboard_analysis_menu     true            true
+                            be      frame_profession_video_1        selected_video  num1
+                            be      frame_profession_video_2        selected_video  num2
+                            be      frame_recorded_video_1          selected_video  num3
+                            be      frame_recorded_video_2          selected_video  num4
 
 frame_profession_video_1    cp      addr_high_count                 num80
                             be      function_analysis               true            true
@@ -86,7 +97,7 @@ function_show_video_menu_pointer
     call function_add_pointer function_add_pointer_ra
 
     ret function_show_video_menu_pointer_ra
-
+    
 //
 // Handle the keyboard's input to move around the pointer.
 //
@@ -155,7 +166,7 @@ function_move_video_pointer_down
 pointer_down_return
 
     ret function_move_video_pointer_down_ra
-
+    
 //
 // Find the color of the current background
 // 
