@@ -3,8 +3,8 @@
 //
 function_playback_menu
         
-     cp     addr_high_count     num28
-     cp	    addr_low_count      num4096
+     cp     addr_high_count     playback_start_high
+     cp	    addr_low_count      playback_start_low
      call   function_sd_draw    function_sd_draw_ra
      call function_show_video_menu_pointer function_show_video_menu_pointer_ra
      call function_video_menu_handle_input function_video_menu_handle_input_ra
@@ -14,12 +14,12 @@ function_playback_menu
                             be      play_recorded_video_1           selected_video  num3
                             be      play_recorded_video_2           selected_video  num4
 
-play_profession_video_1     cp      addr_high_count                 num37
-			    cp      addr_low_count		    num16384
+play_profession_video_1     cp      addr_high_count                 TigerFront_start_high
+			    cp      addr_low_count		    TigerFront_start_low
                             be      function_playback               true            true
 
-play_profession_video_2     cp      addr_high_count                 num74
-			    cp      addr_low_count		    num3968
+play_profession_video_2     cp      addr_high_count                 TigerBehind_start_high
+			    cp      addr_low_count		    TigerBehind_start_low
                             be      function_playback               true            true
 
 play_recorded_video_1       cp      addr_high_count                 num120
@@ -35,8 +35,8 @@ play_recorded_video_2       cp      addr_high_count                 num140
 //
 function_comparison_menu
 
-    cp     addr_high_count     num9
-    cp     addr_low_count      num12288
+    cp     addr_high_count     comparison_start_high
+    cp     addr_low_count      comparison_start_low
     call   function_sd_draw    function_sd_draw_ra
     call function_show_video_menu_pointer function_show_video_menu_pointer_ra 
     call function_video_menu_handle_input function_video_menu_handle_input_ra
@@ -46,12 +46,12 @@ function_comparison_menu
                             be      comp_recorded_video_1           selected_video  num3
                             be      comp_recorded_video_2           selected_video  num4
 
-comp_profession_video_1     cp      addr_high_count_2               num37
-			    cp      addr_low_count		    num16384
+comp_profession_video_1     cp      addr_high_count_2               TigerFront_start_high
+			    cp      addr_low_count		    TigerFront_start_low
                             be      function_comparison             true            true
 
-comp_profession_video_2     cp      addr_high_count_2               num74
-			    cp      addr_low_count		    num3968
+comp_profession_video_2     cp      addr_high_count_2               TigerBehind_start_high
+			    cp      addr_low_count		    TigerBehind_start_low
                             be      function_comparison             true            true
 
 comp_recorded_video_1       cp      addr_high_count_2               num120
@@ -67,8 +67,8 @@ comp_recorded_video_2       cp      addr_high_count_2               num140
 //
 function_frame_menu
 
-     cp     addr_high_count     num18
-     cp     addr_low_count      num24576
+     cp     addr_high_count     framebyframe_start_high
+     cp     addr_low_count      framebyframe_start_low
      call   function_sd_draw    function_sd_draw_ra
      call function_show_video_menu_pointer function_show_video_menu_pointer_ra 
      call function_video_menu_handle_input function_video_menu_handle_input_ra
@@ -78,12 +78,12 @@ function_frame_menu
                             be      frame_recorded_video_1          selected_video  num3
                             be      frame_recorded_video_2          selected_video  num4
 
-frame_profession_video_1    cp      addr_high_count                 num37
-			    cp      addr_low_count		    num16384
+frame_profession_video_1    cp      addr_high_count                 TigerFront_start_high
+			    cp      addr_low_count		    TigerFront_start_low
                             be      function_analysis               true            true
 
-frame_profession_video_2    cp      addr_high_count                 num74
-			    cp      addr_low_count		    num3968
+frame_profession_video_2    cp      addr_high_count                 TigerBehind_start_high
+			    cp      addr_low_count		    TigerBehind_start_low
                             be      function_analysis               true            true
 
 frame_recorded_video_1      cp      addr_high_count                 num120

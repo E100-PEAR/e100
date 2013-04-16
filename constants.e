@@ -119,3 +119,17 @@ false .data 0
 resX    .data   80
 resY    .data   60
 
+// start addr_highs
+comparison_start_high .data 9
+framebyframe_start_high .data 18
+playback_start_high .data 28
+TigerFront_start_high .data 37
+TigerBehind_start_high .data 74
+
+// start addr_lows
+comparison_start_low .data 12288
+framebyframe_start_low .data 24576
+playback_start_low .data 4096
+TigerFront_start_low .data 16384
+TigerBehind_start_low .data 3968
+
