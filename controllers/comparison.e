@@ -95,9 +95,9 @@ reset_addr_low_count_2      add     addr_high_count_2          addr_high_count_2
                             // skip extra code that only applies to tiger videos if we're watching a user video. 
                         
                             cp      vga_x1                      vga_write_x_count_2
-                            cp      vga_y1                      vga_write_y_count_2
+                            cp      vga_y1                      vga_write_y_count
                             cp      vga_x2                      vga_write_x_count_2
-                            cp      vga_y2                      vga_write_y_count_2
+                            cp      vga_y2                      vga_write_y_count
                             cp      vga_color                   sd_read_data
                         
                             call    function_vga_write          function_vga_write_ra                          
