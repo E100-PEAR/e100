@@ -1,103 +1,97 @@
 //
 // Select a video to play.
 //
-function_playback_menu
-        
-     cp     addr_high_count     playback_start_high
-     cp	    addr_low_count      playback_start_low
-     call   function_sd_draw    function_sd_draw_ra
-     call function_show_video_menu_pointer function_show_video_menu_pointer_ra
-     call function_video_menu_handle_input function_video_menu_handle_input_ra
+function_playback_menu      cp      addr_high_count                     playback_start_high
+                            cp	    addr_low_count                      playback_start_low
+                            call    function_sd_draw                    function_sd_draw_ra
+                            call    function_show_video_menu_pointer    function_show_video_menu_pointer_ra
+                            call    function_video_menu_handle_input    function_video_menu_handle_input_ra
 
-                            be      play_profession_video_1         selected_video          num1
-                            be      play_profession_video_2         selected_video          num2
-                            be      play_recorded_video_1           selected_video          num3
-                            be      play_recorded_video_2           selected_video          num4
+                            be      play_profession_video_1             selected_video          num1
+                            be      play_profession_video_2             selected_video          num2
+                            be      play_recorded_video_1               selected_video          num3
+                            be      play_recorded_video_2               selected_video          num4
 
-play_profession_video_1     cp      addr_high_count                 TigerFront_start_high
-			                cp      addr_low_count		            TigerFront_start_low
-                            be      function_playback               true                    true
+play_profession_video_1     cp      addr_high_count                     TigerFront_start_high
+	                        cp      addr_low_count		                TigerFront_start_low
+                            be      function_playback                   true                    true
 
-play_profession_video_2     cp      addr_high_count                 TigerBehind_start_high
-                            cp      addr_low_count		            TigerBehind_start_low
-                            be      function_playback               true                    true
+play_profession_video_2     cp      addr_high_count                     TigerBehind_start_high
+                            cp      addr_low_count		                TigerBehind_start_low
+                            be      function_playback                   true                    true
 
-play_recorded_video_1       cp      addr_high_count                 num120
-                            cp      addr_low_count                  num0    
-                            be      function_playback               true                    true
+play_recorded_video_1       cp      addr_high_count                     num120
+                            cp      addr_low_count                      num0    
+                            be      function_playback                   true                    true
 
-play_recorded_video_2       cp      addr_high_count                 num140
-                            cp      addr_low_count                  num0    
-                            be      function_playback               true                    true
+play_recorded_video_2       cp      addr_high_count                     num140
+                            cp      addr_low_count                      num0    
+                            be      function_playback                   true                    true
 
                             ret     function_playback_menu_ra
 
 //
 // Select the video to compare the latest recorded video to.
 //
-function_comparison_menu
+function_comparison_menu    cp      addr_high_count                     comparison_start_high
+                            cp      addr_low_count                      comparison_start_low
+                            call    function_sd_draw                    function_sd_draw_ra
+                            call    function_show_video_menu_pointer    function_show_video_menu_pointer_ra 
+                            call    function_video_menu_handle_input    function_video_menu_handle_input_ra
 
-    cp     addr_high_count     comparison_start_high
-    cp     addr_low_count      comparison_start_low
-    call   function_sd_draw    function_sd_draw_ra
-    call function_show_video_menu_pointer function_show_video_menu_pointer_ra 
-    call function_video_menu_handle_input function_video_menu_handle_input_ra
+                            cp      addr_low_count                      num0
 
-                            cp      addr_low_count                  num0
+                            be      comp_profession_video_1             selected_video          num1
+                            be      comp_profession_video_2             selected_video          num2
+                            be      comp_recorded_video_1               selected_video          num3
+                            be      comp_recorded_video_2               selected_video          num4
 
-                            be      comp_profession_video_1         selected_video  num1
-                            be      comp_profession_video_2         selected_video  num2
-                            be      comp_recorded_video_1           selected_video  num3
-                            be      comp_recorded_video_2           selected_video  num4
+comp_profession_video_1     cp      addr_high_count_2                   TigerFront_start_high
 
-comp_profession_video_1     cp      addr_high_count_2               TigerFront_start_high
+                            cp      addr_low_count_2		            TigerFront_start_low
+                            be      function_comparison                 true                    true
 
-                            cp      addr_low_count_2		        TigerFront_start_low
-                            be      function_comparison             true            true
+comp_profession_video_2     cp      addr_high_count_2                   TigerBehind_start_high
+                            cp      addr_low_count_2                    TigerBehind_start_low
+                            be      function_comparison                 true                    true
 
-comp_profession_video_2     cp      addr_high_count_2               TigerBehind_start_high
-                            cp      addr_low_count_2		        TigerBehind_start_low
-                            be      function_comparison             true            true
+comp_recorded_video_1       cp      addr_high_count_2                   num120
+                            cp      addr_low_count_2                    num0
+                            be      function_comparison                 true                    true
 
-comp_recorded_video_1       cp      addr_high_count_2               num120
-                            cp      addr_low_count_2                num0
-                            be      function_comparison             true            true
-
-comp_recorded_video_2       cp      addr_high_count_2               num140
-                            cp      addr_low_count_2                num0
-                            be      function_comparison             true            true
+comp_recorded_video_2       cp      addr_high_count_2                   num140
+                            cp      addr_low_count_2                    num0
+                            be      function_comparison                 true                    true
 
                             ret     function_comparison_menu_ra
 
 //
 // Select the video to do frame by frame analysis on.
 //
-function_frame_menu
+function_frame_menu         cp      addr_high_count                     framebyframe_start_high
+                            cp      addr_low_count                      framebyframe_start_low
+                            call    function_sd_draw                    function_sd_draw_ra
+                            call    function_show_video_menu_pointer    function_show_video_menu_pointer_ra 
+                            call    function_video_menu_handle_input    function_video_menu_handle_input_ra
 
-     cp     addr_high_count     framebyframe_start_high
-     cp     addr_low_count      framebyframe_start_low
-     call   function_sd_draw    function_sd_draw_ra
-     call function_show_video_menu_pointer function_show_video_menu_pointer_ra 
-     call function_video_menu_handle_input function_video_menu_handle_input_ra
+                            be      frame_profession_video_1            selected_video          num1
+                            be      frame_profession_video_2            selected_video          num2
+                            be      frame_recorded_video_1              selected_video          num3
+                            be      frame_recorded_video_2              selected_video          num4
 
-                            be      frame_profession_video_1        selected_video  num1
-                            be      frame_profession_video_2        selected_video  num2
-                            be      frame_recorded_video_1          selected_video  num3
-                            be      frame_recorded_video_2          selected_video  num4
+frame_profession_video_1    cp      addr_high_count                     TigerFront_start_high
+                            cp      addr_low_count		                TigerFront_start_low
+                            be      function_analysis                   true                    true
 
-frame_profession_video_1    cp      addr_high_count                 TigerFront_start_high
-			    cp      addr_low_count		    TigerFront_start_low
-                            be      function_analysis               true            true
+frame_profession_video_2    cp      addr_high_count                     TigerBehind_start_high
+                            cp      addr_low_count		                TigerBehind_start_low
+                            be      function_analysis                   true                    true
 
-frame_profession_video_2    cp      addr_high_count                 TigerBehind_start_high
-			    cp      addr_low_count		    TigerBehind_start_low
-                            be      function_analysis               true            true
+frame_recorded_video_1      cp      addr_high_count                     num120
+                            be      function_analysis                   true                    true
 
-frame_recorded_video_1      cp      addr_high_count                 num120
-                            be      function_analysis               true            true
-
-frame_recorded_video_2      cp      addr_high_count                 num140
-                            be      function_analysis               true            true
+frame_recorded_video_2      cp      addr_high_count                     num140
+                            be      function_analysis                   true                    true
 
                             ret     function_frame_menu_ra
 //
