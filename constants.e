@@ -123,13 +123,17 @@ resY    .data   60
 comparison_start_high .data 9
 framebyframe_start_high .data 18
 playback_start_high .data 28
-TigerFront_start_high .data 37
-TigerBehind_start_high .data 74
+TigerFront_start_high .data 55
+TigerBehind_start_high .data 90
 
 // start addr_lows
 comparison_start_low .data 12288
 framebyframe_start_low .data 24576
 playback_start_low .data 4096
-TigerFront_start_low .data 16384
-TigerBehind_start_low .data 3968
+TigerFront_start_low .data 16960
+TigerBehind_start_low .data 3033
 
+// TigerFront_start_high .data 37
+// TigerBehind_start_high .data 74
+// TigerFront_start_low .data 16384
+// TigerBehind_start_low .data 3968
