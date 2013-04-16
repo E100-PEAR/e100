@@ -58,7 +58,7 @@ finish_playback         cp      time_to_stop                num1
                         be      play_pixel_continue         true                    true
 
 check_finish            bne     play_not_finished           time_to_stop            num1
-                        cp      time_to_stop                num1
+                        cp      time_to_stop                num0
                         be      external_stop_video         true                    true
 
                         halt
