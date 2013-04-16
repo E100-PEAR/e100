@@ -89,6 +89,21 @@ reset_addr_low_count_2      add     addr_high_count_2          addr_high_count_2
                             cp      addr_low_count_2           num0
                             cp      sd_addr_high               addr_high_count_2
                             cp      play_or_compare            num0
+
+                            // new additions below this line ////////////////////////
+                            be      comp_not_tiger_video        user_or_tiger_video     num0
+                            // skip extra code that only applies to tiger videos if we're watching a user video. 
+                        
+                            cp      vga_x1                      vga_write_x_count_2
+                            cp      vga_y1                      vga_write_y_count_2
+                            cp      vga_x2                      vga_write_x_count_2
+                            cp      vga_y2                      vga_write_y_count_2
+                            cp      vga_color                   sd_read_data
+                        
+                            call    function_vga_write          function_vga_write_ra                          
+                        
+                            sub     addr_low_count_2            addr_low_count_2       num1  
+comp_not_tiger_video         
                             be      external_stop_video        temp_addr_high_count    addr_high_count
                             be      finish_comparison          temp_addr_high_count_2  addr_high_count_2
 comp_pixel_continue         be      comp_get_pixel_color_2     true                    true                 
