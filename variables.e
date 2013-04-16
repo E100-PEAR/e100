@@ -28,6 +28,7 @@ comparison_resY         .data   60
 draw_resX               .data   0
 draw_resY               .data   0
 play_or_compare         .data   0
+user_or_tiger_video     .data   0  // set this equal to 0 if user video, 1 if tiger video
 
 comparison_counter  .data   0
 

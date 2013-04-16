@@ -13,27 +13,31 @@ function_playback_menu      cp      addr_high_count                     playback
                             be      play_recorded_video_2               selected_video          num4
 
 play_profession_video_1     cp      addr_high_count                     TigerFront_start_high
-	                        cp      addr_low_count		                TigerFront_start_low
+	                         cp      addr_low_count		                  TigerFront_start_low
                             cp      temp_addr_high_count                num67
                             cp      temp_addr_low_count                 num0
+                            cp      user_or_tiger_video                 num1
                             be      function_playback                   true                    true
 
 play_profession_video_2     cp      addr_high_count                     TigerBehind_start_high
-                            cp      addr_low_count		                TigerBehind_start_low
+                            cp      addr_low_count		                  TigerBehind_start_low
                             cp      temp_addr_high_count                num100
                             cp      temp_addr_low_count                 num0
+                            cp      user_or_tiger_video                 num1
                             be      function_playback                   true                    true
 
 play_recorded_video_1       cp      addr_high_count                     num120
                             cp      addr_low_count                      num0
                             cp      temp_addr_high_count                num140
-                            cp      temp_addr_low_count                 num0    
+                            cp      temp_addr_low_count                 num0
+                            cp      user_or_tiger_video                 num0    
                             be      function_playback                   true                    true
 
 play_recorded_video_2       cp      addr_high_count                     num140
                             cp      addr_low_count                      num0 
                             cp      temp_addr_high_count                num160
-                            cp      temp_addr_low_count                 num0    
+                            cp      temp_addr_low_count                 num0
+                            cp      user_or_tiger_video                 num0    
                             be      function_playback                   true                    true
 
                             ret     function_playback_menu_ra
@@ -55,27 +59,31 @@ function_comparison_menu    cp      addr_high_count                     comparis
                             be      comp_recorded_video_2               selected_video          num4
 
 comp_profession_video_1     cp      addr_high_count_2                   TigerFront_start_high
-                            cp      addr_low_count_2		            TigerFront_start_low
+                            cp      addr_low_count_2		               TigerFront_start_low
                             cp      temp_addr_high_count_2              num67
                             cp      temp_addr_low_count_2               num0
+                            cp      user_or_tiger_video                 num1
                             be      function_comparison                 true                    true
 
 comp_profession_video_2     cp      addr_high_count_2                   TigerBehind_start_high
                             cp      addr_low_count_2                    TigerBehind_start_low
                             cp      temp_addr_high_count_2              num100
                             cp      temp_addr_low_count_2               num0
+                            cp      user_or_tiger_video                 num1
                             be      function_comparison                 true                    true
 
 comp_recorded_video_1       cp      addr_high_count_2                   num120
                             cp      addr_low_count_2                    num0
                             cp      temp_addr_high_count_2              num140
                             cp      temp_addr_low_count_2               num0
+                            cp      user_or_tiger_video                 num0
                             be      function_comparison                 true                    true
 
 comp_recorded_video_2       cp      addr_high_count_2                   num140
                             cp      addr_low_count_2                    num0
                             cp      temp_addr_high_count_2              num160
-                            cp      temp_addr_low_count_2               num0 
+                            cp      temp_addr_low_count_2               num0
+                            cp      user_or_tiger_video                 num0 
                             be      function_comparison                 true                    true
 
                             ret     function_comparison_menu_ra
@@ -98,24 +106,28 @@ frame_profession_video_1    cp      addr_high_count                     TigerFro
                             cp      addr_low_count		                TigerFront_start_low
                             cp      temp_addr_high_count                num67
                             cp      temp_addr_low_count                 num0
+                            cp      user_or_tiger_video                 num1
                             be      function_analysis                   true                    true
 
 frame_profession_video_2    cp      addr_high_count                     TigerBehind_start_high
                             cp      addr_low_count		                TigerBehind_start_low
                             cp      temp_addr_high_count                num100
                             cp      temp_addr_low_count                 num0
+                            cp      user_or_tiger_video                 num1
                             be      function_analysis                   true                    true
 
 frame_recorded_video_1      cp      addr_high_count                     num120
                             cp      addr_low_count                      num0
                             cp      temp_addr_high_count                num140
                             cp      temp_addr_low_count                 num0
+                            cp      user_or_tiger_video                 num0
                             be      function_analysis                   true                    true
 
 frame_recorded_video_2      cp      addr_high_count                     num140
                             cp      addr_low_count                      num0 
                             cp      temp_addr_high_count                num160
-                            cp      temp_addr_low_count                 num0 
+                            cp      temp_addr_low_count                 num0
+                            cp      user_or_tiger_video                 num0 
                             be      function_analysis                   true                    true
 
                             ret     function_frame_menu_ra

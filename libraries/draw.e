@@ -131,7 +131,7 @@ sd_draw_set_pixel_data          cp      vga_x1                      vga_write_x_
 sd_draw_reset_addr_low_count    add     addr_high_count             addr_high_count         num1
                         cp      addr_low_count              num0
                         cp      sd_addr_high                addr_high_count
-			cp      vga_x1                      vga_write_x_count
+			               cp      vga_x1                      vga_write_x_count
                         cp      vga_y1                      vga_write_y_count
                         cp      vga_x2                      vga_write_x_count
                         cp      vga_y2                      vga_write_y_count

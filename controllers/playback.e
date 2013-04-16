@@ -2,7 +2,7 @@ function_playback       call    function_clear_screen       function_clear_scree
 			mult    playback_resY               resY                    num3
                         mult    playback_resX               resX                    num3           
 
-                        call    function_erase_buttons      function_erase_buttons_ra
+                        call    function_erase_buttons      function_erase_buttons_ra  // erase any old buttons before drawing new ones
                         call    function_draw_play_buttons  function_draw_play_buttons_ra
                         
 function_playback_start be      playback_row_loop           true                    true 
@@ -43,6 +43,22 @@ reset_addr_low_count    add     addr_high_count             addr_high_count     
                         cp      addr_low_count              num0
                         cp      sd_addr_high                addr_high_count
                         cp      play_or_compare             num1
+                        
+                        // new additions below this line ////////////////////////
+                        be      not_tiger_video             user_or_tiger_video     num0
+                        // skip extra code that only applies to tiger videos if we're watching a user video. 
+                        
+                        cp      vga_x1                      vga_write_x_count
+                        cp      vga_y1                      vga_write_y_count
+                        cp      vga_x2                      vga_write_x_count
+                        cp      vga_y2                      vga_write_y_count
+                        cp      vga_color                   sd_read_data
+                        
+                        call    function_vga_write          function_vga_write_ra                          
+                        
+                        sub     addr_low_count              addr_low_count          num1  
+not_tiger_video         
+                        // end of new additions /////////////////////////////////                  
                         be      finish_playback             temp_addr_high_count    addr_high_count
 play_pixel_continue     be      get_pixel_color             true                    true                 
 
