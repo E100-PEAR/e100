@@ -1,0 +1,8 @@
+Order of images and videos in AllImagesConcatenated.bin:
+
+1. MainMenu
+2. comparisonmenu
+3. framebyframemenu
+4. playbackmenu
+5. Tiger Front
+6. Tiger Back
