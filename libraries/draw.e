@@ -100,7 +100,7 @@ draw_end
 // Draw an image off of an SD card.
 //
 function_sd_draw        cp      draw_resY                   screen_height
-                        //add     draw_resY                   draw_resY               num1
+                        add     draw_resY                   draw_resY               num1
                         cp      draw_resX                   screen_width
                         add     draw_resX                   draw_resX               num1 
                         cp      addr_low_count              num0

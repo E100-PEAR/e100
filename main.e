@@ -22,4 +22,4 @@
 
 #include constants.e
 #include variables.e
-#include images/images.e
+//#include images/images.e
