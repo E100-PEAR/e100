@@ -50,6 +50,7 @@ where_to_go             cp      vga_write_x_count           num0
                         cp      vga_write_x_count_2         num0
                         cp      vga_write_y_count           num0
                         be      function_playback           play_or_compare     num1
+                        be      function_analysis_start     play_or_compare     num2
                         cp      comparison_counter          num0
                         cp      addr_high_count             current_sd_addr_high
                         cp      temp_addr_high_count        addr_high_count
@@ -59,7 +60,6 @@ where_to_go             cp      vga_write_x_count           num0
                         cp      addr_low_count_2            num0
 
                         be      function_comparison_start   play_or_compare     num0
-                        be      function_analysis_start     play_or_compare     num2
                         be      goto_menu                   true                true
 
 addr_high_55            cp      addr_high_count             TigerFront_start_high

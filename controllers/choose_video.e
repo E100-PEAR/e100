@@ -89,16 +89,26 @@ function_frame_menu         cp      addr_high_count                     framebyf
 
 frame_profession_video_1    cp      addr_high_count                     TigerFront_start_high
                             cp      addr_low_count		                TigerFront_start_low
+                            cp      temp_addr_high_count                num67
+                            cp      temp_addr_low_count                 num0
                             be      function_analysis                   true                    true
 
 frame_profession_video_2    cp      addr_high_count                     TigerBehind_start_high
                             cp      addr_low_count		                TigerBehind_start_low
+                            cp      temp_addr_high_count                num100
+                            cp      temp_addr_low_count                 num0
                             be      function_analysis                   true                    true
 
 frame_recorded_video_1      cp      addr_high_count                     num120
+                            cp      addr_low_count                      num0
+                            cp      temp_addr_high_count                num140
+                            cp      temp_addr_low_count                 num0
                             be      function_analysis                   true                    true
 
 frame_recorded_video_2      cp      addr_high_count                     num140
+                            cp      addr_low_count                      num0 
+                            cp      temp_addr_high_count                num160
+                            cp      temp_addr_low_count                 num0 
                             be      function_analysis                   true                    true
 
                             ret     function_frame_menu_ra

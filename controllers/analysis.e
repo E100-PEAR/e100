@@ -13,6 +13,8 @@ a_get_pixel_color           cp      sd_addr_high                addr_high_count
                             cp      play_or_compare             num2 
                             be      external_stop_video         sd_read_data            num256
 
+                            be      frame_check_finish          temp_addr_low_count     addr_low_count
+
 a_set_pixel_data            cp      vga_x1                      vga_write_x_count
                             cp      vga_y1                      vga_write_y_count
                             add     vga_write_y_count           vga_write_y_count       num2
@@ -22,10 +24,7 @@ a_set_pixel_data            cp      vga_x1                      vga_write_x_coun
                             sub     vga_write_y_count           vga_write_y_count       num2
                             cp      vga_color                   sd_read_data
                         
-                            call    function_vga_write          function_vga_write_ra
-                            call    function_vga_write          function_vga_write_ra
-                            call    function_vga_write          function_vga_write_ra
-                            call    function_vga_write          function_vga_write_ra                        
+                            call    function_vga_write          function_vga_write_ra                      
                         
                             add     addr_low_count              addr_low_count          num1         
                             add     vga_write_x_count           vga_write_x_count       num1
@@ -36,8 +35,8 @@ a_reset_addr_low_count      add     addr_high_count             addr_high_count 
                             cp      addr_low_count              num0
                             cp      sd_addr_high                addr_high_count
                             cp      play_or_compare             num2
-                            be      external_stop_video         temp_addr_high_count    addr_high_count
-                            call    a_get_pixel_color           get_pixel_color_ra       
+                            be      finish_analysis             temp_addr_high_count    addr_high_count
+frame_pixel_continue        call    a_get_pixel_color           get_pixel_color_ra       
                             call    a_set_pixel_data            set_pixel_data_ra
 
                             add     addr_low_count              addr_low_count          num1
@@ -55,6 +54,13 @@ a_reset_vga_write_y_count   cp      vga_write_y_count           num0
                             call    function_analysis_key_press function_keyboard_key_press_ra
 
                             be      function_analysis_start     true                    true
+
+finish_analysis         cp      time_to_stop                num1
+                        be      frame_pixel_continue        true                    true
+
+frame_check_finish      bne     a_set_pixel_data            time_to_stop            num1
+                        cp      time_to_stop                num0
+                        be      external_stop_video         true                    true
 
 
                             halt
