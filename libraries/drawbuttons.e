@@ -89,5 +89,38 @@ function_draw_nextframe_button
                         call  function_draw_play function_draw_play_ra
                         
                         ret   function_draw_nextframe_button_ra
+                        
+//////////////////////REPLAY///////////////////////////////////
+//  function_draw_replay  draws a replay button
+//  this looks like a circle with an arrow on it.
+
+function_draw_replay    cp  circle_center_x    num390
+                        cp  circle_center_y    num435
+                        cp  circle_radius      num50
+                        cp  circle_color       color_red
+                        call  function_draw_circle   function_draw_circle_ra
+                      
+                        cp  circle_radius      num40
+                        cp  circle_color       color_black
+                        call  function_draw_circle   function_draw_circle_ra
+                        
+                        cp  vga_x1             num390
+                        cp  vga_x2             num440 
+                        cp  vga_y1             num435
+                        cp  vga_y2             num460
+                        cp  vga_color          color_black
+                        call   function_vga_write  function_vga_write_ra
+                        
+                        cp  play_initial_x     num390
+                        cp  play_initial_y     num450
+                        cp  play_height        num30
+                        cp  play_color         color_red
+                        call   function_draw_play  function_draw_play_ra
+                        
+                        ret    function_draw_replay_ra
+                        
+function_draw_replay_ra  .data  0
+                                                
+                        
 
 function_draw_nextframe_button_ra  .data  0
