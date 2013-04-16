@@ -72,9 +72,13 @@ addr_high_100           cp      addr_high_count             num100
                         be      where_to_go                 true                true
 
 addr_high_120           cp      addr_high_count             num120
+                        cp      temp_addr_high_count        num140
+                        cp      temp_addr_low_count         num0
                         be      where_to_go                 true                true
 
 addr_high_140           cp      addr_high_count             num140
+                        cp      temp_addr_high_count        num140
+                        cp      temp_addr_low_count         num0
                         be      where_to_go                 true                true
 
 save_video              be      goto_menu                   addr_high_count     num100
