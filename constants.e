@@ -27,14 +27,19 @@ num18 .data 18
 num19 .data 19
 num20 .data 20
 num25 .data 25
+num28 .data 28
+num37 .data 37
 num40 .data 40
 num50 .data 50
 num60 .data 60
+num74 .data 74
 num80 .data 80
 num100 .data 100
+num118 .data 118
 num120 .data 120
 num140 .data 140
 num160 .data 160
+num175 .data 175
 num200 .data 200
 num255 .data 255
 num256 .data 256
@@ -50,6 +55,12 @@ num495 .data 495
 num520 .data 520
 num540 .data 540
 num590 .data 590
+num2176 .data 2176
+num3968 .data 3968
+num4096 .data 4096
+num12288 .data 12288
+num16384 .data 16384
+num24576 .data 24576
 num65280 .data 65280
 num19200 .data 19200
 
@@ -105,5 +116,20 @@ true  .data 1
 false .data 0
 
 // Resulotion
-resX    .data   79
-resY    .data   59
+resX    .data   80
+resY    .data   60
+
+// start addr_highs
+comparison_start_high .data 9
+framebyframe_start_high .data 18
+playback_start_high .data 28
+TigerFront_start_high .data 37
+TigerBehind_start_high .data 74
+
+// start addr_lows
+comparison_start_low .data 12288
+framebyframe_start_low .data 24576
+playback_start_low .data 4096
+TigerFront_start_low .data 16384
+TigerBehind_start_low .data 3968
+

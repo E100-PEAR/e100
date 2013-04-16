@@ -1,0 +1,16 @@
+Order of images and videos in AllImagesConcatenated.bin with sizes:
+
+1. MainMenu			480*640 pixels  
+2. comparisonmenu    		480*640 pixels
+3. framebyframemenu 		480*640 pixels
+4. playbackmenu			480*640 pixels
+5. Tiger Front			80*60 pixels, 250 frames
+6. Tiger Back			80*60 pixels, 300 frames
+
+last pixel for each image/video:
+1. addr_high = 9, addr_low = 12287
+2. addr_high = 18, addr_low = 24575
+3. addr_high = 28, addr_low = 4095
+4. addr_high = 37, addr_low = 16383
+5. addr_high = 74, addr_low = 3967
+6. addr_high = 118, addr_low = 2175

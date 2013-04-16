@@ -3,7 +3,8 @@
 //
 function_playback_menu
         
-     cp     addr_high_count     num20
+     cp     addr_high_count     playback_start_high
+     cp	    addr_low_count      playback_start_low
      call   function_sd_draw    function_sd_draw_ra
      call function_show_video_menu_pointer function_show_video_menu_pointer_ra
      call function_video_menu_handle_input function_video_menu_handle_input_ra
@@ -13,10 +14,12 @@ function_playback_menu
                             be      play_recorded_video_1           selected_video  num3
                             be      play_recorded_video_2           selected_video  num4
 
-play_profession_video_1     cp      addr_high_count                 num80
+play_profession_video_1     cp      addr_high_count                 TigerFront_start_high
+			    cp      addr_low_count		    TigerFront_start_low
                             be      function_playback               true            true
 
-play_profession_video_2     cp      addr_high_count                 num100
+play_profession_video_2     cp      addr_high_count                 TigerBehind_start_high
+			    cp      addr_low_count		    TigerBehind_start_low
                             be      function_playback               true            true
 
 play_recorded_video_1       cp      addr_high_count                 num120
@@ -32,7 +35,8 @@ play_recorded_video_2       cp      addr_high_count                 num140
 //
 function_comparison_menu
 
-    cp     addr_high_count     num40
+    cp     addr_high_count     comparison_start_high
+    cp     addr_low_count      comparison_start_low
     call   function_sd_draw    function_sd_draw_ra
     call function_show_video_menu_pointer function_show_video_menu_pointer_ra 
     call function_video_menu_handle_input function_video_menu_handle_input_ra
@@ -42,10 +46,12 @@ function_comparison_menu
                             be      comp_recorded_video_1           selected_video  num3
                             be      comp_recorded_video_2           selected_video  num4
 
-comp_profession_video_1     cp      addr_high_count_2               num80
+comp_profession_video_1     cp      addr_high_count_2               TigerFront_start_high
+			    cp      addr_low_count		    TigerFront_start_low
                             be      function_comparison             true            true
 
-comp_profession_video_2     cp      addr_high_count_2               num100
+comp_profession_video_2     cp      addr_high_count_2               TigerBehind_start_high
+			    cp      addr_low_count		    TigerBehind_start_low
                             be      function_comparison             true            true
 
 comp_recorded_video_1       cp      addr_high_count_2               num120
@@ -61,7 +67,8 @@ comp_recorded_video_2       cp      addr_high_count_2               num140
 //
 function_frame_menu
 
-     cp     addr_high_count     num60
+     cp     addr_high_count     framebyframe_start_high
+     cp     addr_low_count      framebyframe_start_low
      call   function_sd_draw    function_sd_draw_ra
      call function_show_video_menu_pointer function_show_video_menu_pointer_ra 
      call function_video_menu_handle_input function_video_menu_handle_input_ra
@@ -71,10 +78,12 @@ function_frame_menu
                             be      frame_recorded_video_1          selected_video  num3
                             be      frame_recorded_video_2          selected_video  num4
 
-frame_profession_video_1    cp      addr_high_count                 num80
+frame_profession_video_1    cp      addr_high_count                 TigerFront_start_high
+			    cp      addr_low_count		    TigerFront_start_low
                             be      function_analysis               true            true
 
-frame_profession_video_2    cp      addr_high_count                 num100
+frame_profession_video_2    cp      addr_high_count                 TigerBehind_start_high
+			    cp      addr_low_count		    TigerBehind_start_low
                             be      function_analysis               true            true
 
 frame_recorded_video_1      cp      addr_high_count                 num120
@@ -91,8 +100,8 @@ function_show_video_menu_pointer
 
     cp selected_video num1
 
-    cp pointer_x num10
-    cp pointer_y num10
+    cp pointer_x num4
+    cp pointer_y num175
 
     call function_add_pointer function_add_pointer_ra
 
@@ -139,8 +148,9 @@ function_move_video_pointer_up
     // Stop if the selected video is already at the top video.
     be pointer_up_return selected_video num1
 
-    // Move the pointer up 10 pixels and update the selected video ID.
-    sub pointer_new_y pointer_y num10 
+    // Move the pointer up 80 pixels and update the selected video ID.
+    sub pointer_new_y pointer_y num80
+    cp  pointer_new_x pointer_x
     sub selected_video selected_video num1
 
     call function_move_pointer function_move_pointer_ra
@@ -157,8 +167,9 @@ function_move_video_pointer_down
     // Stop if the selected video is already at the bottom video.
     be pointer_down_return selected_video num4
 
-    // Move the pointer down 10 pixels and update the selected video ID.
-    add pointer_new_y pointer_y num10
+    // Move the pointer down 80 pixels and update the selected video ID.
+    add pointer_new_y pointer_y num80
+    cp  pointer_new_x pointer_x
     add selected_video selected_video num1
 
     call function_move_pointer function_move_pointer_ra

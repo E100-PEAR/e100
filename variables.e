@@ -14,12 +14,12 @@ vga_write_y_count   .data   0
 record_x_count  .data   0
 record_y_count  .data   0
 
-playback_resX           .data   0
-playback_resY           .data   0
-analysis_resX           .data   0
-analysis_resY           .data   0
-comparison_resX         .data   0
-comparison_resY         .data   0
+playback_resX           .data   80
+playback_resY           .data   60
+analysis_resX           .data   80
+analysis_resY           .data   60
+comparison_resX         .data   80
+comparison_resY         .data   60
 draw_resX               .data   0
 draw_resY               .data   0
 play_or_compare         .data   0

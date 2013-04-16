@@ -28,6 +28,7 @@ menu //call function_draw_background function_draw_background_ra
 //     call function_draw_button function_draw_button_ra
 
      cp     addr_high_count     num0
+     cp     addr_low_count      num0
      call   function_sd_draw    function_sd_draw_ra
 
      // Set the initial position of the pointer.
@@ -77,7 +78,7 @@ select_menu call function_clear_screen function_clear_screen_ra
 select_left_menu be function_playback_menu pointer_y pointer_top
                  be function_record   true      true
 
-select_right_menu be function_comparison pointer_y pointer_top
+select_right_menu be function_comparison_menu pointer_y pointer_top
                   be function_frame_menu   true true
     
     halt

@@ -100,8 +100,9 @@ draw_end
 // Draw an image off of an SD card.
 //
 function_sd_draw        cp      draw_resY                   screen_height
-                        cp      draw_resX                   screen_width 
-                        cp      addr_low_count              num0
+                        add     draw_resY       draw_resY      num1
+                        cp      draw_resX                   screen_width
+                        add     draw_resX       draw_resX   num1
                         cp      vga_write_y_count           num0
                         cp      vga_write_x_count           num0             
 
@@ -123,7 +124,9 @@ sd_draw_set_pixel_data          cp      vga_x1                      vga_write_x_
                         add     addr_low_count              addr_low_count          num1         
                         add     vga_write_x_count           vga_write_x_count       num1
 
-                        bne     sd_draw_col_loop            addr_low_count          sd_addr_max
+                        bne     sd_draw_col_loop            addr_low_count          sd_addr_max 
+
+
 
 sd_draw_reset_addr_low_count    add     addr_high_count             addr_high_count         num1
                         cp      addr_low_count              num0
@@ -157,3 +160,4 @@ function_draw_background_ra .data 0
 function_draw_button_ra     .data 0
 function_draw_image_ra      .data 0
 function_sd_draw_ra         .data 0
+
