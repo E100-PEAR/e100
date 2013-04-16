@@ -46,10 +46,12 @@ function_comparison_menu
                             be      comp_recorded_video_1           selected_video  num3
                             be      comp_recorded_video_2           selected_video  num4
 
-comp_profession_video_1     cp      addr_high_count_2               num80
+comp_profession_video_1     cp      addr_high_count_2               num37
+			    cp      addr_low_count		    num16384
                             be      function_comparison             true            true
 
-comp_profession_video_2     cp      addr_high_count_2               num100
+comp_profession_video_2     cp      addr_high_count_2               num74
+			    cp      addr_low_count		    num3968
                             be      function_comparison             true            true
 
 comp_recorded_video_1       cp      addr_high_count_2               num120
@@ -76,10 +78,12 @@ function_frame_menu
                             be      frame_recorded_video_1          selected_video  num3
                             be      frame_recorded_video_2          selected_video  num4
 
-frame_profession_video_1    cp      addr_high_count                 num80
+frame_profession_video_1    cp      addr_high_count                 num37
+			    cp      addr_low_count		    num16384
                             be      function_analysis               true            true
 
-frame_profession_video_2    cp      addr_high_count                 num100
+frame_profession_video_2    cp      addr_high_count                 num74
+			    cp      addr_low_count		    num3968
                             be      function_analysis               true            true
 
 frame_recorded_video_1      cp      addr_high_count                 num120
