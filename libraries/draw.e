@@ -124,7 +124,9 @@ sd_draw_set_pixel_data          cp      vga_x1                      vga_write_x_
                         add     addr_low_count              addr_low_count          num1         
                         add     vga_write_x_count           vga_write_x_count       num1
 
-                        bne     sd_draw_col_loop            addr_low_count          sd_addr_max
+                        bne     sd_draw_col_loop            addr_low_count          sd_addr_max 
+
+
 
 sd_draw_reset_addr_low_count    add     addr_high_count             addr_high_count         num1
                         cp      addr_low_count              num0
@@ -138,11 +140,6 @@ sd_draw_reset_vga_write_x_count add     vga_write_y_count           vga_write_y_
 end_sd_draw             cp      vga_write_y_count           num0
                         cp      vga_write_x_count           num0
                         ret     function_sd_draw_ra
-
-//
-// Paints the whole screen black.
-//
-
 
 button_width  .data 200
 button_height .data 60
