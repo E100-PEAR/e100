@@ -4,7 +4,7 @@ function_playback       call    function_clear_screen       function_clear_scree
 
                         call    function_erase_buttons      function_erase_buttons_ra  // erase any old buttons before drawing new ones
                         call    function_draw_play_buttons  function_draw_play_buttons_ra
-                        
+                        call    function_draw_replay        function_draw_replay_ra            
 function_playback_start be      playback_row_loop           true                    true 
 
 playback_row_loop       be      reset_vga_write_y_count     vga_write_y_count       playback_resY
