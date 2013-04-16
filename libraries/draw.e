@@ -139,6 +139,11 @@ end_sd_draw             cp      vga_write_y_count           num0
                         cp      vga_write_x_count           num0
                         ret     function_sd_draw_ra
 
+//
+// Paints the whole screen black.
+//
+
+
 button_width  .data 200
 button_height .data 60
 
@@ -158,3 +163,4 @@ function_draw_background_ra .data 0
 function_draw_button_ra     .data 0
 function_draw_image_ra      .data 0
 function_sd_draw_ra         .data 0
+

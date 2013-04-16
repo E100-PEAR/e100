@@ -1,4 +1,7 @@
-function_comparison         mult    comparison_resY            resY                    num3
+function_comparison         
+                            // start by clearing screen
+			    call    function_clear_screen  function_clear_screen_ra
+		            mult    comparison_resY            resY                    num3
                             mult    comparison_resX            resX                    num3
                             cp      addr_high_count            current_sd_addr_high
                             cp      temp_addr_high_count       addr_high_count

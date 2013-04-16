@@ -1,4 +1,5 @@
-function_analysis           mult    analysis_resY               resY                    num3
+function_analysis           call    function_clear_screen               function_clear_screen_ra
+			    mult    analysis_resY               resY                    num3
                             mult    analysis_resX               resX                    num3
 
                             cp      addr_low_count              num0
