@@ -6,7 +6,7 @@ function_comparison
                             cp      addr_high_count            current_sd_addr_high
                             cp      temp_addr_high_count       addr_high_count
                             sub     addr_high_count            addr_high_count         num20
-                            cp      addr_low_count             num0
+                            //cp      addr_low_count             num0
                             cp      addr_low_count_2           num0
 
 function_comparison_start   be      comparison_row_loop_1      comparison_counter      num0

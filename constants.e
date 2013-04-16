@@ -116,6 +116,6 @@ true  .data 1
 false .data 0
 
 // Resulotion
-resX    .data   79
-resY    .data   59
+resX    .data   80
+resY    .data   60
 
