@@ -11,6 +11,7 @@
 #include drivers/sd_vars.e
 #include drivers/sd_write.e
 #include drivers/sd_read.e
+#include drivers/timer.e
 #include drivers/vga.e
 
 #include libraries/pointer.e

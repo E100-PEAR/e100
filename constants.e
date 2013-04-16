@@ -30,6 +30,7 @@ num25 .data 25
 num28 .data 28
 num37 .data 37
 num40 .data 40
+num42 .data 42
 num50 .data 50
 num60 .data 60
 num67 .data 67
