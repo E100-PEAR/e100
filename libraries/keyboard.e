@@ -52,7 +52,7 @@ where_to_go             cp      vga_write_x_count           num0
                         be      function_playback           play_or_compare     num1
                         be      function_analysis_start     play_or_compare     num2
                         cp      comparison_counter          num0
-                        be      function_comparison_start   play_or_compare     num0
+                        be      function_comparison         play_or_compare     num0
                         be      goto_menu                   true                true
 
 addr_high_55            cp      addr_high_count             TigerFront_start_high
@@ -61,6 +61,8 @@ addr_high_55            cp      addr_high_count             TigerFront_start_hig
                         cp      addr_low_count_2            TigerFront_start_low
                         cp      temp_addr_high_count        num67
                         cp      temp_addr_low_count         num0
+                        cp      temp_addr_high_count_2      num67
+                        cp      temp_addr_low_count_2       num0
                         be      where_to_go                 true                true
 
 addr_high_90            cp      addr_high_count             TigerBehind_start_high
@@ -69,16 +71,22 @@ addr_high_90            cp      addr_high_count             TigerBehind_start_hi
                         cp      addr_low_count_2            TigerBehind_start_low
                         cp      temp_addr_high_count        num100
                         cp      temp_addr_low_count         num0
+                        cp      temp_addr_high_count_2      num100
+                        cp      temp_addr_low_count_2       num0
                         be      where_to_go                 true                true
 
 addr_high_120           cp      addr_high_count             num120
                         cp      temp_addr_high_count        num140
                         cp      temp_addr_low_count         num0
+                        cp      temp_addr_high_count_2      num140
+                        cp      temp_addr_low_count_2       num0 
                         be      where_to_go                 true                true
 
 addr_high_140           cp      addr_high_count             num140
                         cp      temp_addr_high_count        num160
                         cp      temp_addr_low_count         num0
+                        cp      temp_addr_high_count_2      num160
+                        cp      temp_addr_low_count_2       num0 
                         be      where_to_go                 true                true
 
 save_video              be      goto_menu                   addr_high_count     num100

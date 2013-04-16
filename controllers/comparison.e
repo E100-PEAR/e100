@@ -1,11 +1,16 @@
 function_comparison         
                             // start by clearing screen
-			                call    function_clear_screen  function_clear_screen_ra
+			                call    function_clear_screen      function_clear_screen_ra
 		                    mult    comparison_resY            resY                    num3
                             mult    comparison_resX            resX                    num3
                             cp      addr_high_count            current_sd_addr_high
+                            cp      temp_addr_high             addr_high_count
+                            cp      temp_addr_low              num0
                             sub     addr_high_count            addr_high_count         num20
                             cp      addr_low_count             num0
+
+                            call    function_erase_buttons     function_erase_buttons_ra
+                            call    function_draw_play_buttons function_draw_play_buttons_ra
 
 function_comparison_start   be      comparison_row_loop_1      comparison_counter      num0
                             be      comparison_second_frame    comparison_counter      num1
@@ -61,6 +66,8 @@ comp_get_pixel_color_2      cp      sd_addr_low                addr_low_count_2
                             cp      play_or_compare            num0
                             be      external_stop_video        sd_read_data            num256
 
+                            be      check_finish               temp_addr_low_count_2   addr_low_count_2
+
 comp_set_pixel_data_2       cp      vga_x1                     vga_write_x_count_2
                             cp      vga_y1                     vga_write_y_count
                             add     vga_write_y_count          vga_write_y_count       num2
@@ -83,7 +90,8 @@ reset_addr_low_count_2      add     addr_high_count_2          addr_high_count_2
                             cp      sd_addr_high               addr_high_count_2
                             cp      play_or_compare            num0
                             be      external_stop_video        temp_addr_high_count    addr_high_count
-                            be      comp_get_pixel_color_2     true                    true                 
+                            be      finish_comparison          temp_addr_high_count_2  addr_high_count_2
+comp_pixel_continue         be      comp_get_pixel_color_2     true                    true                 
 
 reset_vga_write_x_count_2   add     vga_write_y_count           vga_write_y_count      num3
                             cp      vga_write_x_count_2         comparison_resX
@@ -97,3 +105,10 @@ reset_vga_write_y_count_2   cp      vga_write_y_count           num0
                             cp      play_or_compare             num0
                             call    function_keyboard_playback  function_keyboard_key_press_ra 
                             be      function_comparison_start   true                   true
+
+finish_comparison       cp      time_to_stop                num1
+                        be      comp_pixel_continue         true                    true
+
+check_finish            bne     comp_set_pixel_data_2       time_to_stop            num1
+                        cp      time_to_stop                num0
+                        be      external_stop_video         true                    true

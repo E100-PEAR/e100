@@ -1,5 +1,5 @@
 function_playback       call    function_clear_screen       function_clear_screen_ra
-			            mult    playback_resY               resY                    num3
+			mult    playback_resY               resY                    num3
                         mult    playback_resX               resX                    num3           
 
                         call    function_erase_buttons      function_erase_buttons_ra
