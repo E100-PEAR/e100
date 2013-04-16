@@ -1,8 +1,8 @@
-Order of images and videos in AllImagesConcatenated.bin:
+Order of images and videos in AllImagesConcatenated.bin with sizes:
 
-1. MainMenu
-2. comparisonmenu
-3. framebyframemenu
-4. playbackmenu
-5. Tiger Front
-6. Tiger Back
+1. MainMenu			480*640 pixels
+2. comparisonmenu    		480*640 pixels
+3. framebyframemenu 		480*640 pixels
+4. playbackmenu			480*640 pixels
+5. Tiger Front			80*60 pixels, 250 frames
+6. Tiger Back			80*60 pixels, 300 frames
