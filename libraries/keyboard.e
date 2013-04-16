@@ -46,8 +46,7 @@ instant_playback        cp      addr_low_count              num0
                         blt     addr_high_120               addr_high_count     num140
                         blt     addr_high_140               addr_high_count     num160
 
-where_to_go             cp      addr_low_count              num0
-                        cp      vga_write_x_count           num0
+where_to_go             cp      vga_write_x_count           num0
                         cp      vga_write_x_count_2         num0
                         cp      vga_write_y_count           num0
                         be      function_playback           play_or_compare     num1
@@ -65,10 +64,14 @@ where_to_go             cp      addr_low_count              num0
 
 addr_high_55            cp      addr_high_count             TigerFront_start_high
                         cp      addr_low_count              TigerFront_start_low
+                        cp      temp_addr_high_count        num67
+                        cp      temp_addr_low_count         num0
                         be      where_to_go                 true                true
 
-addr_high_90            cp      addr_high_count             num90
+addr_high_90            cp      addr_high_count             TigerBehind_start_high
                         cp      addr_low_count              TigerBehind_start_low
+                        cp      temp_addr_high_count        num100
+                        cp      temp_addr_low_count         num0
                         be      where_to_go                 true                true
 
 addr_high_120           cp      addr_high_count             num120

@@ -14,10 +14,14 @@ function_playback_menu      cp      addr_high_count                     playback
 
 play_profession_video_1     cp      addr_high_count                     TigerFront_start_high
 	                        cp      addr_low_count		                TigerFront_start_low
+                            cp      temp_addr_high_count                num67
+                            cp      temp_addr_low_count                 num0
                             be      function_playback                   true                    true
 
 play_profession_video_2     cp      addr_high_count                     TigerBehind_start_high
                             cp      addr_low_count		                TigerBehind_start_low
+                            cp      temp_addr_high_count                num100
+                            cp      temp_addr_low_count                 num0
                             be      function_playback                   true                    true
 
 play_recorded_video_1       cp      addr_high_count                     num120
