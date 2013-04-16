@@ -149,7 +149,8 @@ function_move_video_pointer_up
     be pointer_up_return selected_video num1
 
     // Move the pointer up 80 pixels and update the selected video ID.
-    sub pointer_new_y pointer_y num80 
+    sub pointer_new_y pointer_y num80
+    cp  pointer_new_x pointer_x
     sub selected_video selected_video num1
 
     call function_move_pointer function_move_pointer_ra
@@ -168,6 +169,7 @@ function_move_video_pointer_down
 
     // Move the pointer down 80 pixels and update the selected video ID.
     add pointer_new_y pointer_y num80
+    cp  pointer_new_x pointer_x
     add selected_video selected_video num1
 
     call function_move_pointer function_move_pointer_ra
