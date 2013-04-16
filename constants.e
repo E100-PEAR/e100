@@ -135,7 +135,7 @@ comparison_start_low .data 12288
 framebyframe_start_low .data 24576
 playback_start_low .data 4096
 TigerFront_start_low .data 16960
-TigerBehind_start_low .data 3033
+TigerBehind_start_low .data 3040
 
 // TigerFront_start_high .data 37
 // TigerBehind_start_high .data 74
