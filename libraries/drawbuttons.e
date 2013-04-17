@@ -60,7 +60,7 @@ function_draw_play_buttons_ra  .data 0
 //function_erase_buttons erase the record/playback buttons
 // and replaces them with black
 
-function_erase_buttons  cp   vga_x1  num400
+function_erase_buttons  cp   vga_x1  num300
                         cp   vga_x2  screen_width
                         cp   vga_y1  num350
                         cp   vga_y2  screen_height
@@ -92,6 +92,8 @@ function_draw_nextframe_button
                         call  function_draw_replay  function_draw_replay_ra
                         
                         ret   function_draw_nextframe_button_ra
+                      
+function_draw_nextframe_button_ra  .data  0
                         
 //////////////////////REPLAY///////////////////////////////////
 //  function_draw_replay  draws a replay button
@@ -123,7 +125,20 @@ function_draw_replay    cp  circle_center_x    num400
                         ret    function_draw_replay_ra
                         
 function_draw_replay_ra  .data  0
-                                                
-                        
 
-function_draw_nextframe_button_ra  .data  0
+/////////////////////////REWIND////////////////////////////////
+// function_draw_rewind_but draws a rewind button
+// this looks like two backwards play buttons
+
+function_draw_rewind_but   cp   rewind_initial_x   num357
+                           cp   rewind_initial_y   num410
+                           cp   rewind_height      num50
+                           cp   rewind_color       color_red
+                           call function_draw_rewind   function_draw_rewind_ra
+                           cp   rewind_initial_x   num332
+                           call function_draw_rewind   function_draw_rewind_ra
+                           ret function_draw_rewind_but_ra
+                           
+function_draw_rewind_but_ra .data 0
+                                                
+

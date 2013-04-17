@@ -47,7 +47,10 @@ num175 .data 175
 num200 .data 200
 num255 .data 255
 num256 .data 256
+num300 .data 300
+num332 .data 332
 num350 .data 350
+num357 .data 357
 num390 .data 390
 num400 .data 400
 num410 .data 410
@@ -64,6 +67,8 @@ num540 .data 540
 num555 .data 555
 num565 .data 565
 num590 .data 590
+num600 .data 600
+num620 .data 620
 num2176 .data 2176
 num3968 .data 3968
 num4096 .data 4096

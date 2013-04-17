@@ -1,6 +1,7 @@
 function_analysis           call    function_clear_screen       function_clear_screen_ra
                             call    function_draw_nextframe_button   function_draw_nextframe_button_ra
                             call    function_draw_replay        function_draw_replay_ra
+                            call    function_draw_rewind_but    function_draw_rewind_but_ra
 			                   mult    analysis_resY               resY                    num3
                             mult    analysis_resX               resX                    num3
 

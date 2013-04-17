@@ -17,7 +17,7 @@ function_playback_menu      cp      addr_high_count                     playback
                             be      play_recorded_video_2               selected_video          num4
 
 play_profession_video_1     cp      addr_high_count                     TigerFront_start_high
-	                        cp      addr_low_count		                  TigerFront_start_low
+	                         cp      addr_low_count		                  TigerFront_start_low
                             cp      temp_addr_high_count                num67
                             cp      temp_addr_low_count                 num0
                             cp      user_or_tiger_video                 num1
