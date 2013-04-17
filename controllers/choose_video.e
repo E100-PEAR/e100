@@ -2,7 +2,7 @@
 // Select a video to play.
 //
 function_playback_menu      cp      addr_high_count                     playback_start_high
-                            cp	    addr_low_count                      playback_start_low
+                            cp	   addr_low_count                      playback_start_low
                             call    function_sd_draw                    function_sd_draw_ra
 
                             cp      selected_video                      num1
@@ -119,6 +119,7 @@ frame_profession_video_1    cp      addr_high_count                     TigerFro
                             cp      temp_addr_high_count                num67
                             cp      temp_addr_low_count                 num0
                             cp      user_or_tiger_video                 num1
+                            cp      vid_start_addr_high                 TigerFront_start_high
                             be      function_analysis                   true                    true
 
 frame_profession_video_2    cp      addr_high_count                     TigerBehind_start_high
@@ -126,6 +127,7 @@ frame_profession_video_2    cp      addr_high_count                     TigerBeh
                             cp      temp_addr_high_count                num100
                             cp      temp_addr_low_count                 num0
                             cp      user_or_tiger_video                 num1
+                            cp      vid_start_addr_high                 TigerBehind_start_high
                             be      function_analysis                   true                    true
 
 frame_recorded_video_1      cp      addr_high_count                     num120
@@ -133,13 +135,15 @@ frame_recorded_video_1      cp      addr_high_count                     num120
                             cp      temp_addr_high_count                num140
                             cp      temp_addr_low_count                 num0
                             cp      user_or_tiger_video                 num0
+                            cp      vid_start_addr_high                 num120
                             be      function_analysis                   true                    true
 
 frame_recorded_video_2      cp      addr_high_count                     num140
                             cp      addr_low_count                      num0 
                             cp      temp_addr_high_count                num160
                             cp      temp_addr_low_count                 num0
-                            cp      user_or_tiger_video                 num0 
+                            cp      user_or_tiger_video                 num0
+                            cp      vid_start_addr_high                 num140
                             be      function_analysis                   true                    true
 
                             ret     function_frame_menu_ra

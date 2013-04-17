@@ -3,6 +3,7 @@ function_analysis_key_press
 
 call_analysis_read      call    function_keyboard       function_keyboard_ra
                         be      goto_menu               keyboard_value         key_escape
+                        be      analysis_rewind         keyboard_value        charr
                         bne     call_analysis_read      keyboard_value        key_space  
                         ret     function_keyboard_key_press_ra
 

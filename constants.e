@@ -67,6 +67,8 @@ num590 .data 590
 num2176 .data 2176
 num3968 .data 3968
 num4096 .data 4096
+num4800 .data 4800
+num9600 .data 9600
 num12288 .data 12288
 num16384 .data 16384
 num24576 .data 24576
