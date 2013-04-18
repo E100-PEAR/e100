@@ -1,3 +1,6 @@
+//This driver gets the input from the camera and displays it on the vga monitor
+
+
 function_camera in      131             cam_response
                 be      function_camera cam_response    true
 

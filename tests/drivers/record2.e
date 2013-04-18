@@ -1,3 +1,7 @@
+//This is a test case for recording two color values to the same memory address
+//This would be more memory efficent but we were unable to get it to work for
+//the playback. Without it working for the playback this is useless
+
 function_record         cp      cam_scale                       num0 
                         call    function_camera                 function_camera_ra
 

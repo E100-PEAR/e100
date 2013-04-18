@@ -1,3 +1,8 @@
+//This file loads all the drivers in the correct order
+//It is essentially int main() in c++
+
+
+
 #include controllers/menu.e
 #include controllers/choose_video.e
 #include controllers/analysis.e

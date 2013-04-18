@@ -1,0 +1,23 @@
+sd memory allocation setup
+
+Menu GUI implementations
+------------------------
+FIRST ONE AT ADDR 0 (main menu)
+SECOND ONE AT ADDR_HIGH 9 (playback)
+THIRD ONE AT ADDR_HIGH 18 (comparison)
+FOURTH MENU AT ADDR_HIGH OF 27 (frame by frame)
+
+for all these set variable addr_high_count before calling functions
+
+Saved Video storage
+-----------------------------------------
+TIGER1 VIDEO STARTS AT ADDR_HIGH OF 37
+TIGER2 VIDEO STARTS AT ADDR_HIGH OF 74
+VIDEO 1 STARTS AT ADDR_HIGH OF 120
+VIDEO 2 STARTS AT ADDR_HIGH OF 140
+
+With all videos they will force stop recording once it reaches the start of the next video.
+For example if when recording video 1 you get to addr_high of 139 and a full addr_low
+the video will stop recording. Or you could manually stop the recording before that point.
+
+this means each video will be able to record for a max of 25 seconds on the altera

@@ -1,3 +1,10 @@
+//This function blocks the thread for a set amount of miliseconds 
+//before returning.
+//To use this function you need to set the variable sleep to the number
+//of miliseconds you want the program to pause for and call function_sleep
+//It will return in function_sleep_ra
+
+
 function_sleep
 
     // Make sure that the function starts with a

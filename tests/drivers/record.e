@@ -1,3 +1,6 @@
+//This is a file that tests the record functionality
+//It runs the camera and writes the data to sd_card
+
 function_record cp      cam_scale                       num0 
                 call    function_camera                 function_camera_ra
 

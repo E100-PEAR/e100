@@ -1,3 +1,6 @@
+//This file stores constants used all over in the project
+
+
 // Screen constants
 screen_width  .data 639
 screen_height .data 479

@@ -1,3 +1,8 @@
+//This was a test file for playing back videos from the sd card if 
+//multiple pixel color values were stored in the same address
+//This is more memory efficent but we were unable to get it to work
+
+
 function_playback       be      playback_row_loop       true                    true 
 
 playback_row_loop       be      reset_vga_write_y_count vga_write_y_count       resY

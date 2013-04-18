@@ -1,3 +1,10 @@
+//This is a test case that will compare two videos side by side.
+//It was the preliminary tests for video comparison
+//This test relies on other drivers working well because 
+//it is reading recorded videos from the sd card and outputting
+//them to the vga monitor
+
+
 function_comparison         be      comparison_row_loop_1      comparison_counter      num0
                             be      comparison_second_frame    comparison_counter      num1
  

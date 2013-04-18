@@ -1,3 +1,7 @@
+//This file stores many of the variables used by drivers and controllers in this project
+//There are no functions in this file
+
+
 addr_low_count      .data   0
 addr_low_count_2    .data   0
 

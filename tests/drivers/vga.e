@@ -1,3 +1,6 @@
+//This is a test function for the VGA driver that outputs 
+//the color 20 to a rectangle on the screen
+
             call        function_vga_write    function_vga_write_ra
             cp          vga_x1          twenty
             cp          vga_y1          twenty
