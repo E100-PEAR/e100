@@ -1,3 +1,6 @@
+//This function outputs the menu to the screen and selects where to go from there
+//Depending on where the pointer is upon selection the approriate function is called
+
 menu        cp      addr_high_count             num0
             cp      addr_low_count              num0
             call    function_sd_draw            function_sd_draw_ra

@@ -1,3 +1,6 @@
+//This controller is used when selecting a video to play for all the menus
+//It sets the neccesary values for all of the functions before calling them
+
 //
 // Select a video to play.
 //
