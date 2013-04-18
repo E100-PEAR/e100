@@ -43,7 +43,7 @@ a_reset_addr_low_count      add     addr_high_count             addr_high_count 
                             be      frame_not_tiger_video       user_or_tiger_video     num0
                             // skip extra code that only applies to tiger videos if we're watching a user video. 
                         
-                            cp      vga_x1                      vga_write_x_count
+frame_tiger_video           cp      vga_x1                      vga_write_x_count
                             cp      vga_y1                      vga_write_y_count
                             cp      vga_x2                      vga_write_x_count
                             cp      vga_y2                      vga_write_y_count
@@ -52,8 +52,8 @@ a_reset_addr_low_count      add     addr_high_count             addr_high_count 
                             call    function_vga_write          function_vga_write_ra                          
                         
                             sub     addr_low_count              addr_low_count          num1  
-frame_not_tiger_video         
-                            be      finish_analysis             temp_addr_high_count    addr_high_count
+                            
+frame_not_tiger_video       be      finish_analysis             temp_addr_high_count    addr_high_count  
 frame_pixel_continue        call    a_get_pixel_color           get_pixel_color_ra       
                             call    a_set_pixel_data            set_pixel_data_ra
 
@@ -86,5 +86,6 @@ frame_check_finish      bne     a_set_pixel_data            time_to_stop        
 
 
                             halt
+
                             
 #include ../libraries/rewind.e

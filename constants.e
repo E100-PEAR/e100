@@ -76,9 +76,9 @@ num4800 .data 4800
 num9600 .data 9600
 num12288 .data 12288
 num16384 .data 16384
+num19200 .data 19200
 num24576 .data 24576
 num65280 .data 65280
-num19200 .data 19200
 
 // Characters a - z
 chara .data 97
