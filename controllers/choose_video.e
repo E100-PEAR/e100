@@ -20,31 +20,35 @@ function_playback_menu      cp      addr_high_count                     playback
                             be      play_recorded_video_2               selected_video          num4
 
 play_profession_video_1     cp      addr_high_count                     TigerFront_start_high
-	                         cp      addr_low_count		                  TigerFront_start_low
+	                        cp      addr_low_count		                TigerFront_start_low
                             cp      temp_addr_high_count                num67
                             cp      temp_addr_low_count                 num0
                             cp      user_or_tiger_video                 num1
+                            cp      sleep                               num0
                             be      function_playback                   true                    true
 
 play_profession_video_2     cp      addr_high_count                     TigerBehind_start_high
-                            cp      addr_low_count		                  TigerBehind_start_low
+                            cp      addr_low_count		                TigerBehind_start_low
                             cp      temp_addr_high_count                num100
                             cp      temp_addr_low_count                 num0
                             cp      user_or_tiger_video                 num1
+                            cp      sleep                               num0
                             be      function_playback                   true                    true
 
 play_recorded_video_1       cp      addr_high_count                     num120
                             cp      addr_low_count                      num0
                             cp      temp_addr_high_count                num140
                             cp      temp_addr_low_count                 num0
-                            cp      user_or_tiger_video                 num0    
+                            cp      user_or_tiger_video                 num0  
+                            cp      sleep                               num120  
                             be      function_playback                   true                    true
 
 play_recorded_video_2       cp      addr_high_count                     num140
                             cp      addr_low_count                      num0 
                             cp      temp_addr_high_count                num160
                             cp      temp_addr_low_count                 num0
-                            cp      user_or_tiger_video                 num0    
+                            cp      user_or_tiger_video                 num0
+                            cp      sleep                               num120    
                             be      function_playback                   true                    true
 
                             ret     function_playback_menu_ra

@@ -86,6 +86,7 @@ reset_vga_write_y_count call    function_vga_write          function_vga_write_r
                         cp      vga_write_y_count           num0
                         cp      vga_write_x_count           num0
                         cp      play_or_compare             num1
+                        call    function_sleep              function_sleep_ra
                         call    function_keyboard_playback  function_keyboard_key_press_ra
                         be      playback_row_loop           true                    true
 
