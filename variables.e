@@ -66,3 +66,63 @@ get_pixel_color_ra  .data   0
 set_pixel_data_ra   .data   0
 
 function_keyboard_key_press_ra  .data 0
+
+video_pointer .data 0
+
+// Variables used to calculate the position of the
+// next pointer.
+video_pointer_a .data 0
+video_pointer_b .data 0
+pointer_offset  .data 0
+
+video_pointer_positions
+
+// Playback menu pointers
+    .data 4
+    .data 175
+
+    .data 4
+    .data 255
+
+    .data 4
+    .data 335
+
+    .data 4
+    .data 415
+
+// Comparison menu pointers
+    .data 20
+    .data 165
+
+    .data 20
+    .data 250
+
+    .data 20
+    .data 333
+
+    .data 20
+    .data 415
+
+// Analysis menu pointers
+    .data 20
+    .data 160
+
+    .data 20
+    .data 246
+
+    .data 20
+    .data 330
+
+    .data 20
+    .data 415
+
+function_playback_menu_ra            .data 0
+function_comparison_menu_ra          .data 0
+function_frame_menu_ra               .data 0
+function_video_menu_handle_input_ra  .data 0
+function_show_video_menu_pointer_ra  .data 0
+function_move_video_pointer_up_ra    .data 0
+function_move_video_pointer_down_ra  .data 0
+function_select_video_ra             .data 0
+function_find_bkg_color_ra           .data 0
+function_set_pointer_coordinates_ra  .data 0

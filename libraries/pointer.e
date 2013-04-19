@@ -7,17 +7,17 @@
 // pointer_height: the pointer's height.
 // pointer_width: the pointer's width.
 //
-function_prepare_pointer cp vga_x1 pointer_x
-                         cp vga_y1 pointer_y
+function_prepare_pointer cp     vga_x1                      pointer_x
+                         cp     vga_y1                      pointer_y
 
                          // The end coordinates will be the x-coordinate plus the width
                          // and the y-coordinate plus the height.
-                         add vga_x2 pointer_x pointer_width
-                         add vga_y2 pointer_y pointer_height
+                         add    vga_x2                      pointer_x               pointer_width
+                         add    vga_y2                      pointer_y               pointer_height
 
-                         cp vga_color pointer_color
+                         cp     vga_color                   pointer_color
 
-                         ret function_prepare_pointer_ra
+                         ret    function_prepare_pointer_ra
 
 //
 // Add the pointer to the screen.
@@ -25,10 +25,9 @@ function_prepare_pointer cp vga_x1 pointer_x
 // pointer_x: the pointer's x-coordinate.
 // pointer_y: the pointer's y-coordinate.
 //
-function_add_pointer call function_prepare_pointer function_prepare_pointer_ra
-                     call function_vga_write function_vga_write_ra
-
-                     ret function_add_pointer_ra
+function_add_pointer    call    function_prepare_pointer    function_prepare_pointer_ra
+                        call    function_vga_write          function_vga_write_ra
+                        ret     function_add_pointer_ra
 
 //
 // Move the pointer. This "erases" the previous pointer by drawing
@@ -43,104 +42,64 @@ function_add_pointer call function_prepare_pointer function_prepare_pointer_ra
 // pointer_new_x: the x-coordinate that the pointer will be moved to.
 // pointer_new_y: the y-coordinate that the pointer will be moved to.
 //
-function_move_pointer call function_prepare_pointer function_prepare_pointer_ra
-
-
-                      call function_find_bkg_color  function_find_bkg_color_ra
-                      cp vga_color bkg_color
-
-                      // Draw rectangle over old pointer
-                      call function_vga_write function_vga_write_ra
-
-                      // Set the new pointer's coordinates.
-                      cp pointer_x pointer_new_x
-                      cp pointer_y pointer_new_y
-
-                      call function_prepare_pointer function_prepare_pointer_ra
-
-                      // Draw the new pointer.
-                      call function_vga_write function_vga_write_ra
-
-                      ret function_move_pointer_ra
+function_move_pointer   call    function_prepare_pointer    function_prepare_pointer_ra
+                        call    function_find_bkg_color     function_find_bkg_color_ra
+                        cp      vga_color bkg_color
+                        call    function_vga_write          function_vga_write_ra
+                        cp      pointer_x                   pointer_new_x
+                        cp      pointer_y                   pointer_new_y
+                        call    function_prepare_pointer    function_prepare_pointer_ra
+                        call    function_vga_write          function_vga_write_ra
+                        ret     function_move_pointer_ra
 
 //
 // Change the color of the pointer.
 //
 // pointer_new_color: the new color of the pointer
 //
-function_change_pointer_color cp pointer_new_x pointer_x
-                              cp pointer_new_y pointer_y
+function_change_pointer_color 
+                        cp      pointer_new_x               pointer_x
+                        cp      pointer_new_y               pointer_y
+                        cp      pointer_color               pointer_new_color
+                        call    function_move_pointer       function_move_pointer_ra
+                        ret     function_change_pointer_color_ra
 
-                              cp pointer_color pointer_new_color
+function_hide_pointer   cp      pointer_new_x               pointer_x
+                        cp      pointer_new_y               pointer_y
+                        be      keep_new_p_color            pointer_color           color_black
+                        cp      pointer_new_color pointer_color
 
-                              call function_move_pointer function_move_pointer_ra
+keep_new_p_color        cp      pointer_color               color_black
+                        call    function_move_pointer       function_move_pointer_ra
+                        ret     function_hide_pointer_ra
 
-                              ret function_change_pointer_color_ra
+function_show_pointer   cp      pointer_new_x               pointer_x
+                        cp      pointer_new_y               pointer_y
+                        bne     show_pointer                pointer_new_color       color_black
+                        cp      pointer_new_color           color_white
 
-//
-// Hide the pointer. This will save the pointer's current color
-// for when it is shown again.
-//
-function_hide_pointer cp pointer_new_x pointer_x
-                      cp pointer_new_y pointer_y
+show_pointer            call    function_change_pointer_color function_change_pointer_color_ra
+                        ret     function_show_pointer_ra
 
-                      // We'll save the pointer's old color (if it's not black) so that
-                      // the pointer can have the same color when it is shown again. 
-                      be _keep_new_p_color pointer_color color_black
+function_move_pointer_left 
+                        cp      pointer_new_x               pointer_left
+                        call    function_move_pointer       function_move_pointer_ra                           
+                        ret     function_move_pointer_left_ra
 
-                      cp pointer_new_color pointer_color
-_keep_new_p_color     cp pointer_color color_black
+function_move_pointer_right 
+                        cp      pointer_new_x               pointer_right
+                        call    function_move_pointer       function_move_pointer_ra                           
+                        ret     function_move_pointer_right_ra
 
-                      call function_move_pointer function_move_pointer_ra
+function_move_pointer_up 
+                        cp      pointer_new_y               pointer_top
+                        call    function_move_pointer       function_move_pointer_ra                           
+                        ret     function_move_pointer_up_ra
 
-                      ret function_hide_pointer_ra
-
-//
-// Show the pointer.
-//
-function_show_pointer cp pointer_new_x pointer_x
-                      cp pointer_new_y pointer_y
-
-                      bne _show_pointer pointer_new_color color_black
-
-                      // The pointer's new color is set to black, so let's use white.
-                      cp pointer_new_color color_white
-
-_show_pointer         call function_change_pointer_color function_change_pointer_color_ra
-
-                      ret function_show_pointer_ra
-
-//
-// Move the pointer to the left.
-//
-function_move_pointer_left cp pointer_new_x pointer_left
-                           call function_move_pointer function_move_pointer_ra
-                           
-                           ret function_move_pointer_left_ra
-
-//
-// Move the pointer to the right.
-//
-function_move_pointer_right cp pointer_new_x pointer_right
-                           call function_move_pointer function_move_pointer_ra
-                           
-                           ret function_move_pointer_right_ra
-
-//
-// Move the pointer up.
-//
-function_move_pointer_up cp pointer_new_y pointer_top
-                           call function_move_pointer function_move_pointer_ra
-                           
-                           ret function_move_pointer_up_ra
-
-//
-// Move the pointer down.
-//
-function_move_pointer_down cp pointer_new_y pointer_bottom
-                           call function_move_pointer function_move_pointer_ra
-                           
-                           ret function_move_pointer_down_ra
+function_move_pointer_down 
+                        cp      pointer_new_y               pointer_bottom
+                        call    function_move_pointer       function_move_pointer_ra                           
+                        ret     function_move_pointer_down_ra
 
 pointer_x .data 0
 pointer_y .data 0

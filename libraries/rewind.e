@@ -7,19 +7,19 @@
 // on the sd card.
 
 function_rewind  
-                    be      rewind_return       sd_addr_high      vid_start_addr_high       
-                    blt     rewind_drop_addr_high   addr_low_count     num9600
-                    sub     addr_low_count      addr_low_count     num9600
-                    be      rewind_return       true    true
+                    be      rewind_return              sd_addr_high        vid_start_addr_high       
+                    blt     rewind_drop_addr_high      addr_low_count      num9600
+                    sub     addr_low_count             addr_low_count      num9600
+                    be      rewind_return              true                true
 
 rewind_drop_addr_high
-                    sub     rewind_addr_temp     num9600     sd_addr_low
-                    be      rewind_skip_sub_1    user_or_tiger_video  num0
-                    sub     rewind_addr_temp     rewind_addr_temp   num1
-rewind_skip_sub_1   sub     addr_low_count       sd_addr_max     rewind_addr_temp
-                    sub     addr_high_count      sd_addr_high    num1
-                    add     addr_low_count       addr_low_count   num1
-                    be      rewind_return        true             true
+                    sub     rewind_addr_temp           num9600             sd_addr_low
+                    be      rewind_skip_sub_1          user_or_tiger_video num0
+                    sub     rewind_addr_temp           rewind_addr_temp    num1
+rewind_skip_sub_1   sub     addr_low_count             sd_addr_max         rewind_addr_temp
+                    sub     addr_high_count            sd_addr_high        num1
+                    add     addr_low_count             addr_low_count      num1
+                    be      rewind_return              true                true
                      
 rewind_return       ret     function_rewind_ra
 
